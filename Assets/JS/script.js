@@ -18,6 +18,7 @@ function searchByTitle (){
         }
     };
 
+    //var terminatorOMDB = "http://www.omdbapi.com/?t=terminator&apikey=9efaf7ad"
 
 
     // $.ajax(settings).done(function (response) {
@@ -25,11 +26,36 @@ function searchByTitle (){
         //console.log(response.results[0].picture);
         for (var i = 0; i < response.results.length; i++) {
 
+            var plot = $('<p>');
+            var rating = $('<p>');
+            var reviewScore = $('<p>');
+            var actors = $('<p>');
+            var releaseDate = $('<p>');
+            var runTime = $('<p>');
+
+            const terminator = {
+                url: "http://www.omdbapi.com/?t="+response.results[i].name+"&apikey=9efaf7ad",
+                method: "GET",
+            }
+    
+            $.ajax(terminator).then(function (responseTwo) {
+                console.log(responseTwo);
+
+                plot.text('Synopsis: '+responseTwo.Plot);
+                rating.text('Rated: '+responseTwo.Rated);
+                reviewScore.text('IMDB Rating: '+responseTwo.imdbRating);
+                actors.text('Lead Actors: '+responseTwo.Actors);
+                releaseDate.text('Release Date: '+responseTwo.Released);
+                runTime.text('Runtime: '+responseTwo.Runtime);
+                $('body').append(releaseDate, rating, runTime, plot, actors, reviewScore)
+            })
+
             var resultName = $('<h3>');
             resultName.text(response.results[i].name);
 
             var poster = $('<img>');
             poster.attr('src', response.results[i].picture);
+            poster.attr('style', "max-width: 400px; max-height: 300px;");
 
             var availability = $('<ul>');
             availability.text('Available to Watch On:')
