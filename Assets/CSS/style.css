@@ -1,8 +1,23 @@
+
+body{
+        background-image: url("https://www.colourbox.com/preview/5351999-movie-film-reel.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        width: 100% !important;
+        z-index: 0;
+        color:white;
+    }
+
 .header{
     text-align: center;
-    font-family: 'Acme', sans-serif;
+    font-family: 'Cinzel', serif;
+    color:white;
     
 }
+
 
 .modal-main {
     flex-direction: row;
@@ -85,4 +100,38 @@
 
 .li a {
     display: block;
+
+#searchBtn{
+border: solid white 2px;
+background-color:gray;
+color:black;
+margin-left: 150px;
+font-family: 'Cinzel', serif;
+font-size:12px;
+text-align: center;
+height:30px;
+width:150px;
+color:white;
+
+}
+
+#titleSearch{
+    width:300px;
+    margin-left: 80px;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color:white;
+    
+}
+h1{
+    margin-top:10px;
+    background-color:gray;
+    font-family: 'Cinzel', serif;
+    color:white;
+}
+h5{
+    font-family: 'Cinzel', serif;
+    background-color:gray;
+    color:white;
+
 }
