@@ -10,6 +10,17 @@ body{
         z-index: 0;
         color:white;
     }
+    
+#countryInput{
+    width:300px;
+    margin-left: 80px;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    color:black;
+    
+
+
+}
 
 .header{
     text-align: center;
@@ -101,7 +112,11 @@ body{
 .li a {
     display: block;
 }
+<<<<<<< HEAD
 #searchBtn {
+=======
+#searchBtn{
+>>>>>>> 6c666c0d434b844a39af2a70add13e5eaf2d8b5a
 border: solid white 2px;
 background-color:gray;
 color:black;
@@ -111,7 +126,20 @@ font-size:12px;
 text-align: center;
 height:30px;
 width:150px;
-color:white;
+
+}
+#add-city{
+border: solid white 2px;
+background-color:gray;
+color:black;
+margin-left: 150px;
+font-family: 'Cinzel', serif;
+font-size:12px;
+text-align: center;
+height:30px;
+width:150px;
+
+
 
 }
 
@@ -120,7 +148,7 @@ color:white;
     margin-left: 80px;
     font-family: 'Cinzel', serif;
     text-align: center;
-    color:white;
+    color:black;
     
 }
 h1 {
