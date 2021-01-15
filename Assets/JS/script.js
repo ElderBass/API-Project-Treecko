@@ -73,7 +73,7 @@ $(document).ready(function () {
 
             var resultName = $('<h3>');
             resultName.text(response.results[i].name);
-            
+
 
             var favorites = $('<button>');
             favorites.text('Add to Favorites!');
