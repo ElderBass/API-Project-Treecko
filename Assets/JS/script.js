@@ -60,182 +60,117 @@ $(document).ready(function () {
 
     //var terminatorOMDB = "http://www.omdbapi.com/?t=terminator&apikey=9efaf7ad"
 
+        
 
-
-    // $.ajax(settings).done(function (response) {
-        console.log(response);
-        //console.log(response.results[0].picture);
-
-        //for every response we get from the query...
-        for (var i = 0; i < response.results.length; i++) {
+          //$.ajax(settings).done(function (response) {
+          console.log(response);
+          
+          var names = [];
+          //for every response we get from the query...
+          for (var i = 0; i < response.results.length; i++) {
 
             //create a new div for our results to be displayed
             var resultsMain = $('<div>');
 
             var resultName = $('<h3>');
             resultName.text(response.results[i].name);
+            
+            var favorites = $('<button>');
+            favorites.text('Add to Favorites!');
+            favorites.attr('id', response.results[i].name);
+            favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+            favorites.on({
+              mouseenter: function () {
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+              },
+              mouseleave: function () {
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+              }
+              })
+        //response.results[i].name
+        names.push(response.results[i].name)
+        console.log(names);
+      //responseName gets rewritten every loop, resulting in it always being the last item in the looped array
+            favorites.on('click', addToFavorites)
+          
+            resultName.append(favorites)
 
             var poster = $('<img>');
             poster.attr('src', response.results[i].picture);
-            poster.attr('style', "max-width: 400px; max-height: 300px; align:center");
+            poster.attr('style', "max-width: 300px; max-height: 225px;");
+            
 
             var availability = $('<ul>');
             availability.text('Available to Watch On:')
 
             //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
             for (var j = 0; j < response.results[i].locations.length; j++) {
-                //so for each place you can watch the show, create a new list element and append this list element to the unordered list
-                var location = $('<li>');
-                location.text(response.results[i].locations[j].display_name)
-                availability.append(location);  
+              //so for each place you can watch the show, create a new list element and append this list element to the unordered list
+              var location = $('<li>');
+              location.text(response.results[i].locations[j].display_name)
+              availability.append(location);
             }
-            
+
             resultsMain.append(resultName, poster, availability)
             //have a new query for each title that our initial query returns
             const terminator = {
-                url: "http://www.omdbapi.com/?t="+response.results[i].name+"&apikey=9efaf7ad",
-                method: "GET",
+              url: "http://www.omdbapi.com/?t=" + response.results[i].name + "&apikey=9efaf7ad",
+              method: "GET",
             }
             //when this query is done...wait on this to finish before we go forward
             await $.ajax(terminator).then(function (responseTwo) {
-                console.log(responseTwo);
+              console.log(responseTwo);
 
-                //create a new div that will contain all the information we need
-                var resultInfo = $('<div>');
+              //create a new div that will contain all the information we need
+              var resultInfo = $('<div>');
 
-                //create a series of new elements for each piece of info we want
-                var plot = $('<p>');
-                var rating = $('<p>');
-                var reviewScore = $('<p>');
-                var actors = $('<p>');
-                var releaseDate = $('<p>');
-                var runTime = $('<p>');
+              //create a series of new elements for each piece of info we want
+              var plot = $('<p>');
+              var rating = $('<p>');
+              var reviewScore = $('<p>');
+              var actors = $('<p>');
+              var releaseDate = $('<p>');
+              var runTime = $('<p>');
 
-                //set the text of these new elements to their corresponding values from the query
-                plot.text('Synopsis: '+responseTwo.Plot);
-                rating.text('Rated: '+responseTwo.Rated);
-                reviewScore.text('IMDB Rating: '+responseTwo.imdbRating);
-                actors.text('Lead Actors: '+responseTwo.Actors);
-                releaseDate.text('Release Date: '+responseTwo.Released);
-                runTime.text('Runtime: '+responseTwo.Runtime);
+              //set the text of these new elements to their corresponding values from the query
+              plot.text('Synopsis: ' + responseTwo.Plot);
+              rating.text('Rated: ' + responseTwo.Rated);
+              reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
+              actors.text('Lead Actors: ' + responseTwo.Actors);
+              releaseDate.text('Release Date: ' + responseTwo.Released);
+              runTime.text('Runtime: ' + responseTwo.Runtime);
 
-                //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
-                //However, this info is being added to the BOTTOM of the div and not with its corresponding search result -- does that mean this is executing AFTER everything else has been appended?
-                resultInfo.append(releaseDate, rating, runTime, plot, actors, reviewScore)
+              //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
+              //However, this info is being added to the BOTTOM of the div and not with its corresponding search result -- does that mean this is executing AFTER everything else has been appended?
+              resultInfo.append(releaseDate, rating, runTime, plot, actors, reviewScore)
 
-                resultsMain.append(resultInfo)
-            })
+              resultsMain.append(resultInfo)
+            }) //end of omdb ajax query
+
             //for each search result from first query, create elements for the movie/show name, its poster, and an unordered list for what services have that movie
-            
-        //so for each time we make a loop, append all of the information we want to the container housing the information for that one movie
-        //in theory this will create a new div for each of the search results that pop up;
-        
-        //then, for each new div we create, append that div to the main container that will house all of the results.
-        resultsDiv.append(resultsMain);
-        //$('body').append(resultsDiv);
 
-    //$.ajax(settings).done(function (response) {
-    console.log(response);
-    
-    var names = [];
-    //for every response we get from the query...
-    for (var i = 0; i < response.results.length; i++) {
+            //so for each time we make a loop, append all of the information we want to the container housing the information for that one movie
+            //in theory this will create a new div for each of the search results that pop up;
 
-      //create a new div for our results to be displayed
-      var resultsMain = $('<div>');
-
-      var resultName = $('<h3>');
-      resultName.text(response.results[i].name);
-      
-      var favorites = $('<button>');
-      favorites.text('Add to Favorites!');
-      favorites.attr('id', response.results[i].name);
-      favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
-
-   
-   //response.results[i].name
-   names.push(response.results[i].name)
-   console.log(names);
-//responseName gets rewritten every loop, resulting in it always being the last item in the looped array
-      favorites.on('click', addToFavorites)
-    
-      resultName.append(favorites)
-
-      var poster = $('<img>');
-      poster.attr('src', response.results[i].picture);
-      poster.attr('style', "max-width: 400px; max-height: 300px;");
-
-      var availability = $('<ul>');
-      availability.text('Available to Watch On:')
-
-      //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
-      for (var j = 0; j < response.results[i].locations.length; j++) {
-        //so for each place you can watch the show, create a new list element and append this list element to the unordered list
-        var location = $('<li>');
-        location.text(response.results[i].locations[j].display_name)
-        availability.append(location);
-      }
-
-      resultsMain.append(resultName, poster, availability)
-      //have a new query for each title that our initial query returns
-      const terminator = {
-        url: "http://www.omdbapi.com/?t=" + response.results[i].name + "&apikey=9efaf7ad",
-        method: "GET",
-      }
-      //when this query is done...wait on this to finish before we go forward
-      await $.ajax(terminator).then(function (responseTwo) {
-        console.log(responseTwo);
-
-        //create a new div that will contain all the information we need
-        var resultInfo = $('<div>');
-
-        //create a series of new elements for each piece of info we want
-        var plot = $('<p>');
-        var rating = $('<p>');
-        var reviewScore = $('<p>');
-        var actors = $('<p>');
-        var releaseDate = $('<p>');
-        var runTime = $('<p>');
-
-        //set the text of these new elements to their corresponding values from the query
-        plot.text('Synopsis: ' + responseTwo.Plot);
-        rating.text('Rated: ' + responseTwo.Rated);
-        reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
-        actors.text('Lead Actors: ' + responseTwo.Actors);
-        releaseDate.text('Release Date: ' + responseTwo.Released);
-        runTime.text('Runtime: ' + responseTwo.Runtime);
-
-        //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
-        //However, this info is being added to the BOTTOM of the div and not with its corresponding search result -- does that mean this is executing AFTER everything else has been appended?
-        resultInfo.append(releaseDate, rating, runTime, plot, actors, reviewScore)
-
-        resultsMain.append(resultInfo)
-      }) //end of omdb ajax query
-
-      //for each search result from first query, create elements for the movie/show name, its poster, and an unordered list for what services have that movie
-
-      //so for each time we make a loop, append all of the information we want to the container housing the information for that one movie
-      //in theory this will create a new div for each of the search results that pop up;
-
-      //then, for each new div we create, append that div to the main container that will house all of the results.
-      resultsDiv.append(resultsMain);
+            //then, for each new div we create, append that div to the main container that will house all of the results.
+            resultsDiv.append(resultsMain);
 
 
-    }
-    //}); //end of utelly ajax query
-    function addToFavorites(){   
-      for (var j = 0; j < names.length; j++) {   
-        var favoritesList = JSON.parse(localStorage.getItem('favoritesList'))
-        if (favoritesList) {
-          favoritesList.push(names[j])
-        } 
-        else {
-          favoritesList = [names[j]]
+          }
+          //}); //end of utelly ajax query
+          function addToFavorites(){   
+            for (var j = 0; j < names.length; j++) {   
+              var favoritesList = JSON.parse(localStorage.getItem('favoritesList'))
+              if (favoritesList) {
+                favoritesList.push(names[j])
+              } 
+              else {
+                favoritesList = [names[j]]
+              }
+              localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+          }
         }
-        localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-    }
-  }
-  } //end of searchByTitle fxn
+        } //end of searchByTitle fxn
 
   $('#searchBtn').on('click', searchByTitle);
 
