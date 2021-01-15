@@ -1,119 +1,118 @@
-
 body{
-        background-image: url("https://www.colourbox.com/preview/5351999-movie-film-reel.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        width: 100% !important;
-        z-index: 0;
-        color:white;
-    }
-    
+    background-image: url("https://www.colourbox.com/preview/5351999-movie-film-reel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    width: 100% !important;
+    z-index: 0;
+    color:white;
+}
+
 #countryInput{
-    width:250px;
-    margin-left: 80px;
-    font-family: 'Cinzel', serif;
-    text-align: center;
-    color:black;
-    
+width:250px;
+margin-left: 80px;
+font-family: 'Cinzel', serif;
+text-align: center;
+color:black;
+
 
 
 }
 
 .header{
-    text-align: center;
-    font-family: 'Cinzel', serif;
-    color:white;
-    
+text-align: center;
+font-family: 'Cinzel', serif;
+color:white;
+
 }
 
 
 .modal-main {
-    flex-direction: row;
-    box-sizing: border-box;
-    display: flex;
-    place-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    /* width: 100%; */
-    height: 100%;
-    /* having both width&&height enabled at the same time would make buttons and links unclickable... */
-    overflow: auto;
+flex-direction: row;
+box-sizing: border-box;
+display: flex;
+place-content: center;
+align-items: center;
+position: fixed;
+z-index: 1;
+padding-top: 100px;
+left: 0;
+top: 0;
+/* width: 100%; */
+height: 100%;
+/* having both width&&height enabled at the same time would make buttons and links unclickable... */
+overflow: auto;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px;/* Location of the box */ 
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 100px;/* Location of the box */ 
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
 }
-    
+
 .modal-content {
-    background-color: transparent;
-    /* background-color: #888888; */
-    /* margin: auto; */
-    padding: 5%;
-    border: 1px solid #888;
-    width: 70%;
-    /* text-align: center; */
-    /* height: 100%!important; */
-    /* width: 100%!important; */
-    /* min-height: auto!important; */
-    /* min-width: auto!important; */
+background-color: transparent;
+/* background-color: #888888; */
+/* margin: auto; */
+padding: 5%;
+border: 1px solid #888;
+width: 70%;
+/* text-align: center; */
+/* height: 100%!important; */
+/* width: 100%!important; */
+/* min-height: auto!important; */
+/* min-width: auto!important; */
 }
 
 .close {
-    color: #ffffff;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+color: #ffffff;
+float: right;
+font-size: 28px;
+font-weight: bold;
 }
-  
+
 .close:hover,
 .close:focus {
-    color: rgb(160, 160, 160);
-    text-decoration: none;
-    cursor: pointer;
+color: rgb(160, 160, 160);
+text-decoration: none;
+cursor: pointer;
 }
 
 .modal-button {
-    display: table;
-    margin: 100px;
-    background:gray;
-    border: solid white 2px;
-    border-radius: 34px;
-    /* padding: 14px 20px 10px;  */
-    color:black;
-    /* box-sizing: border-box; */
-    cursor: pointer;
-    font-family: 'Cinzel', serif;
-   
+display: table;
+margin: 100px;
+background:gray;
+border: solid white 2px;
+border-radius: 34px;
+/* padding: 14px 20px 10px;  */
+color:black;
+/* box-sizing: border-box; */
+cursor: pointer;
+font-family: 'Cinzel', serif;
+
 }
 
 .card {
-    height: 30rem;
-    margin: 20px;
+height: 30rem;
+margin: 20px;
 }
 
 .treecko-brand {
-    background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
+background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 }
 
 .li a {
-    display: block;
+display: block;
 }
 #searchBtn{
 border: solid white 2px;
@@ -143,49 +142,49 @@ width:150px;
 }
 
 #titleSearch{
-    width:250px;
-    margin-left: 80px;
-    font-family: 'Cinzel', serif;
-    text-align: center;
-    color:black;
-    
+width:250px;
+margin-left: 80px;
+font-family: 'Cinzel', serif;
+text-align: center;
+color:black;
+
 }
 
 
 h1{
-    margin-top:10px;
-    background-color:gray;
-    font-family: 'Cinzel', serif;
-    color:white;
+margin-top:10px;
+background-color:gray;
+font-family: 'Cinzel', serif;
+color:white;
 }
 h5{
-    font-family: 'Cinzel', serif;
-    background-color:gray;
-    color:white;
+font-family: 'Cinzel', serif;
+background-color:gray;
+color:white;
 
 }
 #resultsDiv{
-    
-    /* margin-top:20px; */
-    background-color:white;
-    color:black;
-    width:500px;
-    font-family: 'Cinzel', serif;
-    /* margin: auto; */
-    /* width: 50%; */
-    /* padding: 10px; */
-    margin-left:100px;
-  
+
+/* margin-top:20px; */
+background-color:white;
+color:black;
+width:500px;
+font-family: 'Cinzel', serif;
+/* margin: auto; */
+/* width: 50%; */
+/* padding: 10px; */
+margin-left:100px;
+
 }
 
 h3{
-    text-align:center;
-    font-family: 'Cinzel', serif;
+text-align:center;
+font-family: 'Cinzel', serif;
 
 }
 
 
 .navbar{
-    height:50px;
+height:50px;
 
 }
