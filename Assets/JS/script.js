@@ -74,7 +74,7 @@ async function searchByTitle (){
 
             var poster = $('<img>');
             poster.attr('src', response.results[i].picture);
-            poster.attr('style', "max-width: 400px; max-height: 300px;");
+            poster.attr('style', "max-width: 400px; max-height: 300px; align:center");
 
             var availability = $('<ul>');
             availability.text('Available to Watch On:')
