@@ -112,11 +112,7 @@ body{
 .li a {
     display: block;
 }
-<<<<<<< HEAD
-#searchBtn {
-=======
 #searchBtn{
->>>>>>> 6c666c0d434b844a39af2a70add13e5eaf2d8b5a
 border: solid white 2px;
 background-color:gray;
 color:black;
