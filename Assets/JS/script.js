@@ -63,8 +63,8 @@ $(document).ready(function () {
 
     //$.ajax(settings).done(function (response) {
     console.log(response);
-    //console.log(response.results[0].picture);
-
+    
+    var names = [];
     //for every response we get from the query...
     for (var i = 0; i < response.results.length; i++) {
 
@@ -76,11 +76,16 @@ $(document).ready(function () {
       
       var favorites = $('<button>');
       favorites.text('Add to Favorites!');
-      favorites.attr('id', 'favoritesBtn');
+      favorites.attr('id', response.results[i].name);
       favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
 
-      //favorites.on('click', addToFavorites(response.results[i].name))
-
+   
+   //response.results[i].name
+   names.push(response.results[i].name)
+   console.log(names);
+//responseName gets rewritten every loop, resulting in it always being the last item in the looped array
+      favorites.on('click', addToFavorites)
+    
       resultName.append(favorites)
 
       var poster = $('<img>');
@@ -144,22 +149,36 @@ $(document).ready(function () {
 
     }
     //}); //end of utelly ajax query
-
+    function addToFavorites(){   
+      for (var j = 0; j < names.length; j++) {   
+        var favoritesList = JSON.parse(localStorage.getItem('favoritesList'))
+        if (favoritesList) {
+          favoritesList.push(names[j])
+        } 
+        else {
+          favoritesList = [names[j]]
+        }
+        localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+    }
+  }
   } //end of searchByTitle fxn
 
   $('#searchBtn').on('click', searchByTitle);
 
 }); //end of onReady function
 
-
+/*
 
 function addToFavorites(fav) {
+
   var favoritesList = JSON.parse(localStorage.getItem('favorites'));
-  if (favoritesList != null) {
+
+  if (favoritesList) {
     favoritesList.push(fav);
   }
   else {
-    favoritesList = [fav];
+    localStorage.setItem('favorites', fav)
+    //favoritesList = [fav];
   }
   localStorage.setItem('favorites', JSON.stringify[favoritesList])
-} 
+} */
