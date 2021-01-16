@@ -43,7 +43,7 @@ $(document).ready(function () {
     //async = saying this function holds asynchronous content so only run when the query is done
     async function searchByTitle() {
 
-        console.log('suhdude');
+        
         var userSearch = $('#titleSearch').val().trim();
 
         const settings = {
@@ -57,58 +57,77 @@ $(document).ready(function () {
             }
         };
 
-        //var terminatorOMDB = "http://www.omdbapi.com/?t=terminator&apikey=9efaf7ad"
-
-
-        //$.ajax(settings).done(function (response) {
-        console.log(response);
-        //console.log(response.results[0].picture);
-
-
-        //for every response we get from the query...
-        for (var i = 0; i < response.results.length; i++) {
+          //$.ajax(settings).done(function (response) {
+          console.log(response);
+          
+          var names = [];
+          //for every response we get from the query...
+          for (var i = 0; i < response.results.length; i++) {
 
             //create a new div for our results to be displayed
             var resultsMain = $('<div>');
 
             var resultName = $('<h3>');
             resultName.text(response.results[i].name);
-
-
+            
             var favorites = $('<button>');
             favorites.text('Add to Favorites!');
             favorites.attr('id', response.results[i].name);
-            favorites.attr('style', 'border: solid white 2px; border-radius: 15%; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
-
+//New Stuff Alert! Didn't work though... favorites.html('<a href="#" data-reveal-id="myModal">Add To Favorites</a>');
+            favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+            favorites.on({
+              mouseenter: function () {
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+              },
+              mouseleave: function () {
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+              }
+              })
+        
+        names.push(response.results[i].name)
+        console.log(names);
+      
             var responseName = response.results[i].name
             console.log(responseName);
             favorites.on('click', function () {
                 var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
                 console.log(this.id);
                 if (favoritesList) {
+  //New Stuff Alert! This ensures that if something is already in favs it won't be added again! Huzzah!
+                  if ($.inArray(this.id, favoritesList) === -1) {
                     favoritesList.push(this.id)
+                    //should find some way to make these modals and not alerts!
+                    alert('added to favorites!')
+                  }
+                  else { //ditto!
+                    alert('this is already a favorite!');
+                    
+                  }
                 }
                 else {
                     favoritesList = [this.id]
                 }
                 localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+            /*New Stuff Alert! Fxn described below*/
+                renderFavoritesList();
             })
 
             resultName.append(favorites)
 
             var poster = $('<img>');
             poster.attr('src', response.results[i].picture);
-            poster.attr('style', "max-width: 400px; max-height: 300px;");
+            poster.attr('style', "max-width: 300px; max-height: 225px;");
+            
 
             var availability = $('<ul>');
             availability.text('Available to Watch On:')
 
             //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
             for (var j = 0; j < response.results[i].locations.length; j++) {
-                //so for each place you can watch the show, create a new list element and append this list element to the unordered list
-                var location = $('<li>');
-                location.text(response.results[i].locations[j].display_name)
-                availability.append(location);
+              //so for each place you can watch the show, create a new list element and append this list element to the unordered list
+              var location = $('<li>');
+              location.text(response.results[i].locations[j].display_name)
+              availability.append(location);
             }
 
             resultsMain.append(resultName, poster, availability)
@@ -141,16 +160,11 @@ $(document).ready(function () {
                 runTime.text('Runtime: ' + responseTwo.Runtime);
 
                 //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
-                //However, this info is being added to the BOTTOM of the div and not with its corresponding search result -- does that mean this is executing AFTER everything else has been appended?
                 resultInfo.append(releaseDate, rating, runTime, plot, actors, reviewScore)
 
                 resultsMain.append(resultInfo)
             }) //end of omdb ajax query
 
-            //for each search result from first query, create elements for the movie/show name, its poster, and an unordered list for what services have that movie
-
-            //so for each time we make a loop, append all of the information we want to the container housing the information for that one movie
-            //in theory this will create a new div for each of the search results that pop up;
 
             //then, for each new div we create, append that div to the main container that will house all of the results.
             resultsDiv.append(resultsMain);
@@ -161,21 +175,21 @@ $(document).ready(function () {
     } //end of searchByTitle fxn
 
     $('#searchBtn').on('click', searchByTitle);
+    renderFavoritesList();
 
 }); //end of onReady function
 
-/*
+//New Stuff Alert!
 
-function addToFavorites(fav) {
-
-  var favoritesList = JSON.parse(localStorage.getItem('favorites'));
-
-  if (favoritesList) {
-    favoritesList.push(fav);
+//I'm dumb and this is appending a button every time ANY favorite button is clicked
+function renderFavoritesList() {
+  var favorites = JSON.parse(localStorage.getItem('favoritesList')) 
+  //can I add some sort of check to see if something is already in the favorites list so I don't add it twice?
+  if (favorites) {
+    for (var i=0; i < favorites.length; i++) {
+      var favButton = $('<button>')
+      favButton.text(favorites[i]);
+      $('#favoritesList').append(favButton)
+    }
   }
-  else {
-    localStorage.setItem('favorites', fav)
-    //favoritesList = [fav];
-  }
-  localStorage.setItem('favorites', JSON.stringify[favoritesList])
-} */
+}

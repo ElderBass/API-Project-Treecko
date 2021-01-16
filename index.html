@@ -34,6 +34,14 @@
 
         <div class="cd-md-4">
             <div id='resultsDiv'>
+                <!--New Stuff Alert!-->
+            <!--This isn't working as anticipated. I tried using this as an alert instead of the browser alerts and it didn't work lol.
+                I pulled this from Foundation. I don't know how these things work though. Kelsey, Fong, pls halp!
+                <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                    <h2 id="modalTitle">So Favorite! Much Wow!</h2>
+                    <p class="lead">This has been added to your favorites below!</p>
+                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                </div> -->
             </div>
         </div>
 
@@ -55,8 +63,13 @@
 
     <!-- input this modal somewhere -->
     <div class="container">
-        <div class="row">
+        <div class="row"> <!--Maybe have the favorites list in one of these and search history in the other?-->
             <div class="card">
+                <h3><u>Favorites:</u></h3>
+                <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
+ <!--New Stuff Alert!--><ul class='stack button-group' id='favoritesList'>
+                    <!--For testing purposes, not necessararily a for sure thing...-->
+                </ul>
                 <p>Not sure how layout should be so just throwing boxes in. Content TBD</p>
             </div>
             <div class="card">
