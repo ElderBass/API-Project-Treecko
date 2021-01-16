@@ -73,6 +73,7 @@ $(document).ready(function () {
             var favorites = $('<button>');
             favorites.text('Add to Favorites!');
             favorites.attr('id', response.results[i].name);
+//New Stuff Alert! Didn't work though... favorites.html('<a href="#" data-reveal-id="myModal">Add To Favorites</a>');
             favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
             favorites.on({
               mouseenter: function () {
@@ -92,12 +93,23 @@ $(document).ready(function () {
                 var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
                 console.log(this.id);
                 if (favoritesList) {
+  //New Stuff Alert! This ensures that if something is already in favs it won't be added again! Huzzah!
+                  if ($.inArray(this.id, favoritesList) === -1) {
                     favoritesList.push(this.id)
+                    //should find some way to make these modals and not alerts!
+                    alert('added to favorites!')
+                  }
+                  else { //ditto!
+                    alert('this is already a favorite!');
+                    
+                  }
                 }
                 else {
                     favoritesList = [this.id]
                 }
                 localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+            /*New Stuff Alert! Fxn described below*/
+                renderFavoritesList();
             })
 
             resultName.append(favorites)
@@ -163,5 +175,21 @@ $(document).ready(function () {
     } //end of searchByTitle fxn
 
     $('#searchBtn').on('click', searchByTitle);
+    renderFavoritesList();
 
 }); //end of onReady function
+
+//New Stuff Alert!
+
+//I'm dumb and this is appending a button every time ANY favorite button is clicked
+function renderFavoritesList() {
+  var favorites = JSON.parse(localStorage.getItem('favoritesList')) 
+  //can I add some sort of check to see if something is already in the favorites list so I don't add it twice?
+  if (favorites) {
+    for (var i=0; i < favorites.length; i++) {
+      var favButton = $('<button>')
+      favButton.text(favorites[i]);
+      $('#favoritesList').append(favButton)
+    }
+  }
+}
