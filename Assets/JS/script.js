@@ -73,6 +73,7 @@ $(document).ready(function () {
             var favorites = $('<button>');
             favorites.text('Add to Favorites!');
             favorites.attr('id', response.results[i].name);
+            favorites.addClass('favoriteItem');
 //New Stuff Alert! Didn't work though... favorites.html('<a href="#" data-reveal-id="myModal">Add To Favorites</a>');
             favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
             favorites.on({
@@ -98,17 +99,25 @@ $(document).ready(function () {
                     favoritesList.push(this.id)
                     //should find some way to make these modals and not alerts!
                     alert('added to favorites!')
+                    //so basically if the this.id isn't alreayd in the array, push it in there and make a button out of it on the bottom
+                    // var favButton = $('<button>')
+                    // favButton.text(this.id);
+                    // $('#favoritesList').append(favButton)
+                    
                   }
                   else { //ditto!
-                    alert('this is already a favorite!');
-                    
+                    alert('this is already a favorite!');                    
                   }
                 }
                 else {
                     favoritesList = [this.id]
+                    alert('added to favorites!')
+                    // var favButton = $('<button>')
+                    // favButton.text(this.id);
+                    // $('#favoritesList').append(favButton) //doing this twice, once here and once at renderFavs just below, which means renderFavs isn't working right
                 }
                 localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-            /*New Stuff Alert! Fxn described below*/
+                //calling renderFavorites here will add button functionality to all our new stuff from above
                 renderFavoritesList();
             })
 
@@ -181,15 +190,33 @@ $(document).ready(function () {
 
 //New Stuff Alert!
 
-//I'm dumb and this is appending a button every time ANY favorite button is clicked
+
 function renderFavoritesList() {
   var favorites = JSON.parse(localStorage.getItem('favoritesList')) 
   //can I add some sort of check to see if something is already in the favorites list so I don't add it twice?
   if (favorites) {
     for (var i=0; i < favorites.length; i++) {
-      var favButton = $('<button>')
-      favButton.text(favorites[i]);
-      $('#favoritesList').append(favButton)
+        console.log($('#favoritesList').children())
+      if ($('#favoritesList').children().length === 0){ //for this to work, I then must have to MAKE a child in the above fxn
+          var favButton = $('<button>') //so if the length of the children of favs list === 0, it don't got no children so we make one and give it the id
+          favButton.attr('id', favorites[i]);
+          favButton.text(favorites[i]); //need this ID for crosschecking later.
+          $('#favoritesList').append(favButton)
+        }
+      else{
+          $('#favoritesList').children().each(function() { //this still isn't working as intended, not checking to see if this is already made or not
+            if ($(this).id != favorites[i]) {
+              var favButton = $('<button>')
+              favButton.text(favorites[i]);
+              favButton.attr('id', favorites[i]); 
+              $('#favoritesList').append(favButton)
+            }
+            })
+        }
+       }  /* Basically I'm trying to get this to 1.) Check if the favoritesList card has any favorites in it, and if not then make a button from storage
+        and 2.) If the favsList does have buttons in it, cross check the exisitng button's id with names in storage, and they don't match, make buttons out of them
+          so with this iteration, adding the first favorite only made one list item at bottom, but then adding a second favorite
+            added two buttons of the new fav and one more of the old, going from 1 button to 4 total, two of each. */
+      }
     }
-  }
-}
+  
