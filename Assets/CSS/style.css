@@ -8,22 +8,21 @@ body{
     width: 100% !important;
     z-index: 0;
     color:white;
+    font-family: 'Cinzel', serif;
+    /* font-size: 1vw; */
 }
 
 #countryInput{
 width:250px;
-margin-left: 80px;
-font-family: 'Cinzel', serif;
+/* margin-left: 80px; */
+/* font-family: 'Cinzel', serif; */
 text-align: center;
 color:black;
-
-
-
 }
 
 .header{
 text-align: center;
-font-family: 'Cinzel', serif;
+/* font-family: 'Cinzel', serif; */
 color:white;
 
 }
@@ -57,21 +56,19 @@ width: 100%; /* Full width */
 height: 100%; /* Full height */
 overflow: auto; /* Enable scroll if needed */
 background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
+background-color: rgba(0,0,0,0.84); /* Black w/ opacity */
 }
 
 .modal-content {
-background-color: transparent;
-/* background-color: #888888; */
-/* margin: auto; */
-padding: 5%;
+background-color: rgb(172, 172, 172); /*feel free to change the color of modal bg*/
+padding: 1%;
 border: 1px solid #888;
-width: 70%;
-/* text-align: center; */
-/* height: 100%!important; */
-/* width: 100%!important; */
-/* min-height: auto!important; */
-/* min-width: auto!important; */
+width: 80%;
+/* height: 100%; */
+margin: auto;
+max-height: 100%;
+font-family: 'Cinzel', serif;
+
 }
 
 .close {
@@ -89,17 +86,16 @@ cursor: pointer;
 }
 
 .modal-button {
-display: table;
-margin: 100px;
+/* display: table; */
+/* margin: 100px; */
 background:gray;
 border: solid white 2px;
-border-radius: 34px;
+/* border-radius: 34px; */
 /* padding: 14px 20px 10px;  */
 color:black;
 /* box-sizing: border-box; */
 cursor: pointer;
-font-family: 'Cinzel', serif;
-
+/* font-family: 'Cinzel', serif; */
 }
 
 .card {
@@ -118,7 +114,7 @@ display: block;
 border: solid white 2px;
 background-color:gray;
 color:black;
-margin-left: 100px;
+/* margin-left: 100px; */
 font-family: 'Cinzel', serif;
 font-size:12px;
 text-align: center;
@@ -126,65 +122,95 @@ height:30px;
 width:150px;
 
 }
-#add-city{
+.swag{
 border: solid white 2px;
 background-color:gray;
 color:black;
-margin-left: 100px;
+/* margin-left: 100px; */
 font-family: 'Cinzel', serif;
 font-size:12px;
 text-align: center;
 height:30px;
 width:150px;
-
-
-
 }
 
 #titleSearch{
 width:250px;
-margin-left: 80px;
-font-family: 'Cinzel', serif;
+/* margin-left: 80px; */
+/* font-family: 'Cinzel', serif; */
 text-align: center;
 color:black;
-
 }
-
 
 h1{
 margin-top:10px;
 background-color:gray;
-font-family: 'Cinzel', serif;
+/* font-family: 'Cinzel', serif; */
 color:white;
 }
+
+h2 {
+    font-family: 'Cinzel', serif;
+}
+
 h5{
-font-family: 'Cinzel', serif;
+/* font-family: 'Cinzel', serif; */
 background-color:gray;
 color:white;
 
 }
-#resultsDiv{
 
+#resultsDiv{
 /* margin-top:20px; */
 background-color:white;
 color:black;
-width:500px;
-font-family: 'Cinzel', serif;
-/* margin: auto; */
-/* width: 50%; */
-/* padding: 10px; */
-margin-left:100px;
-
+/* width: 500px; */
+/* font-family: 'Cinzel', serif; */
+width: 80%;
+/* margin-left:100px; */
+padding: 0px 20px 0px 20px;
 }
 
 h3{
 text-align:center;
-font-family: 'Cinzel', serif;
-
+/* font-family: 'Cinzel', serif; */
+margin-top:10px;
+background-color:gray;
 }
 
 
 .navbar{
-height:50px;
+height:60px;
+}
 
+.genre-button {
+    background-color: rgb(255, 255, 255);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.genre-search {
+    width: 80%;
+    height: 400px;
+    background-color: gray;
+    text-align: center;
+    margin: auto;
+}
+
+.ul {
+    list-style-type: none;
+    /* float: right; */
+}
+
+li {
+    color: black;
+    list-style-type: none;
+}
+
+.col-md-2 {
+    padding: 0px 0px
+}
+
+.col-md-10 {
+    padding: 0px 0px
 }
