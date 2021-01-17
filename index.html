@@ -25,28 +25,32 @@
 
     <BR>
     <div class="row">
-        <!-- <div class="cd-md-1"><input type='text' id='titleSearch' placeholder='enter movie or show title'> -->
         <div class="col-md-2" align="center"><input type='text' id='titleSearch' placeholder='enter movie or show title'>
             <button id='searchBtn' type='submit'>Search Flick Finder</button><BR><BR>
-            <input type="text" id="countryInput" placeholder="Enter country">
-            <input class="swag" type="submit" value="Confirm"><br><br>
             <button class="modal-button" id="myBtn">Popular on the Web</button>
         </div>
 
-        <!-- <div class="cd-md-4"> -->
         <div class="col-md-10" align="center">
             <div id='resultsDiv'>
+                <!--New Stuff Alert!-->
+            <!--This isn't working as anticipated. I tried using this as an alert instead of the browser alerts and it didn't work lol.
+                I pulled this from Foundation. I don't know how these things work though. Kelsey, Fong, pls halp!
+                <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                    <h2 id="modalTitle">So Favorite! Much Wow!</h2>
+                    <p class="lead">This has been added to your favorites below!</p>
+                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                </div> -->
             </div>
         </div>
 
     </div>
     <div class="modal-main">
         <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
+            <div class="modal-content" >
+                <div><span class="close">&times;</span></div>
                 <div>
                     <h2>Top 10 Popular Movies</h2>
-                    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleInterval" class="carousel slide" data-pause="carousel" class="default">
                         <div class="carousel-inner">
                           <div class="carousel-item active" data-interval="#">
                             <iframe width="100%" height="720" src="https://www.youtube.com/embed/7Y6-w5Psupw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -100,13 +104,17 @@
     <!-- <div class="container">
         <div class="row">
             <div class="card">
-                <p>Not sure how layout should be so just throwing boxes in. Content TBD</p>
+                <h3><u>Favorites:</u></h3>
+                <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
+ <!--New Stuff Alert!--><ul class='stack button-group' id='favoritesList'>
+                    <!--For testing purposes, not necessararily a for sure thing...-->
+                </ul>
+                <!-- <p>Not sure how layout should be so just throwing boxes in. Content TBD</p> -->
             </div>
             <div class="card">
-                <p>Not sure how layout should be so just throwing boxes in. Content TBD</p>
             </div>
         </div>
-    </div> -->
+    </div>
     <hr>
     <div class="genre-search">
         <h2>Search by Genres</h2>
@@ -123,31 +131,30 @@
     </div>
     <hr>
     <footer>
-    <nav class="navbar navbar-light bg-light">
-        <ul>
-            <a class="treecko-brand" href="#">
-                <img src="./Assets/treecko.jpg" width="50" height="50" class="d-inline-block align-top" alt="treecko" loading="lazy">
-            </a>
-        </ul>
-        <button><li>About Flick Finder</li></button>
-        <button><li>Contact Us</li></button>
-        <button><li>Forum</li></button>
-        <button><li>Help Center</li</button>
-        <button><li>My Account</li></button>
+        <nav class="navbar navbar-light bg-light">
+            <ul>
+                <a class="treecko-brand" href="#">
+                    <img src="./Assets/treecko.jpg" width="50" height="50" class="d-inline-block align-top" alt="treecko" loading="lazy">
+                </a>
+            </ul>
+            <button><li>About Flick Finder</li></button>
+            <button><li>Contact Us</li></button>
+            <button><li>Forum</li></button>
+            <button><li>Help Center</li</button>
+            <button><li>My Account</li></button>
         </nav>
     </footer>
     
     <!-- <div style="margin-top: 1000px;"></div> for temporary scrolling of page until deleted -->
 
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script type='text/javascript' src='./Assets\JS\script.js'> </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" type="text/css" href="./Assets/CSS/custom.css">  <!-- link stays after "bootstrap.bundle.min.js" (above) to overwrite existing css -->
 
 </body>
 

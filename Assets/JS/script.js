@@ -1,19 +1,19 @@
 // start of MODAL JS 
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close");
-// converting this^ to jQuery seems to disable modal button
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+var modal = $("#myModal");
+var btn = $("#myBtn");
+var span = $(".close");
+
+btn.on('click', function () {
+    modal.attr('style', "display: block");
+})
+span.on('click', function () {
+    modal.attr('style', "display: none");
+})
+$(window).on('click', function (event) {
+    if (event.target == modal) {
+       modal.attr('style', "display: none");
+    }
+})
 // end of MODAL JS
 
 //var terminator = JSON.parse('{"results":[{"id":"5d97daa89a76a40056de5f32","picture":"https://utellyassets9-1.imgix.net/api/Images/b93cb309ce6401428c9c21f68ce98910/Redirect?fit=crop&auto=compress&crop=faces,top","name":"Terminator: The Sarah Connor Chronicles","locations":[{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/iTunesIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"iTunes","name":"iTunesIVAUS","id":"5d80a9a5d51bef861d3740d3","url":"https://itunes.apple.com/us/tv-season/what-he-beheld/id270795587?i=275552016"},{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/GooglePlayIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"Google Play","name":"GooglePlayIVAUS","id":"5d8260b128fbcd0052aed197","url":"https://play.google.com/store/tv/show?amp=&amp=&cdid=tvseason-JmDY6h1mSEQ&gdid=tvepisode-ZQ2SblJqIQU&gl=US&hl=en&id=ZK0HwIx2b-U"},{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/AmazonInstantVideoIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"Amazon Instant Video","name":"AmazonInstantVideoIVAUS","id":"5d82609332ac2f0051962fe6","url":"https://watch.amazon.com/detail?asin=B0015CFWFK&creativeASIN=B0015CFWFK&ie=UTF8&linkCode=xm2&tag=utellycom00-21"}],"provider":"iva","weight":9194,"external_ids":{"iva_rating":null,"imdb":{"url":"https://www.imdb.com/title/tt0851851","id":"tt0851851"},"tmdb":{"url":"https://www.themoviedb.org/tv/433","id":"433"},"wiki_data":{"url":"https://www.wikidata.org/wiki/Q94713","id":"Q94713"},"iva":{"id":"128140"},"gracenote":null,"rotten_tomatoes":null,"facebook":null}},{"id":"5d97da9a9a76a40056de4ae8","picture":"https://utellyassets9-1.imgix.net/api/Images/8b3165fad41b7d7df3fb60fee343c725/Redirect?fit=crop&auto=compress&crop=faces,top","name":"Terminator Salvation: The Machinima Series","locations":[{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/GooglePlayIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"Google Play","name":"GooglePlayIVAUS","id":"5d8260b128fbcd0052aed197","url":"https://play.google.com/store/tv/show?amp=&amp=&cdid=tvseason-zKEcmKaTCT4&gdid=tvepisode-de68GfQoThk&gl=US&hl=en&id=yXT4d2Yryh0"},{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/AmazonInstantVideoIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"Amazon Instant Video","name":"AmazonInstantVideoIVAUS","id":"5d82609332ac2f0051962fe6","url":"https://watch.amazon.com/detail?asin=B002B4364A&creativeASIN=B002B4364A&ie=UTF8&linkCode=xm2&tag=utellycom00-21"}],"provider":"iva","weight":5928,"external_ids":{"iva_rating":null,"imdb":{"url":"https://www.imdb.com/title/tt1446633","id":"tt1446633"},"tmdb":{"url":"https://www.themoviedb.org/tv/56150","id":"56150"},"wiki_data":{"url":"https://www.wikidata.org/wiki/Q4455892","id":"Q4455892"},"iva":{"id":"731147"},"gracenote":null,"rotten_tomatoes":null,"facebook":null}},{"id":"5e270a0c6bcb1ff18a19707b","picture":"https://utellyassets9-1.imgix.net/api/Images/6551af4c69ae64c7a9d5ff56194ec947/Redirect?fit=crop&auto=compress&crop=faces,top","name":"The Terminator","locations":[{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/iTunesIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"iTunes","name":"iTunesIVAUS","id":"5d80a9a5d51bef861d3740d3","url":"https://itunes.apple.com/us/movie/the-terminator/id271991087"},{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/AmazonInstantVideoIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"Amazon Instant Video","name":"AmazonInstantVideoIVAUS","id":"5d82609332ac2f0051962fe6","url":"https://watch.amazon.com/detail?asin=B00153ZC8Q&creativeASIN=B00153ZC8Q&ie=UTF8&linkCode=xm2&tag=utellycom00-21"},{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/GooglePlayIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"Google Play","name":"GooglePlayIVAUS","id":"5d8260b128fbcd0052aed197","url":"https://play.google.com/store/movies/details/The_Terminator?gl=US&hl=en&id=-fN82upbGPo"}],"provider":"iva","weight":0,"external_ids":{"iva_rating":null,"imdb":{"url":"https://www.imdb.com/title/tt0088247","id":"tt0088247"},"tmdb":{"url":"https://www.themoviedb.org/movie/218","id":"218"},"wiki_data":{"url":"https://www.wikidata.org/wiki/Q162255","id":"Q162255"},"iva":{"id":"706"},"gracenote":null,"rotten_tomatoes":null,"facebook":null}},{"id":"5ec924dab510aaed9affe2e5","picture":"https://utellyassets9-1.imgix.net/api/Images/321cea0e8fabd5884e4d6b6626b6c980/Redirect?fit=crop&auto=compress&crop=faces,top","name":"Ninja Terminator","locations":[{"icon":"https://utellyassets7.imgix.net/locations_icons/utelly/black_new/TubiIVAUS.png?w=92&auto=compress&app_version=393b9d13-cf56-4e48-9959-cc873c5f4c9d_e12122021-01-09","display_name":"TubiIVAUS","name":"TubiIVAUS","id":"5e87e00a46c072c816919b3d","url":"https://tubitv.com/movies/542407"}],"provider":"iva","weight":0,"external_ids":{"iva_rating":null,"imdb":{"url":"https://www.imdb.com/title/tt0199849","id":"tt0199849"},"tmdb":{"url":"https://www.themoviedb.org/movie/40027","id":"40027"},"wiki_data":{"url":"https://www.wikidata.org/wiki/Q30126713","id":"Q30126713"},"iva":null,"gracenote":null,"rotten_tomatoes":null,"facebook":null}}],"updated":"2021-01-11T05:08:36+0000","term":"terminator","status_code":200,"variant":"ivafull"}')
@@ -28,7 +28,7 @@ $(document).ready(function () {
     //async = saying this function holds asynchronous content so only run when the query is done
     async function searchByTitle() {
 
-        console.log('suhdude');
+        
         var userSearch = $('#titleSearch').val().trim();
 
         const settings = {
@@ -42,42 +42,80 @@ $(document).ready(function () {
             }
         };
 
-        //var terminatorOMDB = "http://www.omdbapi.com/?t=terminator&apikey=9efaf7ad"
-
-
-        //$.ajax(settings).done(function (response) {
-        console.log(response);
-        //console.log(response.results[0].picture);
-
-
-        //for every response we get from the query...
-        for (var i = 0; i < response.results.length; i++) {
+          //$.ajax(settings).done(function (response) {
+          console.log(response);
+          
+          var names = [];
+          //for every response we get from the query...
+          for (var i = 0; i < response.results.length; i++) {
 
             //create a new div for our results to be displayed
             var resultsMain = $('<div>');
 
             var resultName = $('<h3>');
             resultName.text(response.results[i].name);
-            resultName.attr("style", "font-family: 'Cinzel', serif; font-size: 2vw")
+            resultName.attr("style", "font-family: 'Cinzel', serif; font-size: 2.4vw")
 
 
             var favorites = $('<button>');
             favorites.text('Add to Favorites!');
             favorites.attr('id', response.results[i].name);
-            favorites.attr('style', 'border: solid white 2px; border-radius: 15%; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
-
+            
+            favorites.addClass('favoriteItem');
+//New Stuff Alert! Didn't work though... favorites.html('<a href="#" data-reveal-id="myModal">Add To Favorites</a>');
+            favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+            favorites.on({
+              mouseenter: function () {
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+              },
+              mouseleave: function () {
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+              }
+              })
+        
+        names.push(response.results[i].name)
+        console.log(names);
+      
             var responseName = response.results[i].name
             console.log(responseName);
             favorites.on('click', function () {
                 var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
                 console.log(this.id);
                 if (favoritesList) {
+                //This ensures that if something is already in favs it won't be added again! Huzzah!
+                  if ($.inArray(this.id, favoritesList) === -1) {
                     favoritesList.push(this.id)
+                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                    //should find some way to make these modals and not alerts!
+                    alert('added to favorites!')
+
+                    //so basically if the this.id isn't already in the array, push it in there and make a button out of it on the bottom
+                    var favButton = $('<button>')
+                    favButton.text(this.id);
+                    favButton.attr('class', 'button')         //NEW STUFF ALERT
+                    $('#favoritesList').append(favButton)
+                    //renderFavoritesList(); // keep it in here so that it only runs renderFavs when new favs are added
+                    
+                  }
+                  else { //ditto!
+                    alert('this is already a favorite!');                    
+                  }
                 }
                 else {
+                  //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
                     favoritesList = [this.id]
+                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                    var favButton = $('<button>')
+                    favButton.text(this.id);
+                    favButton.attr('class', 'button') 
+                    $('#favoritesList').append(favButton)
+                    alert('added to favorites!')
+                    //renderFavoritesList(); // keep it in here so that it only runs renderFavs when new favs are added
+                    
                 }
-                localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                //localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                //calling renderFavorites here will add button functionality to all our new stuff from above
+                
             })
 
             resultName.append(favorites)
@@ -92,10 +130,10 @@ $(document).ready(function () {
 
             //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
             for (var j = 0; j < response.results[i].locations.length; j++) {
-                //so for each place you can watch the show, create a new list element and append this list element to the unordered list
-                var location = $('<li>');
-                location.text(response.results[i].locations[j].display_name)
-                availability.append(location);
+              //so for each place you can watch the show, create a new list element and append this list element to the unordered list
+              var location = $('<li>');
+              location.text(response.results[i].locations[j].display_name)
+              availability.append(location);
             }
 
             resultsMain.append(resultName, poster, availability)
@@ -128,16 +166,11 @@ $(document).ready(function () {
                 runTime.text('Runtime: ' + responseTwo.Runtime);
 
                 //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
-                //However, this info is being added to the BOTTOM of the div and not with its corresponding search result -- does that mean this is executing AFTER everything else has been appended?
                 resultInfo.append(releaseDate, rating, runTime, plot, actors, reviewScore)
 
                 resultsMain.append(resultInfo)
             }) //end of omdb ajax query
 
-            //for each search result from first query, create elements for the movie/show name, its poster, and an unordered list for what services have that movie
-
-            //so for each time we make a loop, append all of the information we want to the container housing the information for that one movie
-            //in theory this will create a new div for each of the search results that pop up;
 
             //then, for each new div we create, append that div to the main container that will house all of the results.
             resultsDiv.append(resultsMain);
@@ -148,21 +181,28 @@ $(document).ready(function () {
     } //end of searchByTitle fxn
 
     $('#searchBtn').on('click', searchByTitle);
+    renderFavoritesList(); //only calling renderFavorites here so it only works on refreshing the page
 
 }); //end of onReady function
 
-/*
+//New Stuff Alert! -- Fixed this shit!
 
-function addToFavorites(fav) {
-
-  var favoritesList = JSON.parse(localStorage.getItem('favorites'));
-
-  if (favoritesList) {
-    favoritesList.push(fav);
+//this will basically only be run on refreshing the page and will create buttons for every favorite saved in storage
+function renderFavoritesList() { 
+  //convert items in storage into an array
+  var favorites = JSON.parse(localStorage.getItem('favoritesList')) 
+ //empty out the list of favorites on the bottom of the page to make room for new buttons
+  $('#favoritesList').empty();
+  if (favorites) {
+   //for every item inside our favorites array...
+    for (var i=0; i < favorites.length; i++) {
+    //...create a button for that item, set its text and id to its name (not sure I need that anymore), add button class to it for Foundation/CSS, then append it to the page
+          var favButton = $('<button>') 
+          favButton.attr('id', favorites[i]); //not sure we need to do this anymore since I circumvented the problem this was trying to solve
+          favButton.attr('class', 'button')
+          favButton.text(favorites[i]);
+          $('#favoritesList').append(favButton)
+      
+        } 
   }
-  else {
-    localStorage.setItem('favorites', fav)
-    //favoritesList = [fav];
-  }
-  localStorage.setItem('favorites', JSON.stringify[favoritesList])
-} */
+}
