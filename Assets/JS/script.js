@@ -73,6 +73,7 @@ $(document).ready(function () {
             var favorites = $('<button>');
             favorites.text('Add to Favorites!');
             favorites.attr('id', response.results[i].name);
+            
             favorites.addClass('favoriteItem');
 //New Stuff Alert! Didn't work though... favorites.html('<a href="#" data-reveal-id="myModal">Add To Favorites</a>');
             favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
@@ -94,15 +95,19 @@ $(document).ready(function () {
                 var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
                 console.log(this.id);
                 if (favoritesList) {
-  //New Stuff Alert! This ensures that if something is already in favs it won't be added again! Huzzah!
+                //This ensures that if something is already in favs it won't be added again! Huzzah!
                   if ($.inArray(this.id, favoritesList) === -1) {
                     favoritesList.push(this.id)
+                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
                     //should find some way to make these modals and not alerts!
                     alert('added to favorites!')
-                    //so basically if the this.id isn't alreayd in the array, push it in there and make a button out of it on the bottom
-                    // var favButton = $('<button>')
-                    // favButton.text(this.id);
-                    // $('#favoritesList').append(favButton)
+
+                    //so basically if the this.id isn't already in the array, push it in there and make a button out of it on the bottom
+                    var favButton = $('<button>')
+                    favButton.text(this.id);
+                    favButton.attr('class', 'button')         //NEW STUFF ALERT
+                    $('#favoritesList').append(favButton)
+                    //renderFavoritesList(); // keep it in here so that it only runs renderFavs when new favs are added
                     
                   }
                   else { //ditto!
@@ -110,15 +115,20 @@ $(document).ready(function () {
                   }
                 }
                 else {
+                  //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
                     favoritesList = [this.id]
+                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                    var favButton = $('<button>')
+                    favButton.text(this.id);
+                    favButton.attr('class', 'button') 
+                    $('#favoritesList').append(favButton)
                     alert('added to favorites!')
-                    // var favButton = $('<button>')
-                    // favButton.text(this.id);
-                    // $('#favoritesList').append(favButton) //doing this twice, once here and once at renderFavs just below, which means renderFavs isn't working right
+                    //renderFavoritesList(); // keep it in here so that it only runs renderFavs when new favs are added
+                    
                 }
-                localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                //localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
                 //calling renderFavorites here will add button functionality to all our new stuff from above
-                renderFavoritesList();
+                
             })
 
             resultName.append(favorites)
@@ -184,39 +194,28 @@ $(document).ready(function () {
     } //end of searchByTitle fxn
 
     $('#searchBtn').on('click', searchByTitle);
-    renderFavoritesList();
+    renderFavoritesList(); //only calling renderFavorites here so it only works on refreshing the page
 
 }); //end of onReady function
 
-//New Stuff Alert!
+//New Stuff Alert! -- Fixed this shit!
 
-
-function renderFavoritesList() {
+//this will basically only be run on refreshing the page and will create buttons for every favorite saved in storage
+function renderFavoritesList() { 
+  //convert items in storage into an array
   var favorites = JSON.parse(localStorage.getItem('favoritesList')) 
-  //can I add some sort of check to see if something is already in the favorites list so I don't add it twice?
+ //empty out the list of favorites on the bottom of the page to make room for new buttons
+  $('#favoritesList').empty();
   if (favorites) {
+   //for every item inside our favorites array...
     for (var i=0; i < favorites.length; i++) {
-        console.log($('#favoritesList').children())
-      if ($('#favoritesList').children().length === 0){ //for this to work, I then must have to MAKE a child in the above fxn
-          var favButton = $('<button>') //so if the length of the children of favs list === 0, it don't got no children so we make one and give it the id
-          favButton.attr('id', favorites[i]);
-          favButton.text(favorites[i]); //need this ID for crosschecking later.
+    //...create a button for that item, set its text and id to its name (not sure I need that anymore), add button class to it for Foundation/CSS, then append it to the page
+          var favButton = $('<button>') 
+          favButton.attr('id', favorites[i]); //not sure we need to do this anymore since I circumvented the problem this was trying to solve
+          favButton.attr('class', 'button')
+          favButton.text(favorites[i]);
           $('#favoritesList').append(favButton)
-        }
-      else{
-          $('#favoritesList').children().each(function() { //this still isn't working as intended, not checking to see if this is already made or not
-            if ($(this).id != favorites[i]) {
-              var favButton = $('<button>')
-              favButton.text(favorites[i]);
-              favButton.attr('id', favorites[i]); 
-              $('#favoritesList').append(favButton)
-            }
-            })
-        }
-       }  /* Basically I'm trying to get this to 1.) Check if the favoritesList card has any favorites in it, and if not then make a button from storage
-        and 2.) If the favsList does have buttons in it, cross check the exisitng button's id with names in storage, and they don't match, make buttons out of them
-          so with this iteration, adding the first favorite only made one list item at bottom, but then adding a second favorite
-            added two buttons of the new fav and one more of the old, going from 1 button to 4 total, two of each. */
-      }
-    }
-  
+      
+        } 
+  }
+}
