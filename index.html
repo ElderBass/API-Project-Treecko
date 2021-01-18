@@ -27,26 +27,47 @@
     <div class="row">
         <div class="cd-md-1"><input type='text' id='titleSearch' placeholder='enter movie or show title'>
             <button id='searchBtn' type='submit'>Search Flick Finder</button><BR><BR>
-            <input type="text" id="countryInput" placeholder="Enter a country of origin to populate results?">
-            <input id="add-city" type="submit" value="Confirm">
-            <button class="modal-button" id="myBtn">Modal Button</button>
-        </div>
 
+                <!-- <div class="row"> Maybe have the favorites list in one of these and search history in the other? -->
+                    <div class="card">
+                        <h3><u>Favorites:</u></h3>
+                        <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
+         <!--New Stuff Alert!--><ul class='stack button-group' id='favoritesList'>
+                            <!--For testing purposes, not necessararily a for sure thing...-->
+                        </ul>
+                        <!-- <p>Not sure how layout should be so just throwing boxes in. Content TBD</p> -->
+                    <!-- </div>
+                    <div class="card">
+                        <p>Not sure how layout should be so just throwing boxes in. Content TBD</p>
+                    </div>
+                </div> -->
+        </div>
+    </div>
         <div class="cd-md-4">
             <div id='resultsDiv'>
-                <!--New Stuff Alert!-->
-            <!--This isn't working as anticipated. I tried using this as an alert instead of the browser alerts and it didn't work lol.
-                I pulled this from Foundation. I don't know how these things work though. Kelsey, Fong, pls halp!
-                <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-                    <h2 id="modalTitle">So Favorite! Much Wow!</h2>
-                    <p class="lead">This has been added to your favorites below!</p>
-                    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-                </div> -->
+                <!-- leave this empty, it displays the results for search flick finder button-->
+                </div> 
             </div>
         </div>
 
     </div>
-    <div class="modal-main">
+
+<!-- HEY SETH AND MICHEAL I added an alert class to this, I think you just need to add an
+on click event to the favorites buttons for this to pop up when that is clicked ?? -->
+    <div class="alert"> 
+    New Stuff Alert!
+    This isn't working as anticipated. I tried using this as an alert instead of the browser alerts and it didn't work lol.
+       I pulled this from Foundation. I don't know how these things work though. Kelsey, Fong, pls halp!
+       <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+           <h2 id="modalTitle">So Favorite! Much Wow!</h2>
+           <p class="lead">This has been added to your favorites below!</p>
+           <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+       </div>
+
+
+
+    <!-- </div> COMMMENTING OUT ALL THIS, MODUAL BUTTON TO WORK ON IN THE FUTURE AS POP UP -->
+    <!-- <div class="modal-main">
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
@@ -56,30 +77,17 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+     <!--
+            <input type="text" id="countryInput" placeholder="Enter a country of origin to populate results?">
+            <input id="add-city" type="submit" value="Confirm">
+            <button class="modal-button" id="myBtn">Modal Button</button>-->
 
 
-
-
-    <!-- input this modal somewhere -->
-    <div class="container">
-        <div class="row"> <!--Maybe have the favorites list in one of these and search history in the other?-->
-            <div class="card">
-                <h3><u>Favorites:</u></h3>
-                <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
- <!--New Stuff Alert!--><ul class='stack button-group' id='favoritesList'>
-                    <!--For testing purposes, not necessararily a for sure thing...-->
-                </ul>
-                <p>Not sure how layout should be so just throwing boxes in. Content TBD</p>
-            </div>
-            <div class="card">
-                <p>Not sure how layout should be so just throwing boxes in. Content TBD</p>
-            </div>
-        </div>
-    </div>
-    <div style="margin-top: 500px;"></div> //for temporary scrolling of page until deleted
+   
+    <div style="margin-top: 500px;"></div>
     <footer>
-        <!-- Image and text -->
+        Image and text
         <nav class="navbar navbar-light bg-light">
             <ul style="list-style-type:none;">
                 <li>
