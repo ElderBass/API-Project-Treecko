@@ -22,7 +22,7 @@ color:black;
 
 .header{
 text-align: center;
-/* font-family: 'Cinzel', serif; */
+font-family: 'Cinzel', serif;
 color:white;
 }
 
@@ -85,16 +85,14 @@ cursor: pointer;
 }
 
 .modal-button {
-/* display: table; */
-/* margin: 100px; */
 background:gray;
 border: solid white 2px;
-/* border-radius: 34px; */
-/* padding: 14px 20px 10px;  */
 color:black;
-/* box-sizing: border-box; */
 cursor: pointer;
-/* font-family: 'Cinzel', serif; */
+font-size:12px;
+text-align: center;
+height:30px;
+width:150px;
 }
 
 .card {
@@ -190,6 +188,15 @@ height:60px;
 li {
     color: black;
     list-style-type: none;
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
 }
 
 .col-md-2 {
