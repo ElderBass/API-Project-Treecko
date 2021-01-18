@@ -74,6 +74,15 @@ width: 70%;
 /* min-width: auto!important; */
 }
 
+a {
+    color: black;
+}
+
+#favsModal {
+    background-color: white;
+    color:black;
+}
+
 .close {
 color: #ffffff;
 float: right;

@@ -73,7 +73,9 @@ $(document).ready(function () {
             resultName.text(response.results[i].name);
             
             var favorites = $('<button>');
-            favorites.text('Add to Favorites!');
+            //this attribute is for linking the Add to Favs button to the 'Added to Favs' modal that will pop up
+            favorites.attr('data-open', 'favsModal');
+
             favorites.attr('id', response.results[i].name);
             
             favorites.addClass('favoriteItem');
@@ -99,22 +101,24 @@ $(document).ready(function () {
                 if (favoritesList) {
                 //This ensures that if something is already in favs it won't be added again! Huzzah!
                   if ($.inArray(this.id, favoritesList) === -1) {
+                    //if it's not in favorites, then add this to it!
                     favoritesList.push(this.id)
                     localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-                    //should find some way to make these modals and not alerts!
-                    alert('added to favorites!')
+
+                    //NEW STUFF -- this sets the html of the Modal to reveal a message telling user they've successfully added to their favorites
+                    $('#favsModal').html("<h2>So Favorite! Much Wow!</h2><p class='lead'>This has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
 
                     //so basically if the this.id isn't already in the array, push it in there and make a button out of it on the bottom
-                    var favButton = $('<button>')
+                    var favButton = $('<button>');
                     favButton.text(this.id);
-                    favButton.attr('class', 'button')
-                    favButton.on('click', displayFavorite)         //NEW STUFF ALERT
-                    $('#favoritesList').append(favButton)
-                    //renderFavoritesList(); // keep it in here so that it only runs renderFavs when new favs are added
-                    
+                    favButton.attr('class', 'button');
+                    favButton.on('click', displayFavorite);         
+                    $('#favoritesList').append(favButton);
                   }
-                  else { //ditto!
-                    alert('this is already a favorite!');                    
+                  else { 
+                    //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
+                    $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+
                   }
                 }
                 else {
@@ -122,12 +126,14 @@ $(document).ready(function () {
                     favoritesList = [this.id]
                     localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
                     var favButton = $('<button>')
-                    favButton.text(this.id);
-                    
+                    favButton.text(this.id)
                     favButton.attr('class', 'button')
                     favButton.on('click', displayFavorite) 
                     $('#favoritesList').append(favButton)
-                    alert('added to favorites!')
+
+                    $('#favsModal').html("<h2>So Favorite! Much Wow!</h2><p class='lead'>This has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+
+
                   }  
             })
 
@@ -279,3 +285,5 @@ async function displayFavorite () { //an on-click function
   }) 
 
 }
+
+$(document).foundation();
