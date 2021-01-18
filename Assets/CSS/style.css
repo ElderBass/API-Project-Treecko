@@ -70,6 +70,15 @@ max-height: 100%;
 font-family: 'Cinzel', serif;
 }
 
+a {
+    color: black;
+}
+
+#favsModal {
+    background-color: white;
+    color:black;
+}
+
 .close {
 color: #ffffff;
 float: right;
@@ -96,8 +105,11 @@ width:150px;
 }
 
 .card {
-height: 30rem;
-margin: 20px;
+margin-top:10px;
+margin-left:80px;
+height: 300px;
+width:250px;
+
 }
 
 .treecko-brand {
@@ -157,11 +169,17 @@ padding: 0px 20px 0px 20px;
 }
 
 h3{
+<<<<<<< HEAD
 text-align:center;
 /* font-family: 'Cinzel', serif; */
 margin-top:10px;
 background-color:gray;
 }
+=======
+    text-align:center;
+    font-family: 'Cinzel', serif;
+    text-decoration: underline;
+>>>>>>> d771398de51f34803ee151fd75505bd04b4b390d
 
 .navbar{
 height:60px;
@@ -199,6 +217,7 @@ li a {
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 .col-md-2 {
     padding: 0px 0px
 }
@@ -213,4 +232,17 @@ li a {
 
 .default {
     cursor: default;
+=======
+}
+
+.favoritesList{
+    background-color:white;
+color:black;
+width:500px;
+font-family: 'Cinzel', serif;
+/* margin: auto; */
+/* width: 50%; */
+/* padding: 10px; */
+margin-left:100px;
+>>>>>>> d771398de51f34803ee151fd75505bd04b4b390d
 }
