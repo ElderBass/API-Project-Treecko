@@ -111,7 +111,7 @@ $(document).ready(function () {
                     //so basically if the this.id isn't already in the array, push it in there and make a button out of it on the bottom
                     var favButton = $('<button>');
                     favButton.text(this.id);
-                    favButton.attr('class', 'button');
+                    // favButton.attr('class', 'button');
                     favButton.on('click', displayFavorite);         
                     $('#favoritesList').append(favButton);
                   }
@@ -217,7 +217,6 @@ function renderFavoritesList() {
     //...create a button for that item, set its text and id to its name (not sure I need that anymore), add button class to it for Foundation/CSS, then append it to the page
           var favButton = $('<button>') 
           favButton.attr('id', favorites[i]); //not sure we need to do this anymore since I circumvented the problem this was trying to solve
-          favButton.attr('class', 'button')
           favButton.text(favorites[i]);
           favButton.on('click', displayFavorite)
           $('#favoritesList').append(favButton)
