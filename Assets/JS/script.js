@@ -177,9 +177,10 @@ $(document).ready(function () {
                 var releaseDate = $('<p>');
                 var runTime = $('<p>');
 
+              
                 //set the text of these new elements to their corresponding values from the query
                 plot.text('Synopsis: ' + responseTwo.Plot);
-                rating.text('Rated: ' + responseTwo.Rated);
+                rating.text( 'Rated: ' + responseTwo.Rated );
                 reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
                 //actors.text('Lead Actors: ' + responseTwo.Actors);
                 releaseDate.text('Release Date: ' + responseTwo.Released);
