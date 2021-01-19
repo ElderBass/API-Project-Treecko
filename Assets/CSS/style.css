@@ -212,3 +212,8 @@ font-family: 'Cinzel', serif;
 /* padding: 10px; */
 margin-left:100px;
 }
+
+.firstWord {
+    color: red;
+    text-decoration: underline;
+}
