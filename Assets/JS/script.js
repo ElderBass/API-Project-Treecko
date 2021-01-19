@@ -118,6 +118,59 @@ $(document).ready(function () {
                       //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
                       $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
                     }
+
+          //for every response we get from the query...
+          for (var i = 0; i < response.results.length; i++) {
+
+            //create a new div for our results to be displayed
+            var resultsMain = $('<div>');
+            //For title of the result
+            var resultName = $('<h3>');
+            resultName.text(response.results[i].name);
+            
+            var favorites = $('<button>');
+            //this attribute is for linking the Add to Favs button to the 'Added to Favs' modal that will pop up
+            favorites.attr('data-open', 'favsModal');
+            //this will be used for identificaiton purposes in functions below
+            favorites.attr('id', response.results[i].name);
+            favorites.text('Flick to Favorites!')
+            favorites.addClass('favoriteItem');
+//New Stuff Alert! Didn't work though... favorites.html('<a href="#" data-reveal-id="myModal">Add To Favorites</a>');
+            favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+            favorites.on({
+              mouseenter: function () {
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+              }, //this whole function basically just adds a hover effect on the favorites button, creating a black border around it on hover
+              mouseleave: function () {
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+              }
+              })
+        
+            favorites.on('click', function () {
+                var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+                
+                if (favoritesList) {
+                //This ensures that if something is already in favs it won't be added again! Huzzah!
+                  if ($.inArray(this.id, favoritesList) === -1) {
+                    //if it's not in favorites, then add this to it!
+                    favoritesList.push(this.id)
+                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                    $('#clearFavorites').removeClass('hide');
+                    //NEW STUFF -- this sets the html of the Modal to reveal a message telling user they've successfully added to their favorites
+                    $('#favsModal').html("<h2>Flick-tastic!</h2><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+
+                    //so basically if the this.id isn't already in the array, push it in there and make a button out of it on the bottom
+                    var favButton = $('<button>');
+                    favButton.text(this.id);
+                    favButton.attr('class', 'button');
+                    favButton.on('click', displayFavorite);         
+                    $('#favoritesList').append(favButton);
+                    
+                  }
+                  else { 
+                    //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
+                    $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+
                   }
 
                   else {
@@ -180,6 +233,15 @@ $(document).ready(function () {
                   reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
                   releaseDate.text('Release Date: ' + responseTwo.Released);
                   runTime.text('Runtime: ' + responseTwo.Runtime);
+=======
+              
+                //set the text of these new elements to their corresponding values from the query
+                plot.text('Synopsis: ' + responseTwo.Plot);
+                rating.text( 'Rated: ' + responseTwo.Rated );
+                reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
+                //actors.text('Lead Actors: ' + responseTwo.Actors);
+                releaseDate.text('Release Date: ' + responseTwo.Released);
+                runTime.text('Runtime: ' + responseTwo.Runtime);
 
                   //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
                   resultInfo.append(releaseDate, rating, runTime, plot, reviewScore);
@@ -226,7 +288,20 @@ function renderFavoritesList() {
     for (var i=0; i < favorites.length; i++) {
     //...create a button for that item, set its text and id to its name (not sure I need that anymore), add button class to it for Foundation/CSS, then append it to the page
           var favButton = $('<button>') 
-          favButton.attr('id', favorites[i]); //not sure we need to do this anymore since I circumvented the problem this was trying to solve
+          favButton.attr("class", "button");
+          favButton.attr('id', favorites[i]);
+          
+          //just added this in so that the styling matches the favorites buttons on displaydiv
+          favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+            favButton.on({
+              mouseenter: function () {
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+              },
+              mouseleave: function () {
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+              }
+              })
+          //not sure we need to do this anymore since I circumvented the problem this was trying to solve
           favButton.text(favorites[i]);
           favButton.on('click', displayFavorite)
           favButton.attr('class', 'button')
