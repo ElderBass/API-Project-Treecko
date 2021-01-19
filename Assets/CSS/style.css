@@ -252,6 +252,8 @@ width:400px;
 font-family: 'Cinzel', serif;
 }
 
+
+
 .button{
 margin-left: 80px;
 border: solid white 2px;
@@ -262,8 +264,11 @@ font-size:9px;
 text-align: center;  
 height:60px;
 width:200px;
-}
+} 
 
+ul {
+    list-style-type: none;
+}
 #favsModal {
     background-color: white;
     color:black;
@@ -273,7 +278,6 @@ width:200px;
     color: red;
     text-decoration: underline;
 }
-=======
 /*Seth added this feature recently - probably needs to be restyled */
 #clearFavorites {
     border: solid white 2px;
@@ -290,4 +294,4 @@ width:200px;
 }
 /*Seth added this for the 'clear favorites' button and it should be left in.*/
 .hide {
-    display: none;
+    display: none;}

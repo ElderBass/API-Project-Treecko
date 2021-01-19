@@ -200,27 +200,6 @@ $(document).ready(function () {
                   }
 
 
-                  else {
-                    //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
-                      favoritesList = [this.id]
-                      localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-                      var favButton = $('<button>')
-                      favButton.text(this.id)
-                      favButton.attr('class', 'button')
-                      favButton.on('click', displayFavorite) 
-                      $('#favoritesList').append(favButton)
-                      $('#clearFavorites').removeClass('hide');
-                      $('#favsModal').removeClass('hide');
-                      $('#favsModal').html("<h2>Flick-tastic!</h2><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
-
-                    }  
-              })
-
-              resultName.append(favorites)
-              //create image tag for the movie poster
-              var poster = $('<img>');
-              poster.attr('src', response.results[i].picture);
-              poster.attr('style', "max-width: 300px; max-height: 225px;");
               
               //create an unordered list that we'll append movie services to down below
               var availability = $('<ul>');
