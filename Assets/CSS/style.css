@@ -1,6 +1,6 @@
 body{
     background-image: url("https://www.colourbox.com/preview/5351999-movie-film-reel.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -10,24 +10,12 @@ body{
     color:white;
 }
 
-#countryInput{
-width:250px;
-margin-left: 80px;
-font-family: 'Cinzel', serif;
-text-align: center;
-color:black;
-
-
-
-}
-
 .header{
 text-align: center;
 font-family: 'Cinzel', serif;
 color:white;
 
 }
-
 
 .modal-main {
 flex-direction: row;
@@ -40,9 +28,7 @@ z-index: 1;
 padding-top: 100px;
 left: 0;
 top: 0;
-/* width: 100%; */
 height: 100%;
-/* having both width&&height enabled at the same time would make buttons and links unclickable... */
 overflow: auto;
 }
 
@@ -62,25 +48,23 @@ background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
 
 .modal-content {
 background-color: transparent;
-/* background-color: #888888; */
-/* margin: auto; */
 padding: 5%;
 border: 1px solid #888;
 width: 70%;
-/* text-align: center; */
-/* height: 100%!important; */
-/* width: 100%!important; */
-/* min-height: auto!important; */
-/* min-width: auto!important; */
 }
 
 a {
     color: black;
 }
-
+/*Seth altered this for his own testing purposes - changes not permanent */
 #favsModal {
     background-color: white;
     color:black;
+    border: solid black 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .close {
@@ -103,17 +87,14 @@ margin: 100px;
 background:gray;
 border: solid white 2px;
 border-radius: 34px;
-/* padding: 14px 20px 10px;  */
 color:black;
-/* box-sizing: border-box; */
 cursor: pointer;
 font-family: 'Cinzel', serif;
-
 }
 
 .card {
 margin-top:10px;
-margin-left:80px;
+margin-left:-20px;
 height: 300px;
 width:250px;
 
@@ -123,45 +104,33 @@ width:250px;
 background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 }
 
-.li a {
+/* .li a {
 display: block;
-}
+} */
+
 #searchBtn{
 border: solid white 2px;
 background-color:gray;
 color:black;
 margin-left: 100px;
 font-family: 'Cinzel', serif;
-font-size:12px;
+font-size:16px;
 text-align: center;
 height:30px;
-width:150px;
-
-}
-#add-city{
-border: solid white 2px;
-background-color:gray;
-color:black;
-margin-left: 100px;
-font-family: 'Cinzel', serif;
-font-size:12px;
-text-align: center;
-height:30px;
-width:150px;
-
-
-
+width:200px;
 }
 
 #titleSearch{
-width:250px;
-margin-left: 80px;
-font-family: 'Cinzel', serif;
-text-align: center;
+border: solid white 2px;
+background-color:white;
 color:black;
-
+margin-left:80px; 
+font-family: 'Cinzel', serif;
+font-size:16px;
+text-align: center;
+height:40px;
+width:250px;
 }
-
 
 h1{
 margin-top:10px;
@@ -169,51 +138,112 @@ background-color:gray;
 font-family: 'Cinzel', serif;
 color:white;
 }
+
 h5{
 font-family: 'Cinzel', serif;
 background-color:gray;
 color:white;
-
 }
-#resultsDiv{
 
-/* margin-top:20px; */
+#resultsDiv{
 background-color:white;
 color:black;
 width:500px;
 font-family: 'Cinzel', serif;
-/* margin: auto; */
-/* width: 50%; */
-/* padding: 10px; */
 margin-left:100px;
-
 }
 
 h3{
     text-align:center;
     font-family: 'Cinzel', serif;
     text-decoration: underline;
-
 }
 
 
 .navbar{
 height:50px;
-
 }
 
-.favoritesList{
-    background-color:white;
+#favoritesList{
+background-color:white;
 color:black;
-width:500px;
+width:400px;
 font-family: 'Cinzel', serif;
-/* margin: auto; */
-/* width: 50%; */
-/* padding: 10px; */
-margin-left:100px;
+}
+
+/* .button{
+margin-left: 80px;
+border: solid white 2px;
+background-color:gray; 
+color:black;
+font-family: 'Cinzel', serif;
+font-size:9px;
+text-align: center;  
+height:60px;
+width:200px;
+} */
+
+#favsModal {
+    background-color: white;
+    color:black;
 }
 
 .firstWord {
     color: red;
     text-decoration: underline;
 }
+=======
+/*Seth added this feature recently - probably needs to be restyled */
+#clearFavorites {
+    border: solid white 2px;
+    background-color:gray; 
+    color:black;
+    font-family: 'Cinzel', serif;
+    font-size:8px;
+    /* text-align: center;  */
+    height:30px;
+    width:90px;
+}
+#clearFavorites:hover {
+    border: solid black 1px;
+}
+/*Seth added this for the 'clear favorites' button and it should be left in.*/
+.hide {
+    display: none;
+}
+
+.modal-main { 
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    }
+    
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px;/* Location of the box */ 
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
+    }
+    
+    .modal-content {
+    background-color: transparent;
+    padding: 5%;
+    border: 1px solid #888;
+    width: 70%;
+    }
