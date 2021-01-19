@@ -273,7 +273,7 @@ width:200px;
     color: red;
     text-decoration: underline;
 }
-=======
+
 /*Seth added this feature recently - probably needs to be restyled */
 #clearFavorites {
     border: solid white 2px;
@@ -291,3 +291,4 @@ width:200px;
 /*Seth added this for the 'clear favorites' button and it should be left in.*/
 .hide {
     display: none;
+}
