@@ -1,6 +1,6 @@
 body{
     background-image: url("https://www.colourbox.com/preview/5351999-movie-film-reel.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -15,52 +15,6 @@ text-align: center;
 font-family: 'Cinzel', serif;
 color:white;
 
-}
-
-
-.modal-main {
-flex-direction: row;
-box-sizing: border-box;
-display: flex;
-place-content: center;
-align-items: center;
-position: fixed;
-z-index: 1;
-padding-top: 100px;
-left: 0;
-top: 0;
-height: 100%;
-overflow: auto;
-}
-
-.modal {
-display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
-padding-top: 100px;/* Location of the box */ 
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
-}
-
-.modal-content {
-background-color: transparent;
-padding: 5%;
-border: 1px solid #888;
-width: 70%;
-}
-
-a {
-    color: black;
-}
-
-#favsModal {
-    background-color: white;
-    color:black;
 }
 
 .close {
@@ -83,9 +37,7 @@ margin: 100px;
 background:gray;
 border: solid white 2px;
 border-radius: 34px;
-/* padding: 14px 20px 10px;  */
 color:black;
-/* box-sizing: border-box; */
 cursor: pointer;
 font-family: 'Cinzel', serif;
 
@@ -93,7 +45,7 @@ font-family: 'Cinzel', serif;
 
 .card {
 margin-top:10px;
-margin-left:80px;
+margin-left:-20px;
 height: 300px;
 width:250px;
 
@@ -113,36 +65,23 @@ background-color:gray;
 color:black;
 margin-left: 100px;
 font-family: 'Cinzel', serif;
-font-size:12px;
+font-size:16px;
 text-align: center;
 height:30px;
-width:150px;
+width:200px;
 
 }
-#add-city{
-border: solid white 2px;
-background-color:gray;
-color:black;
-margin-left: 100px;
-font-family: 'Cinzel', serif;
-font-size:12px;
-text-align: center;
-height:30px;
-width:150px;
-
-
-
-}
-
 #titleSearch{
-width:250px;
-margin-left: 80px;
-font-family: 'Cinzel', serif;
-text-align: center;
+border: solid white 2px;
+background-color:white;
 color:black;
-
+margin-left:80px; 
+font-family: 'Cinzel', serif;
+font-size:16px;
+text-align: center;
+height:40px;
+width:250px;
 }
-
 
 h1{
 margin-top:10px;
@@ -156,16 +95,12 @@ background-color:gray;
 color:white;
 
 }
-#resultsDiv{
 
-/* margin-top:20px; */
+#resultsDiv{
 background-color:white;
 color:black;
 width:500px;
 font-family: 'Cinzel', serif;
-/* margin: auto; */
-/* width: 50%; */
-/* padding: 10px; */
 margin-left:100px;
 
 }
@@ -183,23 +118,64 @@ height:50px;
 
 }
 
-.favoritesList{
-    background-color:white;
+#favoritesList{
+background-color:white;
 color:black;
-width:500px;
+width:400px;
 font-family: 'Cinzel', serif;
-margin-left:100px;
+
 }
-.resultName,
-.button,
- .favorites,
-.favButton{
+
+
+
+/* .button{
+margin-left: 80px;
 border: solid white 2px;
 background-color:gray; 
 color:black;
 font-family: 'Cinzel', serif;
-font-size:12px;
-/* text-align: center;  */
-height:50px;
-width:150px;
+font-size:9px;
+text-align: center;  
+height:60px;
+width:200px;
+} */
+
+#favsModal {
+    background-color: white;
+    color:black;
 }
+.modal-main { 
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    }
+    
+    .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px;/* Location of the box */ 
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
+    }
+    
+    .modal-content {
+    background-color: transparent;
+    padding: 5%;
+    border: 1px solid #888;
+    width: 70%;
+    }
