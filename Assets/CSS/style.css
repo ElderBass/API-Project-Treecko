@@ -190,10 +190,8 @@ width:500px;
 font-family: 'Cinzel', serif;
 margin-left:100px;
 }
-.resultName,
-.button,
- .favorites,
-.favButton{
+
+ .button {
 border: solid white 2px;
 background-color:gray; 
 color:black;
@@ -202,4 +200,22 @@ font-size:12px;
 /* text-align: center;  */
 height:50px;
 width:150px;
+}
+
+#clearFavorites {
+    border: solid white 2px;
+    background-color:gray; 
+    color:black;
+    font-family: 'Cinzel', serif;
+    font-size:8px;
+    /* text-align: center;  */
+    height:30px;
+    width:90px;
+}
+#clearFavorites:hover {
+    border: solid black 1px;
+}
+
+.hide {
+    display: none;
 }
