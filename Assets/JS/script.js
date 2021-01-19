@@ -171,7 +171,7 @@ $(document).ready(function () {
                   runTime.html((`<span class="firstWord">Runtime:</span>`) +' '+ responseTwo.Runtime);
 
                   //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
-                  resultInfo.append(releaseDate, rating, runTime, plot, reviewScore);
+                  resultInfo.append(releaseDate, rating, runTime,reviewScore, plot, );
 
                   resultsMain.append(resultInfo);
               }) //end of omdb ajax query
