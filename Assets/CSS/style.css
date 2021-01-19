@@ -27,6 +27,56 @@ a {
     color:black;
 }
 
+.modal-main {
+flex-direction: row;
+box-sizing: border-box;
+display: flex;
+place-content: center;
+align-items: center;
+position: fixed;
+z-index: 1;
+padding-top: 100px;
+left: 0;
+top: 0;
+height: 100%;
+overflow: auto;
+}
+
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 100px;/* Location of the box */ 
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
+}
+
+.modal-content {
+background-color: transparent;
+padding: 5%;
+border: 1px solid #888;
+width: 70%;
+}
+
+a {
+    color: black;
+}
+/*Seth altered this for his own testing purposes - changes not permanent */
+#favsModal {
+    background-color: white;
+    color:black;
+    border: solid black 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
 .close {
 color: #ffffff;
 float: right;
@@ -50,6 +100,7 @@ font-size:12px;
 text-align: center;
 height:30px;
 width:150px;
+font-family: 'Cinzel', serif;
 }
 
 .card {
@@ -218,6 +269,12 @@ width:200px;
     color:black;
 }
 
+.firstWord {
+    color: red;
+    text-decoration: underline;
+}
+=======
+/*Seth added this feature recently - probably needs to be restyled */
 #clearFavorites {
     border: solid white 2px;
     background-color:gray; 
@@ -231,7 +288,6 @@ width:200px;
 #clearFavorites:hover {
     border: solid black 1px;
 }
-
+/*Seth added this for the 'clear favorites' button and it should be left in.*/
 .hide {
     display: none;
-}
