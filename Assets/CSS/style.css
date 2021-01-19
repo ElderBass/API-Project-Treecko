@@ -1,6 +1,6 @@
 body{
     background-image: url("https://www.colourbox.com/preview/5351999-movie-film-reel.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -12,62 +12,10 @@ body{
     /* font-size: 1.2vw; */
 }
 
-#countryInput{
-width:250px;
-/* margin-left: 80px; */
-/* font-family: 'Cinzel', serif; */
-text-align: center;
-color:black;
-}
-
 .header{
 text-align: center;
 font-family: 'Cinzel', serif;
 color:white;
-}
-
-
-.modal-main {
-flex-direction: row;
-box-sizing: border-box;
-display: flex;
-place-content: center;
-align-items: center;
-position: fixed;
-z-index: 1;
-padding-top: 100px;
-left: 0;
-top: 0;
-/* width: 100%; */
-height: 100%;
-/* having both width&&height enabled at the same time would make buttons and links unclickable... */
-overflow: auto;
-}
-
-.modal {
-display: none; /* Hidden by default */
-position: fixed; /* Stay in place */
-z-index: 1; /* Sit on top */
-padding-top: 100px;/* Location of the box */ 
-left: 0;
-top: 0;
-width: 100%; /* Full width */
-height: 100%; /* Full height */
-overflow: auto; /* Enable scroll if needed */
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0,0.84); /* Black w/ opacity */
-}
-
-.modal-content {
-background-color: rgb(172, 172, 172); /*feel free to change the color of modal bg*/
-padding: 1%;
-border: 1px solid #888;
-width: 80%;
-/* height: 100%; */
-margin: auto;
-margin-bottom: 100px;
-max-height: 100%;
-font-family: 'Cinzel', serif;
 }
 
 a {
@@ -106,7 +54,7 @@ width:150px;
 
 .card {
 margin-top:10px;
-margin-left:80px;
+margin-left:-20px;
 height: 300px;
 width:250px;
 
@@ -116,27 +64,32 @@ width:250px;
 background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 }
 
-.li a {
+/* .li a {
 display: block;
-}
+} */
+
 #searchBtn{
 border: solid white 2px;
 background-color:gray;
 color:black;
-/* margin-left: 100px; */
+margin-left: 100px;
 font-family: 'Cinzel', serif;
-font-size:12px;
+font-size:16px;
 text-align: center;
 height:30px;
-width:150px;
+width:200px;
 }
 
 #titleSearch{
-width:250px;
-/* margin-left: 80px; */
-/* font-family: 'Cinzel', serif; */
-text-align: center;
+border: solid white 2px;
+background-color:white;
 color:black;
+margin-left:80px; 
+font-family: 'Cinzel', serif;
+font-size:16px;
+text-align: center;
+height:30px;
+width:150px;
 }
 
 h1{
@@ -145,16 +98,10 @@ background-color:gray;
 /* font-family: 'Cinzel', serif; */
 color:white;
 }
-
-h2 {
-    font-family: 'Cinzel', serif;
-}
-
 h5{
 /* font-family: 'Cinzel', serif; */
 background-color:gray;
 color:white;
-
 }
 
 #resultsDiv{
@@ -181,6 +128,17 @@ height:60px;
 
 .ul {
     list-style-type: none;
+background-color:white;
+color:black;
+width:500px;
+font-family: 'Cinzel', serif;
+margin-left:100px;
+}
+
+h3{
+    text-align:center;
+    font-family: 'Cinzel', serif;
+    text-decoration: underline;
 }
 
 li {
@@ -230,4 +188,50 @@ form {
     border-style: solid;
     background-color: rgb(104, 104, 104);
     padding-top: 20px;
+}
+
+.navbar{
+height:50px;
+}
+
+#favoritesList{
+background-color:white;
+color:black;
+width:400px;
+font-family: 'Cinzel', serif;
+}
+
+.button{
+margin-left: 80px;
+border: solid white 2px;
+background-color:gray; 
+color:black;
+font-family: 'Cinzel', serif;
+font-size:9px;
+text-align: center;  
+height:60px;
+width:200px;
+}
+
+#favsModal {
+    background-color: white;
+    color:black;
+}
+
+#clearFavorites {
+    border: solid white 2px;
+    background-color:gray; 
+    color:black;
+    font-family: 'Cinzel', serif;
+    font-size:8px;
+    /* text-align: center;  */
+    height:30px;
+    width:90px;
+}
+#clearFavorites:hover {
+    border: solid black 1px;
+}
+
+.hide {
+    display: none;
 }

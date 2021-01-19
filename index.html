@@ -25,35 +25,46 @@
 
     <BR>
     <div class="row">
+
         <div class="col-md-2" align="center"><input type='text' id='titleSearch' placeholder='enter movie or show title'>
             <button id='searchBtn' type='submit'>Search Flick Finder</button><BR><BR>
             <button class="modal-button" id="myBtn">Popular on the Web</button>
         </div>
 
         <div class="col-md-10" align="center">
-            <div id='resultsDiv'>
-                <!-- leave this empty, it displays the results for search flick finder button-->
-                </div> 
+
+        <div class="cd-md-1"><input type='text' id='titleSearch' placeholder='enter movie or show title'>
+            <div id='searchBtn' type='submit'>Search Flick Finder</button><BR><BR>
+            <div class="card">
+                <h3><u>Favorites</u></h3>
+                <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
+                <ul class='stack button-group' id='favoritesList'>
+                </ul>
+                <button class='button hide' id='clearFavorites'>Clear Favorites</button>
             </div>
         </div>
-
     </div>
+    <div class="row">
+        <div class="cd-md-4">
+            <div id='resultsDiv'>
+                <!-- leave this empty, it displays the results for search flick finder button-->
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <!--NEW STUFF ALERT-->
+    <!--Thanks Fong! I got this working finally! So when you add/fail to add something to favorites, this Modal should pop up with a message-->
+    <div id="favsModal" class="reveal" data-reveal>
+        </button>
+    </div>
+
 
        <div id="favsModal" class="reveal" data-reveal >
 
-           <!--The text/html content of this will be dictated by the JS-->>
-           
-          </button>
-       </div>
-       
-       
+    </div> 
 
-
-    <!-- </div> COMMMENTING OUT ALL THIS, MODUAL BUTTON TO WORK ON IN THE FUTURE AS POP UP -->
-     <!--
-            <input type="text" id="countryInput" placeholder="Enter a country of origin to populate results?">
-            <input id="add-city" type="submit" value="Confirm">
-            <button class="modal-button" id="myBtn">Modal Button</button>-->
 
     <!-- <div class="container">
         <div class="row">
@@ -166,6 +177,7 @@
     </div>
   <hr>
 
+
   <footer>
     <nav class="navbar navbar-light bg-light">
         <ul>
@@ -180,6 +192,21 @@
         <button><li><a href="index.html" style="color: black;">My Account</a></li></button>
     </nav>
   </footer>
+
+    <div style="margin-top: 500px;"></div>
+    <footer>
+        Image and text
+        <nav class="navbar navbar-light bg-light">
+            <ul style="list-style-type:none;">
+                <li>
+                    <a class="treecko-brand" href="#">
+                        <img src="./Assets/treecko.jpg" width="40" height="40" class="d-inline-block align-top"
+                            alt="treecko" loading="lazy">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
 
 
     <div style="margin-top: 1000px;"></div> <!-- for temporary scrolling of page until deleted -->
