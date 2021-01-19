@@ -1,5 +1,4 @@
 // start of MODAL JS 
-var startBtn = $(".start-button");
 var modal = $("#myModal");
 var btn = $("#myBtn");
 var span = $(".close");
@@ -14,22 +13,8 @@ span.on('click', function () {
 })
 $(window).on('click', function (event) {
     if (event.target == modal) {
-        modal.attr('style', "display: none");;
+       modal.attr('style', "display: none");
     }
-})
-startBtn.on("click", function (e) {
-    e.preventDefault();
-    // lines here-----
-    var timerCount = 60;
-    var timerId = setInterval(function () {
-        timerCount--;
-        timerDisplay.text(timerCount);
-        if (timerCount === 0) {
-            wordDisplay.text("")
-            clearInterval(timerId);
-            // ----to here, if commented out would prevent modal from opening. idk what the codes in between are doing but yeah it prevents from opening. help fix to make it cleaner? lol
-        }
-    });
 })
 // end of MODAL JS
 
@@ -130,7 +115,9 @@ $(document).ready(function () {
             //For title of the result
             var resultName = $('<h3>');
             resultName.text(response.results[i].name);
-            
+            resultName.attr("style", "font-family: 'Cinzel', serif; font-size: 2.4vw")
+
+
             var favorites = $('<button>');
             //this attribute is for linking the Add to Favs button to the 'Added to Favs' modal that will pop up
             favorites.attr('data-open', 'favsModal');
@@ -142,8 +129,10 @@ $(document).ready(function () {
             favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white; border-radius: 25px');
             favorites.on({
               mouseenter: function () {
-                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
-              }, //this whole function basically just adds a hover effect on the favorites button, creating a black border around it on hover
+
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white; border-radius: 25px');
+              },
+              
               mouseleave: function () {
                 $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white; border-radius: 25px');
               }
@@ -174,7 +163,42 @@ $(document).ready(function () {
                     //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
                     $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
 
+
+                  }  
+            })
+
+            resultName.append(favorites)
+            //create image tag for the movie poster
+            var poster = $('<img>');
+            poster.attr('src', response.results[i].picture);
+            // poster.attr('style', "max-width: 400px; max-height: 300px;");
+            poster.attr('style', "max-width: 50%");
+            
+            
+            //create an unordered list that we'll append movie services to down below
+
+            var availability = $('<ul>');
+            availability.text('Available to Watch On:')
+
+            //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
+            for (var j = 0; j < response.results[i].locations.length; j++) {
+              //so for each place you can watch the show, create a new list element and append this list element to the unordered list
+              var location = $('<li>');
+              location.text(response.results[i].locations[j].display_name)
+              availability.append(location);
+            }
+
+            resultsMain.append(resultName, poster, availability)
+            //have a new query for each title that our initial query returns
+            const terminator = {
+                url: "http://www.omdbapi.com/?t=" + response.results[i].name + "&apikey=9efaf7ad",
+                method: "GET",
+            }
+            //when this query is done...wait on this to finish before we go forward
+            await $.ajax(terminator).then(function (responseTwo) {
+                console.log(responseTwo);
                   }
+
 
                   else {
                     //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
@@ -236,13 +260,13 @@ $(document).ready(function () {
                   reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
                   releaseDate.text('Release Date: ' + responseTwo.Released);
                   runTime.text('Runtime: ' + responseTwo.Runtime);
-=======
+
               
                 //set the text of these new elements to their corresponding values from the query
                 plot.html((`<span class="firstWord">Synopsis:</span>`) +' '+ responseTwo.Plot);
                 rating.html((`<span class="firstWord">Rated:</span>`) +' '+ responseTwo.Rated);
                 reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) +' '+ responseTwo.imdbRating);
-=======
+
                 plot.text('Synopsis: ' + responseTwo.Plot);
                 rating.text( 'Rated: ' + responseTwo.Rated );
                 reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
