@@ -35,6 +35,9 @@ startBtn.on("click", function (e) {
 
 var resultsDiv = $('#resultsDiv');
 
+
+$('#resultsDiv').attr('align','center');
+
 $(document).ready(function () {
     //e.preventDefault();
     
@@ -80,13 +83,13 @@ $(document).ready(function () {
             
             favorites.addClass('favoriteItem');
 //New Stuff Alert! Didn't work though... favorites.html('<a href="#" data-reveal-id="myModal">Add To Favorites</a>');
-            favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+            favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white; border-radius: 25px');
             favorites.on({
               mouseenter: function () {
-                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white; border-radius: 25px');
               },
               mouseleave: function () {
-                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white; border-radius: 25px');
               }
               })
         
@@ -142,7 +145,7 @@ $(document).ready(function () {
 
             var poster = $('<img>');
             poster.attr('src', response.results[i].picture);
-            poster.attr('style', "max-width: 300px; max-height: 225px;");
+            poster.attr('style', "max-width: 300px; max-height: 225px; ");
             
 
             var availability = $('<ul>');
@@ -243,6 +246,7 @@ function renderFavoritesList() {
 //click function for favorites
 async function displayFavorite () { //an on-click function
   $('#resultsDiv').empty();
+ 
   
     const terminator = {  //changed the url to have 'plot=full' to it so we get a longer synopsis
       url: "http://www.omdbapi.com/?t=" + this.id + "&plot=full&apikey=9efaf7ad",
@@ -264,6 +268,7 @@ async function displayFavorite () { //an on-click function
       var poster = $('<img>');
         poster.attr('src', responseTwo.Poster);
         poster.attr('style', "max-width: 300px; max-height: 225px;");
+      
     /*    
       var availability = $('<ul>');
           availability.text('Available to Watch On:')
