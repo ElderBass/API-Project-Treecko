@@ -224,3 +224,40 @@ width:150px;
 .hide {
     display: none;
 }
+
+/*
+.modal-main { 
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: auto;
+    }
+    
+    .modal {
+    display: none;  Hidden by default 
+    position: fixed; Stay in place 
+    z-index: 1;  Sit on top 
+    padding-top: 100px; Location of the box  
+    left: 0;
+    top: 0;
+    width: 100%;  Full width 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.92);
+    }
+    
+    .modal-content {
+    background-color: transparent;
+    padding: 5%;
+    border: 1px solid #888;
+    width: 70%;
+    } */
