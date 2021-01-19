@@ -27,41 +27,30 @@
     <div class="row">
         <div class="cd-md-1"><input type='text' id='titleSearch' placeholder='enter movie or show title'>
             <button id='searchBtn' type='submit'>Search Flick Finder</button><BR><BR>
+            <div class="card">
+                <h3><u>Favorites:</u></h3>
+                <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
+                <ul class='stack button-group' id='favoritesList'>
+                </ul>
 
-                <!-- <div class="row"> Maybe have the favorites list in one of these and search history in the other? -->
-                    <div class="card">
-                        <h3><u>Favorites:</u></h3>
-                        <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
-         <!--New Stuff Alert!--><ul class='stack button-group' id='favoritesList'>
-                            <!--For testing purposes, not necessararily a for sure thing...-->
-                        </ul>
-                        <!-- <p>Not sure how layout should be so just throwing boxes in. Content TBD</p> -->
-                    <!-- </div>
-                    <div class="card">
-                        <p>Not sure how layout should be so just throwing boxes in. Content TBD</p>
-                    </div>
-                </div> -->
+            </div>
         </div>
-    </div>
         <div class="cd-md-4">
             <div id='resultsDiv'>
                 <!-- leave this empty, it displays the results for search flick finder button-->
-                </div> 
             </div>
         </div>
+    </div>
 
     </div>
 
-<!--NEW STUFF ALERT-->
-<!--Thanks Fong! I got this working finally! So when you add/fail to add something to favorites, this Modal should pop up with a message-->
-       <div id="favsModal" class="reveal" data-reveal >
+    <!--NEW STUFF ALERT-->
+    <!--Thanks Fong! I got this working finally! So when you add/fail to add something to favorites, this Modal should pop up with a message-->
+    <div id="favsModal" class="reveal" data-reveal>
+        </button>
+    </div>
 
-           <!--The text/html content of this will be dictated by the JS-->>
-           
-          </button>
-       </div>
-       
-       
+
 
 
     <!-- </div> COMMMENTING OUT ALL THIS, MODUAL BUTTON TO WORK ON IN THE FUTURE AS POP UP -->
@@ -76,13 +65,13 @@
             </div>
         </div>
     </div> -->
-     <!--
+    <!--
             <input type="text" id="countryInput" placeholder="Enter a country of origin to populate results?">
             <input id="add-city" type="submit" value="Confirm">
             <button class="modal-button" id="myBtn">Modal Button</button>-->
 
 
-   
+
     <div style="margin-top: 500px;"></div>
     <footer>
         Image and text
@@ -90,8 +79,8 @@
             <ul style="list-style-type:none;">
                 <li>
                     <a class="treecko-brand" href="#">
-                        <img src="./Assets/treecko.jpg" width="40" height="40" class="d-inline-block align-top" alt="treecko"
-                            loading="lazy">
+                        <img src="./Assets/treecko.jpg" width="40" height="40" class="d-inline-block align-top"
+                            alt="treecko" loading="lazy">
                     </a>
                 </li>
             </ul>
