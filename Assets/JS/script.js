@@ -1,5 +1,4 @@
 // start of MODAL JS 
-var startBtn = $(".start-button");
 var modal = $("#myModal");
 var btn = $("#myBtn");
 var span = $(".close");
@@ -14,26 +13,15 @@ span.on('click', function () {
 })
 $(window).on('click', function (event) {
     if (event.target == modal) {
-        modal.attr('style', "display: none");;
+       modal.attr('style', "display: none");
     }
-})
-startBtn.on("click", function (e) {
-    e.preventDefault();
-    // lines here-----
-    var timerCount = 60;
-    var timerId = setInterval(function () {
-        timerCount--;
-        timerDisplay.text(timerCount);
-        if (timerCount === 0) {
-            wordDisplay.text("")
-            clearInterval(timerId);
-            // ----to here, if commented out would prevent modal from opening. idk what the codes in between are doing but yeah it prevents from opening. help fix to make it cleaner? lol
-        }
-    });
 })
 // end of MODAL JS
 
 var resultsDiv = $('#resultsDiv');
+
+
+$('#resultsDiv').attr('align','center');
 
 $(document).ready(function () {
     //e.preventDefault();
@@ -92,62 +80,64 @@ $(document).ready(function () {
                 }
                 })
           
+              
+        
               favorites.on('click', function () {
-                //make an array of any favorites we have saved in local storage
-                  var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
-                  //if stuff is in that array...
-                  if (favoritesList) {
-                  //Check if something is already in favs so it won't be added again! 
-                    if ($.inArray(this.id, favoritesList) === -1) {
-                      //if it's not in favorites, then add this to it!
-                      favoritesList.push(this.id)
-                      localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-                      $('#clearFavorites').removeClass('hide');
-                      $('#favsModal').removeClass('hide');
-                      //this sets the html of the Modal to reveal a message telling user they've successfully added to their favorites
-                      $('#favsModal').html("<h2>Flick-tastic!</h2><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+                var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+                
+                if (favoritesList) {
+                //This ensures that if something is already in favs it won't be added again! Huzzah!
+                  if ($.inArray(this.id, favoritesList) === -1) {
+                    //if it's not in favorites, then add this to it!
+                    favoritesList.push(this.id)
+                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                    $('#clearFavorites').removeClass('hide');
+                    //NEW STUFF -- this sets the html of the Modal to reveal a message telling user they've successfully added to their favorites
+                    $('#favsModal').html("<h2>Flick-tastic!</h2><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
 
-                      //so basically if the this.id isn't already in the array, push it in there and make a button out of it on the bottom
-                      var favButton = $('<button>');
-                      favButton.text(this.id);
-                      favButton.attr('class', 'button');
-                      favButton.on('click', displayFavorite);         
-                      $('#favoritesList').append(favButton);
-                    }
-                    else { 
-                      //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
-                      $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
-                    }
+                    //so basically if the this.id isn't already in the array, push it in there and make a button out of it on the bottom
+                    var favButton = $('<button>');
+                    favButton.text(this.id);
+                    favButton.attr('class', 'button');
+                    favButton.on('click', displayFavorite);         
+                    $('#favoritesList').append(favButton);
+                    
                   }
-
-                  else {
-                    //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
-                      favoritesList = [this.id]
-                      localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-                      var favButton = $('<button>')
-                      favButton.text(this.id)
-                      favButton.attr('class', 'button')
-                      favButton.on('click', displayFavorite) 
-                      $('#favoritesList').append(favButton)
-                      $('#clearFavorites').removeClass('hide');
-                      $('#favsModal').removeClass('hide');
-                      $('#favsModal').html("<h2>Flick-tastic!</h2><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
-
-                    }  
+                  else { 
+                    //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
+                    $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>");
+                  }
+                }
+                else {
+                  //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
+                    favoritesList = [this.id]
+                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                    var favButton = $('<button>')
+                    favButton.text(this.id)
+                    favButton.attr('class', 'button')
+                    favButton.on('click', displayFavorite) 
+                    $('#favoritesList').append(favButton)
+                    $('#clearFavorites').removeClass('hide');
+                    $('#favsModal').removeClass('hide');
+                    $('#favsModal').html("<h2>Flick-tastic!</h2><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+                  }   
               })
 
               resultName.append(favorites)
               //create image tag for the movie poster
               var poster = $('<img>');
               poster.attr('src', response.results[i].picture);
-              poster.attr('style', "max-width: 300px; max-height: 225px;");
+              // poster.attr('style', "max-width: 400px; max-height: 300px;");
+              poster.attr('style', "max-width: 50%");
+              
               
               //create an unordered list that we'll append movie services to down below
+
               var availability = $('<ul>');
               availability.text('Available to Watch On:')
 
               //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
-             for (var j = 0; j < response.results[i].locations.length; j++) {
+              for (var j = 0; j < response.results[i].locations.length; j++) {
                 //so for each place you can watch the show, create a new list element and append this list element to the unordered list
                 var location = $('<li>');
                 location.text(response.results[i].locations[j].display_name)
@@ -155,11 +145,11 @@ $(document).ready(function () {
               }
 
               resultsMain.append(resultName, poster, availability)
-              //have a new query for each title that our initial query returns
+
               const terminator = {
                   url: "http://www.omdbapi.com/?t=" + response.results[i].name + "&apikey=9efaf7ad",
                   method: "GET",
-              }
+                }
               //when this query is done...wait on this to finish before we go forward
               await $.ajax(terminator).then(function (responseTwo) {
                   console.log(responseTwo);
@@ -175,11 +165,11 @@ $(document).ready(function () {
                   var runTime = $('<p>');
 
                   //set the text of these new elements to their corresponding values from the query
-                  plot.text('Synopsis: ' + responseTwo.Plot);
-                  rating.text('Rated: ' + responseTwo.Rated);
-                  reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
-                  releaseDate.text('Release Date: ' + responseTwo.Released);
-                  runTime.text('Runtime: ' + responseTwo.Runtime);
+                  plot.html((`<span class="firstWord">Synopsis:</span>`) +' '+ responseTwo.Plot);
+                  rating.html((`<span class="firstWord">Rated:</span>`) +' '+ responseTwo.Rated);
+                  reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) +' '+ responseTwo.imdbRating);
+                  releaseDate.html((`<span class="firstWord">Release Date:</span>`) +' '+ responseTwo.Released);
+                  runTime.html((`<span class="firstWord">Runtime:</span>`) +' '+ responseTwo.Runtime);
 
                   //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
                   resultInfo.append(releaseDate, rating, runTime, plot, reviewScore);
@@ -190,12 +180,13 @@ $(document).ready(function () {
 
               //then, for each new div we create, append that div to the main container that will house all of the results.
               resultsDiv.append(resultsMain);
-
+          
           } //end of for loop
         } // end of first if statement
-        else { //NEW STUFF ALERT -- this changes the modal so that if the search is wonky, an alert tells the user so; needs tweaking still
-          //$('#favsModal').html("<h2>These aren't the results you're looking for...</h2><p class='lead'>Your search didn't return any results. Check your spelling and try again.</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
-        }
+
+      else { //NEW STUFF ALERT -- this changes the modal so that if the search is wonky, an alert tells the user so; needs tweaking still
+        //$('#favsModal').html("<h2>These aren't the results you're looking for...</h2><p class='lead'>Your search didn't return any results. Check your spelling and try again.</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+      }
       //}); //end of utelly ajax query
 
     } //end of searchByTitle fxn
@@ -226,7 +217,20 @@ function renderFavoritesList() {
     for (var i=0; i < favorites.length; i++) {
     //...create a button for that item, set its text and id to its name (not sure I need that anymore), add button class to it for Foundation/CSS, then append it to the page
           var favButton = $('<button>') 
-          favButton.attr('id', favorites[i]); //not sure we need to do this anymore since I circumvented the problem this was trying to solve
+          favButton.attr("class", "button");
+          favButton.attr('id', favorites[i]);
+          
+          //just added this in so that the styling matches the favorites buttons on displaydiv
+          favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+            favButton.on({
+              mouseenter: function () {
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+              },
+              mouseleave: function () {
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+              }
+              })
+          //not sure we need to do this anymore since I circumvented the problem this was trying to solve
           favButton.text(favorites[i]);
           favButton.on('click', displayFavorite)
           favButton.attr('class', 'button')
@@ -239,6 +243,7 @@ function renderFavoritesList() {
 //click function for favorites
 async function displayFavorite () { //an on-click function
   $('#resultsDiv').empty();
+ 
   
     const terminator = {  //changed the url to have 'plot=full' to it so we get a longer synopsis
       url: "http://www.omdbapi.com/?t=" + this.id + "&plot=full&apikey=9efaf7ad",
@@ -260,6 +265,7 @@ async function displayFavorite () { //an on-click function
       var poster = $('<img>');
         poster.attr('src', responseTwo.Poster);
         poster.attr('style', "max-width: 300px; max-height: 225px;");
+      
     /*    
       var availability = $('<ul>');
           availability.text('Available to Watch On:')
@@ -279,14 +285,14 @@ async function displayFavorite () { //an on-click function
       var link = $('<a>');
       var genre = $('<p>');
 
-      plot.text('Synopsis: ' + responseTwo.Plot);
-      rating.text('Rated: ' + responseTwo.Rated);
-      reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
-      genre.text('Genre: '+responseTwo.Genre)
-      actors.text('Lead Actors: ' + responseTwo.Actors);
-      director.text('Directed By: '+responseTwo.Director)
-      releaseDate.text('Release Date: ' + responseTwo.Released);
-      runTime.text('Runtime: ' + responseTwo.Runtime);
+      plot.html((`<span class="firstWord">Synopsis:</span>`) +' '+ responseTwo.Plot);
+      rating.html((`<span class="firstWord">Rated:</span>`) +' '+ responseTwo.Rated);
+      reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) +' '+ responseTwo.imdbRating);
+      genre.html((`<span class="firstWord">Genre:</span>`) +' '+ responseTwo.Genre);
+      actors.html((`<span class="firstWord">Lead Actors:</span>`) +' '+ responseTwo.Actors);
+      director.html((`<span class="firstWord">Directed By:</span>`) +' '+ responseTwo.Director)
+      releaseDate.html((`<span class="firstWord">Release Date:</span>`) +' '+ responseTwo.Released);
+      runTime.html((`<span class="firstWord">Runtime:</span>`) +' '+ responseTwo.Runtime);
       link.text('IMDB Page')
       link.attr('href', "https://www.imdb.com/title/"+responseTwo.imdbID+"/")
 
