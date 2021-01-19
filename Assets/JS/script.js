@@ -60,22 +60,21 @@ $(document).ready(function () {
         };
 
           //$.ajax(settings).done(function (response) {
-          console.log(response);
+          //console.log(response);
           
-          var names = [];
           //for every response we get from the query...
           for (var i = 0; i < response.results.length; i++) {
 
             //create a new div for our results to be displayed
             var resultsMain = $('<div>');
-
+            //For title of the result
             var resultName = $('<h3>');
             resultName.text(response.results[i].name);
             
             var favorites = $('<button>');
             //this attribute is for linking the Add to Favs button to the 'Added to Favs' modal that will pop up
             favorites.attr('data-open', 'favsModal');
-
+            //this will be used for identificaiton purposes in functions below
             favorites.attr('id', response.results[i].name);
             
             favorites.addClass('favoriteItem');
@@ -84,20 +83,15 @@ $(document).ready(function () {
             favorites.on({
               mouseenter: function () {
                 $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
-              },
+              }, //this whole function basically just adds a hover effect on the favorites button, creating a black border around it on hover
               mouseleave: function () {
                 $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
               }
               })
         
-        names.push(response.results[i].name)
-        console.log(names);
-      
-            var responseName = response.results[i].name
-            console.log(responseName);
             favorites.on('click', function () {
                 var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
-                console.log(this.id);
+                
                 if (favoritesList) {
                 //This ensures that if something is already in favs it won't be added again! Huzzah!
                   if ($.inArray(this.id, favoritesList) === -1) {
@@ -118,9 +112,9 @@ $(document).ready(function () {
                   else { 
                     //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
                     $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
-
                   }
                 }
+
                 else {
                   //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
                     favoritesList = [this.id]
@@ -138,12 +132,12 @@ $(document).ready(function () {
             })
 
             resultName.append(favorites)
-
+            //create image tag for the movie poster
             var poster = $('<img>');
             poster.attr('src', response.results[i].picture);
             poster.attr('style', "max-width: 300px; max-height: 225px;");
             
-
+            //create an unordered list that we'll append movie services to down below
             var availability = $('<ul>');
             availability.text('Available to Watch On:')
 
@@ -280,7 +274,7 @@ async function displayFavorite () { //an on-click function
       link.text('IMDB Page')
       link.attr('href', "https://www.imdb.com/title/"+responseTwo.imdbID+"/")
 
-      resultsDiv.append(resultName, poster, genre, releaseDate, rating, runTime, director, plot, actors, reviewScore, availabiltiy, link)
+      resultsDiv.append(resultName, poster, genre, releaseDate, rating, runTime, director, plot, actors, reviewScore, /*availabiltiy,*/ link)
 
   }) 
 
