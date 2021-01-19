@@ -187,6 +187,12 @@ width:200px;
     background-color: white;
     color:black;
 }
+
+.firstWord {
+    color: red;
+    text-decoration: underline;
+}
+=======
 /*Seth added this feature recently - probably needs to be restyled */
 #clearFavorites {
     border: solid white 2px;

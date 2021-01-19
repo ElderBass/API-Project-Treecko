@@ -236,12 +236,17 @@ $(document).ready(function () {
 =======
               
                 //set the text of these new elements to their corresponding values from the query
+                plot.html((`<span class="firstWord">Synopsis:</span>`) +' '+ responseTwo.Plot);
+                rating.html((`<span class="firstWord">Rated:</span>`) +' '+ responseTwo.Rated);
+                reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) +' '+ responseTwo.imdbRating);
+=======
                 plot.text('Synopsis: ' + responseTwo.Plot);
                 rating.text( 'Rated: ' + responseTwo.Rated );
                 reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
+
                 //actors.text('Lead Actors: ' + responseTwo.Actors);
-                releaseDate.text('Release Date: ' + responseTwo.Released);
-                runTime.text('Runtime: ' + responseTwo.Runtime);
+                releaseDate.html((`<span class="firstWord">Release Date:</span>`) +' '+ responseTwo.Released);
+                runTime.html((`<span class="firstWord">Runtime:</span>`) +' '+ responseTwo.Runtime);
 
                   //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
                   resultInfo.append(releaseDate, rating, runTime, plot, reviewScore);
@@ -354,14 +359,14 @@ async function displayFavorite () { //an on-click function
       var link = $('<a>');
       var genre = $('<p>');
 
-      plot.text('Synopsis: ' + responseTwo.Plot);
-      rating.text('Rated: ' + responseTwo.Rated);
-      reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
-      genre.text('Genre: '+responseTwo.Genre)
-      actors.text('Lead Actors: ' + responseTwo.Actors);
-      director.text('Directed By: '+responseTwo.Director)
-      releaseDate.text('Release Date: ' + responseTwo.Released);
-      runTime.text('Runtime: ' + responseTwo.Runtime);
+      plot.html((`<span class="firstWord">Synopsis:</span>`) +' '+ responseTwo.Plot);
+      rating.html((`<span class="firstWord">Rated:</span>`) +' '+ responseTwo.Rated);
+      reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) +' '+ responseTwo.imdbRating);
+      genre.html((`<span class="firstWord">Genre:</span>`) +' '+ responseTwo.Genre);
+      actors.html((`<span class="firstWord">Lead Actors:</span>`) +' '+ responseTwo.Actors);
+      director.html((`<span class="firstWord">Directed By:</span>`) +' '+ responseTwo.Director)
+      releaseDate.html((`<span class="firstWord">Release Date:</span>`) +' '+ responseTwo.Released);
+      runTime.html((`<span class="firstWord">Runtime:</span>`) +' '+ responseTwo.Runtime);
       link.text('IMDB Page')
       link.attr('href', "https://www.imdb.com/title/"+responseTwo.imdbID+"/")
 
