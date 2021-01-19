@@ -111,9 +111,10 @@ $(document).ready(function () {
                     //so basically if the this.id isn't already in the array, push it in there and make a button out of it on the bottom
                     var favButton = $('<button>');
                     favButton.text(this.id);
-                    // favButton.attr('class', 'button');
+                    favButton.attr('class', 'button');
                     favButton.on('click', displayFavorite);         
                     $('#favoritesList').append(favButton);
+                    
                   }
                   else { 
                     //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
@@ -176,9 +177,10 @@ $(document).ready(function () {
                 var releaseDate = $('<p>');
                 var runTime = $('<p>');
 
+              
                 //set the text of these new elements to their corresponding values from the query
                 plot.text('Synopsis: ' + responseTwo.Plot);
-                rating.text('Rated: ' + responseTwo.Rated);
+                rating.text( 'Rated: ' + responseTwo.Rated );
                 reviewScore.text('IMDB Rating: ' + responseTwo.imdbRating);
                 //actors.text('Lead Actors: ' + responseTwo.Actors);
                 releaseDate.text('Release Date: ' + responseTwo.Released);
@@ -216,7 +218,20 @@ function renderFavoritesList() {
     for (var i=0; i < favorites.length; i++) {
     //...create a button for that item, set its text and id to its name (not sure I need that anymore), add button class to it for Foundation/CSS, then append it to the page
           var favButton = $('<button>') 
-          favButton.attr('id', favorites[i]); //not sure we need to do this anymore since I circumvented the problem this was trying to solve
+          favButton.attr("class", "button");
+          favButton.attr('id', favorites[i]);
+          
+          //just added this in so that the styling matches the favorites buttons on displaydiv
+          favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+            favButton.on({
+              mouseenter: function () {
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+              },
+              mouseleave: function () {
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+              }
+              })
+          //not sure we need to do this anymore since I circumvented the problem this was trying to solve
           favButton.text(favorites[i]);
           favButton.on('click', displayFavorite)
           $('#favoritesList').append(favButton)
