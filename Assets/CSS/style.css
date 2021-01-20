@@ -181,7 +181,7 @@ background-color:gray;
 color:white;
 }
 
-.topTen{
+.top10{
     margin: auto;
     width: 80%; 
    padding: 10px;
@@ -192,7 +192,7 @@ background-color:white;
 color:black;
  width: 700px; 
 font-family: 'Cinzel', serif;
-margin-left:100px;
+margin-left:350px;
 height:450px;
 overflow: scroll;
 border: solid black 8px;
