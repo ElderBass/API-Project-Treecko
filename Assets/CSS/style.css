@@ -99,7 +99,6 @@ a {
 }
 
 .modal-button {
-
     background: rgb(104, 104, 104);
     border: solid white 2px;
     color: black;
@@ -118,7 +117,6 @@ a {
     height: 300px;
     width: 250px;
     border: solid rgb(104, 104, 104) 6px;
-
 }
 
 .about-card {
@@ -147,7 +145,6 @@ a {
 }
 
 #titleSearch {
-
     border: solid rgb(104, 104, 104) 6px;
     background-color: white;
     color: black;
@@ -221,13 +218,17 @@ h2 {
     border: solid black 6px;
 }
 
+#favsModal h1 {
+    background-color: white;
+    color: black;
+}
+
 #favsModal h2 {
     background-color: white;
 }
 
 #favsModal h3 {
     background-color: white;
-
 }
 
 .ul {
@@ -280,7 +281,6 @@ li a {
     width: 80%;
     padding: 10px;
 }
-
 
 #heart {
     color: red;
