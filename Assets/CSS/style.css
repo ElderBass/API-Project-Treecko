@@ -29,8 +29,16 @@ h5 {
 }
 
 a {
+    
     color: black;
+    font-size:16px;
     font-family: 'Cinzel', serif;
+    text-decoration: underline;
+    font-weight:bold;
+    
+}
+a:hover{
+    color:rgb(104, 104, 104);
 }
 
 .modal-main {
@@ -130,7 +138,7 @@ a {
 }
 
 .treecko-logo {
-    background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
+background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 }
 
 #searchBtn {
@@ -146,8 +154,26 @@ a {
     border-radius: 28px;
 }
 
-#titleSearch {
+#searchBtn:hover {
+    border: solid black 1px;
+    background-color:gray;
+}
 
+#resultsDiv{
+background-color:white;
+color:black;
+ width: 800px; 
+font-family: 'Cinzel', serif;
+margin-left:70px;
+height:550px;
+overflow-y: scroll;
+border: solid black 8px;
+margin-top:20px;
+font-family: 'Cinzel', serif;
+padding-bottom:30px;
+}
+
+#titleSearch {
     border: solid rgb(104, 104, 104) 6px;
     background-color: white;
     color: black;
@@ -171,21 +197,6 @@ h5 {
     font-family: 'Cinzel', serif;
     background-color: rgb(104, 104, 104);
     color: white;
-}
-
-#resultsDiv {
-    background-color: white;
-    color: black;
-    width: 800px;
-    font-family: 'Cinzel', serif;
-    margin-left: 100px;
-    height: 550px;
-    overflow: scroll;
-    border: solid black 8px;
-    margin-top: 20px;
-    font-family: 'Cinzel', serif;
-    /* width: 80%;
-padding: 0px 20px 0px 20px;  */
 }
 
 h3 {
@@ -296,8 +307,9 @@ form {
     background-color: black;
 }
 
-.navbar {
-    background-color: white;
+
+.navbar{
+background-color:rgb(104, 104, 104);
 }
 
 #favoritesList {
@@ -321,6 +333,10 @@ form {
     width: 200px;
     border-radius: 28px;
 }
+.button:hover {
+    border: solid black 1px;
+    background-color:gray;
+
 
 ul {
     list-style-type: none;
@@ -331,9 +347,6 @@ ul {
     text-decoration: underline;
     font-weight: bold;
 }
-
-
-/*Seth added this feature recently - probably needs to be restyled */
 
 #clearFavorites {
     border: solid white 2px;
@@ -352,9 +365,6 @@ ul {
     border: solid black 1px;
 }
 
-
-/*Seth added this for the 'clear favorites' button and it should be left in.*/
-
 .hide {
     display: none;
 }
@@ -364,4 +374,4 @@ ul {
     margin: auto;
     width: 80%;
     padding: 10px;
-}
+  }
