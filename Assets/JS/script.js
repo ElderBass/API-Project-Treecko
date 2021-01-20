@@ -145,7 +145,6 @@ $(document).ready(function() {
                                 }
                                 //when this query is done...wait on this to finish before we go forward
                             await $.ajax(terminator).then(function(responseTwo) {
-                                    console.log(responseTwo);
 
                                     //create a new div that will contain all the information we need
                                     var resultInfo = $('<div>');
