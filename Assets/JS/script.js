@@ -253,7 +253,7 @@ async function displayFavorite() {
 
     //this code is almost identical to the stuff above - redo the query for the OMDB API for this specific favorite
     await $.ajax(terminator).then(function(responseTwo) {
-
+        console.log(responseTwo);
         var resultName = $('<h3>');
         resultName.attr('style', 'font-weight: 800')
         resultName.html(responseTwo.Title + "    " + "<span id='heart'>&#10084</span>");
@@ -272,14 +272,14 @@ async function displayFavorite() {
         var link = $('<a>');
         var genre = $('<p>');
 
-        plot.html((`<span class="firstWord">Synopsis:</span>`) + ' ' + responseTwo.Plot);
-        rating.html((`<span class="firstWord">Rated:</span>`) + ' ' + responseTwo.Rated);
-        reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + ' ' + responseTwo.imdbRating);
-        genre.html((`<span class="firstWord">Genre:</span>`) + ' ' + responseTwo.Genre);
-        actors.html((`<span class="firstWord">Lead Actors:</span>`) + ' ' + responseTwo.Actors);
-        director.html((`<span class="firstWord">Directed By:</span>`) + ' ' + responseTwo.Director)
-        releaseDate.html((`<span class="firstWord">Release Date:</span>`) + ' ' + responseTwo.Released);
-        runTime.html((`<span class="firstWord">Runtime:</span>`) + ' ' + responseTwo.Runtime);
+        plot.html((`<span class="firstWord">Synopsis:</span>`) + '<BR> ' + responseTwo.Plot);
+        rating.html((`<span class="firstWord">Rated:</span>`) + '<BR> ' + responseTwo.Rated);
+        reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + '<BR> ' + responseTwo.imdbRating);
+        genre.html((`<span class="firstWord">Genre:</span>`) + '<BR> ' + responseTwo.Genre);
+        actors.html((`<span class="firstWord">Lead Actors:</span>`) + '<BR> ' + responseTwo.Actors);
+        director.html((`<span class="firstWord">Directed By:</span>`) + '<BR> ' + responseTwo.Director)
+        releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR> ' + responseTwo.Released);
+        runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR> ' + responseTwo.Runtime);
         link.text('IMDB Page')
         link.attr('href', "https://www.imdb.com/title/" + responseTwo.imdbID + "/")
 
@@ -304,10 +304,10 @@ async function displayFavorite() {
                 //so we use that variable I declared earlier to search through the results of the query for the one that matches 'favName', then display results for just that movie
                 if (favName === response.results[i].name) {
 
-                    availability.html(`<span class="firstWord">Available to Watch On:</span><br>`)
+                    availability.html("<span class='firstWord'>Available to Watch On:</span>")
 
                     for (var j = 0; j < response.results[i].locations.length; j++) {
-                        var location = $('<li>');
+                        var location = $('<ul>');
                         location.text(response.results[i].locations[j].display_name)
                         availability.append(location);
                     }
