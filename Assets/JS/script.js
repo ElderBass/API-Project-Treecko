@@ -1,13 +1,12 @@
-var modal = $("#myModal");
-var btn = $("#myBtn");
-var span = $(".close");
-
-//$('#searchBtn').attr('data-open', 'favsModal');
-
 //going to put all of the results from our search into this container
 var resultsDiv = $('#resultsDiv');
 //so our results are lined up nicely on the page
 $('#resultsDiv').attr('align', 'center');
+
+$('#searchBtn').attr('data-open', 'favsModal');
+
+//this styling won't take when it's written in style.css so I have it here...
+$('#favsModal').attr('style', 'background-color: white;')
 
 $(document).ready(function () {
 
@@ -16,8 +15,10 @@ $(document).ready(function () {
 
   //async = saying this function holds asynchronous content so only run when the query is done
   async function searchByTitle() {
+
     //empty our results div from the previous search first so we can add new search results to it
     resultsDiv.empty();
+    $('#favsModal').html("<h2>Finding your Flick...</h2>");
 
     var userSearch = $('#titleSearch').val().trim();
     const settings = {
@@ -36,8 +37,8 @@ $(document).ready(function () {
         //if we get any results back from our query, then we'll do stuff with them
         if (response.results.length > 0) {
 
-          //doesn't work; I mean it hides but then you still need to X out of it before touching the main screen....
-         // $('#favsModal').addClass('hide');
+          $('#favsModal').foundation('close');
+
 
           //for every response we get from the query...
           for (var i = 0; i < response.results.length; i++) {
@@ -176,20 +177,7 @@ $(document).ready(function () {
         //if we don't get any results back from the query, pop up this modal alert
         else { //this changes the modal so that if the search is wonky, an alert tells the user so; needs tweaking still
           
-          var callout = $('<div>')
-          var close = $('<button>')
-          close.attr('class', "close-button")
-          close.attr('aria-label', 'Dismiss alert')
-          close.attr('type', 'button')
-          close.attr('data-close') 
-          close.html(`<span aria-hidden='true'>&times;</span>`)
-          callout.addClass("callout primary")
-          callout.attr('data-closable')
-          callout.html("<h3>These aren't the results you're looking for...</h3><p>Check your spelling and try again!</p>");
-          callout.append(close);
-          $('body').prepend(callout)
-                    
-          //$('#favsModal').html("<h3>These aren't the results you're looking for...</h3><p class='lead'>Your search didn't return any results. Check your spelling and try again.</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+          $('#favsModal').html("<h2>These aren't the results you're looking for...</h2><p class='lead'>Your search didn't return any results. Check your spelling and try again.</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
         }
       }
       query(response);
@@ -264,7 +252,8 @@ async function displayFavorite() {
 
     var resultName = $('<h3>');
     resultName.attr('style', 'font-weight: 800')
-    resultName.html(responseTwo.Title + "    " + "<span>&#x1F60D</span>");
+    resultName.html(responseTwo.Title + "    " + "<span id='heart'>&#10084</span>");
+
 
     var poster = $('<img>');
     poster.attr('src', responseTwo.Poster);
