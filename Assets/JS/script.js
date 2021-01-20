@@ -157,11 +157,11 @@ $(document).ready(function() {
                                     var runTime = $('<p>');
 
                                     //set the text of these new elements to their corresponding values from the query
-                                    plot.html((`<span class="firstWord">Synopsis:</span>`) + ' <BR>' + responseTwo.Plot);
-                                    rating.html((`<span class="firstWord">Rated:</span>`) + ' <BR>' + responseTwo.Rated);
-                                    reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + '<BR> ' + responseTwo.imdbRating);
-                                    releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR> ' + responseTwo.Released);
-                                    runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR> ' + responseTwo.Runtime);
+                                    plot.html((`<span class="firstWord">Synopsis:</span>`) + '<BR>' + responseTwo.Plot);
+                                    rating.html((`<span class="firstWord">Rated:</span>`) + '<BR>' + responseTwo.Rated);
+                                    reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + '<BR>' + responseTwo.imdbRating);
+                                    releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR>' + responseTwo.Released);
+                                    runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR>' + responseTwo.Runtime);
 
                                     //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results                 
 
@@ -253,7 +253,7 @@ async function displayFavorite() {
 
     //this code is almost identical to the stuff above - redo the query for the OMDB API for this specific favorite
     await $.ajax(terminator).then(function(responseTwo) {
-
+        console.log(responseTwo);
         var resultName = $('<h3>');
         resultName.attr('style', 'font-weight: 800')
         resultName.html(responseTwo.Title + "    " + "<span id='heart'>&#10084</span>");
@@ -271,15 +271,15 @@ async function displayFavorite() {
         var runTime = $('<p>');
         var link = $('<a>');
         var genre = $('<p>');
-
-        plot.html((`<span class="firstWord">Synopsis:</span>`) + ' <BR>' + responseTwo.Plot);
-        rating.html((`<span class="firstWord">Rated:</span>`) + ' <BR>' + responseTwo.Rated);
+      
+        plot.html((`<span class="firstWord">Synopsis:</span>`) + '<BR>' + responseTwo.Plot);
+        rating.html((`<span class="firstWord">Rated:</span>`) + '<BR>' + responseTwo.Rated);
         reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + '<BR> ' + responseTwo.imdbRating);
-        genre.html((`<span class="firstWord">Genre:</span>`) + '<BR> ' + responseTwo.Genre);
-        actors.html((`<span class="firstWord">Lead Actors:</span>`) + '<BR> ' + responseTwo.Actors);
-        director.html((`<span class="firstWord">Directed By:</span>`) + '<BR> ' + responseTwo.Director)
-        releaseDate.html((`<span class="firstWord">Release Date:</span>`) + ' <BR>' + responseTwo.Released);
-        runTime.html((`<span class="firstWord">Runtime:</span>`) + ' <BR>' + responseTwo.Runtime);
+        genre.html((`<span class="firstWord">Genre:</span>`) + '<BR>' + responseTwo.Genre);
+        actors.html((`<span class="firstWord">Lead Actors:</span>`) + '<BR>' + responseTwo.Actors);
+        director.html((`<span class="firstWord">Directed By:</span>`) + '<BR>' + responseTwo.Director)
+        releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR>' + responseTwo.Released);
+        runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR>' + responseTwo.Runtime);
         link.text('IMDB Page')
         link.attr('href', "https://www.imdb.com/title/" + responseTwo.imdbID + "/")
 
@@ -304,10 +304,10 @@ async function displayFavorite() {
                 //so we use that variable I declared earlier to search through the results of the query for the one that matches 'favName', then display results for just that movie
                 if (favName === response.results[i].name) {
 
-                    availability.html(`<span class="firstWord">Available to Watch On:</span><br>`)
+                    availability.html("<span class='firstWord'>Available to Watch On:</span>")
 
                     for (var j = 0; j < response.results[i].locations.length; j++) {
-                        var location = $('<li>');
+                        var location = $('<ul>');
                         location.text(response.results[i].locations[j].display_name)
                         availability.append(location);
                     }
