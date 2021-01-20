@@ -126,10 +126,18 @@ margin-left:80px;
 height: 300px;
 width:250px;
 border: solid gray 6px;
-
 }
 
-.treecko-brand {
+
+.about-card {
+width: 30%;
+margin-right: auto;
+margin-left: auto;
+background-color: gray;
+padding: 0 20px 20px 20px;
+}
+
+.treecko-logo {
 background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 }
 
@@ -253,6 +261,16 @@ li a {
     cursor: default;
 }
 
+.top10 {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    border: white;
+    border-style: solid;   
+}
+
+
 
 
 form {
@@ -265,7 +283,7 @@ form {
 }
 
 .navbar{
-height:50px;
+background-color: white;
 }
 
 #favoritesList{
