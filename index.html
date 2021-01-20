@@ -26,13 +26,14 @@
 
     <BR>
     <div class="row">
-        <div class="col-md-10" align="center">
-
+        <div class="col-md-10" align="center"> <!--Not sure we need this-->
+            <a href='#top10'><button class='button'>Trending Now</button></a>
+            <a href='#freeMovies'><button class='button'>Free Movies on YouTube</button></a>
             <div class="cd-md-1"><input type='text' id='titleSearch' placeholder='enter movie or show title'>
                 <button id='searchBtn' type='submit'>Search Flick Finder</button><BR><BR>
                 <div class="card">
                     <h3><u>Favorites</u></h3>
-                    <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
+                    
                     <ul class='stack button-group' id='favoritesList'>
                     </ul>
                     <button class='button hide' id='clearFavorites'>Clear Favorites</button>
@@ -55,7 +56,7 @@
 
 
     <hr>
-    <div class="top10">
+    <div class="top10" id="top10">
         <h2 style="background-color: gray; margin: auto;">Top 10 Popular Movies</h2>
           <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-use-m-u-i="false">
             <div class="orbit-wrapper">
@@ -156,7 +157,7 @@
     </div>
     </div>
     <hr>
-    <div class="movie-list">
+    <div class="movie-list"  id='freeMovies'>
       <h3>Free Movies</h3>
         <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
             <li><a href="https://www.youtube.com/embed/Om3rG2Shbic"><img
