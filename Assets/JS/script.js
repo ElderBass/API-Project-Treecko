@@ -1,4 +1,3 @@
-// start of MODAL JS 
 var modal = $("#myModal");
 var btn = $("#myBtn");
 var span = $(".close");
@@ -16,7 +15,6 @@ $(window).on('click', function (event) {
        modal.attr('style', "display: none");
     }
 })
-// end of MODAL JS
 
 //going to put all of the results from our search into this container
 var resultsDiv = $('#resultsDiv');
@@ -34,7 +32,6 @@ $(document).ready(function () {
       resultsDiv.empty();
         
         var userSearch = $('#titleSearch').val().trim();
-
         const settings = {
             "async": true,
             "crossDomain": true,
@@ -56,7 +53,6 @@ $(document).ready(function () {
 
             //for every response we get from the query...
             for (var i = 0; i < response.results.length; i++) {
-
               //create a new div for our results to be displayed
               var resultsMain = $('<div>');
               //For title of the result
@@ -330,5 +326,4 @@ async function displayFavorite () {
 
 }
 
-//this readies any of the js functionality from Foundation
 $(document).foundation();
