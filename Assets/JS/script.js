@@ -300,6 +300,7 @@ async function displayFavorite() {
                 "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
             }
         }
+        
         $.ajax(services).then(function(response) {
             console.log(response)
             for (var i = 0; i < response.results.length; i++) {

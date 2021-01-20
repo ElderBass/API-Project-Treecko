@@ -30,7 +30,14 @@ h5 {
 
 a {
     color: black;
+    font-size: 16px;
     font-family: 'Cinzel', serif;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(104, 104, 104);
 }
 
 .modal-main {
@@ -144,6 +151,25 @@ a {
     border-radius: 28px;
 }
 
+#searchBtn:hover {
+    border: solid black 1px;
+    background-color: gray;
+}
+
+#resultsDiv {
+    background-color: white;
+    color: black;
+    width: 800px;
+    font-family: 'Cinzel', serif;
+    margin-left: 70px;
+    height: 550px;
+    overflow-y: scroll;
+    border: solid black 8px;
+    margin-top: 20px;
+    font-family: 'Cinzel', serif;
+    padding-bottom: 30px;
+}
+
 #titleSearch {
     border: solid rgb(104, 104, 104) 6px;
     background-color: white;
@@ -168,21 +194,6 @@ h5 {
     font-family: 'Cinzel', serif;
     background-color: rgb(104, 104, 104);
     color: white;
-}
-
-#resultsDiv {
-    background-color: white;
-    color: black;
-    width: 800px;
-    font-family: 'Cinzel', serif;
-    margin-left: 100px;
-    height: 550px;
-    overflow: scroll;
-    border: solid black 8px;
-    margin-top: 20px;
-    font-family: 'Cinzel', serif;
-    /* width: 80%;
-padding: 0px 20px 0px 20px;  */
 }
 
 h3 {
@@ -297,7 +308,7 @@ form {
 }
 
 .navbar {
-    background-color: white;
+    background-color: rgb(104, 104, 104);
 }
 
 #favoritesList {
@@ -322,6 +333,11 @@ form {
     border-radius: 28px;
 }
 
+.button:hover {
+    border: solid black 1px;
+    background-color: gray;
+}
+
 ul {
     list-style-type: none;
 }
@@ -331,9 +347,6 @@ ul {
     text-decoration: underline;
     font-weight: bold;
 }
-
-
-/*Seth added this feature recently - probably needs to be restyled */
 
 #clearFavorites {
     border: solid white 2px;
@@ -351,9 +364,6 @@ ul {
 #clearFavorites:hover {
     border: solid black 1px;
 }
-
-
-/*Seth added this for the 'clear favorites' button and it should be left in.*/
 
 .hide {
     display: none;
