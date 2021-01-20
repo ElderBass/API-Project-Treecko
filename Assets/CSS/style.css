@@ -124,7 +124,8 @@ margin-top:10px;
 margin-left:80px;
 height: 300px;
 width:250px;
-border: solid gray 6px;}
+border: solid gray 6px;
+}
 
 .about-card {
 width: 30%;
@@ -181,16 +182,16 @@ color:white;
 #resultsDiv{
 background-color:white;
 color:black;
- width: 700px; 
+ width: 800px; 
 font-family: 'Cinzel', serif;
 margin-left:100px;
-height:450px;
+height:550px;
 overflow: scroll;
 border: solid black 8px;
 margin-top:20px;
 font-family: 'Cinzel', serif;
-width: 80%;
-padding: 0px 20px 0px 20px;
+/* width: 80%;
+padding: 0px 20px 0px 20px;  */
 }
 
 h3{
@@ -198,6 +199,17 @@ text-align:center;
 font-family: 'Cinzel', serif;
 margin-top:10px;
 background-color:gray;
+}
+
+h2{
+    color:black;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    background-color:gray;
+}
+
+.navbar{
+height:60px;
 }
 
 .ul {
@@ -248,7 +260,7 @@ li a {
     text-align: center;
     border: white;
     border-style: solid;
-    width: 80%; 
+    width: 50%; 
     padding: 10px;
 }
 
@@ -270,18 +282,21 @@ background-color:white;
 color:black;
 width:400px;
 font-family: 'Cinzel', serif;
+overflow: scroll;
+
+
 }
 
 
 .button{
-margin-left: 80px;
+margin-left: 100px;
 border: solid white 2px;
 background-color:gray; 
 color:black;
 font-family: 'Cinzel', serif;
-font-size:12px; /*Seth edited font size here recently */
+font-size:10px; /*Seth edited font size here recently */
 text-align: center;  
-height:60px;
+height:30px;
 width:200px;
 border-radius: 28px;
 } 
