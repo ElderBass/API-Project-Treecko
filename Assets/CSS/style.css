@@ -9,6 +9,7 @@ body{
     z-index: 0;
     color:white;
     font-family: 'Cinzel', serif;
+    overflow-x: hidden;
     /* font-size: 1.2vw; */
 }
 
