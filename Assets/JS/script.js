@@ -8,6 +8,7 @@ $('#searchBtn').attr('data-open', 'favsModal');
 //this styling won't take when it's written in style.css so I have it here...
 $('#favsModal').attr('style', 'background-color: white;')
 
+
 $(document).ready(function() {
 
     //Results Variable for testing
@@ -16,171 +17,179 @@ $(document).ready(function() {
     //async = saying this function holds asynchronous content so only run when the query is done
     async function searchByTitle() {
 
+
         //empty our results div from the previous search first so we can add new search results to it
         resultsDiv.empty();
-        $('#favsModal').html("<h2>Finding your Flick...</h2>");
+        $('#favsModal').html("<h1>Finding your flick..</h1>")
+        setTimeout(waiting, 1000);
 
-        var userSearch = $('#titleSearch').val().trim();
-        const settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=" + userSearch + "&country=us",
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "34b731eb9fmsh514e31a16caa9fbp14cea5jsnb01736405b87",
-                "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
-            }
-        };
+        function waiting() {
+            var userSearch = $('#titleSearch').val().trim();
+            const settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=" + userSearch + "&country=us",
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-key": "34b731eb9fmsh514e31a16caa9fbp14cea5jsnb01736405b87",
+                    "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
+                }
+            };
 
-        $.ajax(settings).then(function(response) {
-            async function query(response) {
-                //if we get any results back from our query, then we'll do stuff with them
-                if (response.results.length > 0) {
+            $.ajax(settings).then(function(response) {
+                async function query(response) {
+                    //if we get any results back from our query, then we'll do stuff with them
 
-                    $('#favsModal').foundation('close');
+                    if (response.results.length > 0) {
+
+                        //doesn't work; I mean it hides but then you still need to X out of it before touching the main screen....
+                        $('#favsModal').foundation('close');
+                        // $('#favsModal').addClass('hide');
+                        // $('#favsModal').attr('data-overlay','false'); 
 
 
-                    //for every response we get from the query...
-                    for (var i = 0; i < response.results.length; i++) {
-                        //create a new div for our results to be displayed
-                        var resultsMain = $('<div>');
-                        //For title of the result
-                        var resultName = $('<h3>');
-                        resultName.text(response.results[i].name);
+                        //for every response we get from the query...
+                        for (var i = 0; i < response.results.length; i++) {
+                            //create a new div for our results to be displayed
+                            var resultsMain = $('<div>');
+                            //For title of the result
+                            var resultName = $('<h3>');
+                            resultName.text(response.results[i].name);
 
-                        //create image tag for the movie poster
-                        var poster = $('<img>');
-                        poster.attr('src', response.results[i].picture);
-                        poster.attr('style', "max-width: 50%");
+                            //create image tag for the movie poster
+                            var poster = $('<img>');
+                            poster.attr('src', response.results[i].picture);
+                            poster.attr('style', "max-width: 50%");
 
-                        //create a button to be displayed next to the title's name, which when clicked adds this title to the user's favorites list
-                        var favorites = $('<button>');
-                        //this attribute is for linking the Add to Favs button to the 'Added to Favs' modal that will pop up
-                        favorites.attr('data-open', 'favsModal');
-                        //this will be used for identificaiton purposes in functions below
-                        favorites.attr('id', response.results[i].name);
-                        favorites.text('Flick to Favorites!')
-                            //styling our favorite button as desired
-                        favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+                            //create a button to be displayed next to the title's name, which when clicked adds this title to the user's favorites list
+                            var favorites = $('<button>');
+                            //this attribute is for linking the Add to Favs button to the 'Added to Favs' modal that will pop up
+                            favorites.attr('data-open', 'favsModal');
+                            //this will be used for identificaiton purposes in functions below
+                            favorites.attr('id', response.results[i].name);
+                            favorites.text('Flick to Favorites!')
+                                //styling our favorite button as desired
+                            favorites.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
 
-                        //this whole function basically just adds a hover effect on the favorites button, creating a black border around it on hover
-                        favorites.on({
-                                mouseenter: function() {
-                                    $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
-                                },
-                                mouseleave: function() {
-                                    $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+                            //this whole function basically just adds a hover effect on the favorites button, creating a black border around it on hover
+                            favorites.on({
+                                    mouseenter: function() {
+                                        $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+                                    },
+                                    mouseleave: function() {
+                                        $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 20px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:30px; width:150px; color:white;');
+                                    }
+                                })
+                                //append the favorites button to the title container so it's handy for the user
+                            resultName.append(favorites)
+
+                            //when clicked, the favorite button will execute this function, which adds the current movie to the favorites tab and stores it in storage
+                            favorites.on('click', function() {
+                                //set a variable to the array of items under the 'favoritesList' key in storage
+                                var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
+                                //if there is stuff in our favorites in storage...
+                                if (favoritesList) {
+                                    //Check if this title is already in favs array, so it can't be added again!
+                                    if ($.inArray(this.id, favoritesList) === -1) {
+
+                                        //if it's not in favorites, then add this to it and put it in storage!
+                                        favoritesList.push(this.id)
+                                        localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+
+                                        //reveals the button in the favorites card that allows user to reset their list of favorites
+                                        $('#clearFavorites').removeClass('hide');
+                                        //this sets the html of a Modal to reveal a message telling user they've successfully added to their favorites
+                                        $('#favsModal').html("<h3>Flick-tastic!</h3><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+
+                                        //make a button out of this favorite so that, when clicked, more detailed info will be displayed of the favorite on the screen
+                                        var favButton = $('<button>');
+                                        favButton.text(this.id);
+                                        favButton.attr('class', 'button'); //add this class for styling purposes
+                                        favButton.on('click', displayFavorite); //displayFavorite elaborated below       
+                                        $('#favoritesList').append(favButton); //have an empty <ul> that we will append all favorites to
+
+                                    } else {
+                                        //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
+                                        $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>");
+                                    }
+                                } else {
+                                    //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
+                                    favoritesList = [this.id]
+                                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                                    var favButton = $('<button>')
+                                    favButton.text(this.id)
+                                    favButton.attr('class', 'button')
+                                    favButton.on('click', displayFavorite)
+                                    $('#favoritesList').append(favButton)
+                                    $('#clearFavorites').removeClass('hide');
+                                    $('#favsModal').removeClass('hide');
+                                    $('#favsModal').html("<h3>Flick-tastic!</h3><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
                                 }
                             })
-                            //append the favorites button to the title container so it's handy for the user
-                        resultName.append(favorites)
 
-                        //when clicked, the favorite button will execute this function, which adds the current movie to the favorites tab and stores it in storage
-                        favorites.on('click', function() {
-                            //set a variable to the array of items under the 'favoritesList' key in storage
-                            var favoritesList = JSON.parse(localStorage.getItem("favoritesList"));
-                            //if there is stuff in our favorites in storage...
-                            if (favoritesList) {
-                                //Check if this title is already in favs array, so it can't be added again!
-                                if ($.inArray(this.id, favoritesList) === -1) {
+                            //create an unordered list that we'll append movie services to down below
+                            var availability = $('<ul>');
+                            availability.html(`<span class="firstWord">Available to Watch On:</span><br>`);
 
-                                    //if it's not in favorites, then add this to it and put it in storage!
-                                    favoritesList.push(this.id)
-                                    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+                            //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
+                            for (var j = 0; j < response.results[i].locations.length; j++) {
+                                //so for each place you can watch the show, create a new list element and append this list element to the unordered list
+                                var location = $('<li>');
+                                location.text(response.results[i].locations[j].display_name)
+                                availability.append(location);
+                            }
+                            //append everything we have so far into the div we created earliery
+                            resultsMain.append(resultName, poster, availability)
 
-                                    //reveals the button in the favorites card that allows user to reset their list of favorites
-                                    $('#clearFavorites').removeClass('hide');
-                                    //this sets the html of a Modal to reveal a message telling user they've successfully added to their favorites
-                                    $('#favsModal').html("<h3>Flick-tastic!</h3><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
-
-                                    //make a button out of this favorite so that, when clicked, more detailed info will be displayed of the favorite on the screen
-                                    var favButton = $('<button>');
-                                    favButton.text(this.id);
-                                    favButton.attr('class', 'button'); //add this class for styling purposes
-                                    favButton.on('click', displayFavorite); //displayFavorite elaborated below       
-                                    $('#favoritesList').append(favButton); //have an empty <ul> that we will append all favorites to
-
-                                } else {
-                                    //if item is already a favorite, we clear the favsModal of content, then replace its content with a message saying the user has already favorited that item
-                                    $('#favsModal').html("<h2>Great Scott!</h2><p class='lead'>This is ALREADY a favorite!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>");
+                            const terminator = {
+                                    url: "http://www.omdbapi.com/?t=" + response.results[i].name + "&apikey=9efaf7ad",
+                                    method: "GET",
                                 }
-                            } else {
-                                //again, as above, if there's nothing in storage, push this movie into it, create button out of movie and append it below
-                                favoritesList = [this.id]
-                                localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
-                                var favButton = $('<button>')
-                                favButton.text(this.id)
-                                favButton.attr('class', 'button')
-                                favButton.on('click', displayFavorite)
-                                $('#favoritesList').append(favButton)
-                                $('#clearFavorites').removeClass('hide');
-                                $('#favsModal').removeClass('hide');
-                                $('#favsModal').html("<h3>Flick-tastic!</h3><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
-                            }
-                        })
+                                //when this query is done...wait on this to finish before we go forward
+                            await $.ajax(terminator).then(function(responseTwo) {
+                                    console.log(responseTwo);
 
-                        //create an unordered list that we'll append movie services to down below
-                        var availability = $('<ul>');
-                        availability.html(`<span class="firstWord">Available to Watch On:</span><br>`);
+                                    //create a new div that will contain all the information we need
+                                    var resultInfo = $('<div>');
 
-                        //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
-                        for (var j = 0; j < response.results[i].locations.length; j++) {
-                            //so for each place you can watch the show, create a new list element and append this list element to the unordered list
-                            var location = $('<li>');
-                            location.text(response.results[i].locations[j].display_name)
-                            availability.append(location);
-                        }
-                        //append everything we have so far into the div we created earliery
-                        resultsMain.append(resultName, poster, availability)
+                                    //create a series of new elements for each piece of info we want
+                                    var plot = $('<p>');
+                                    var rating = $('<p>');
+                                    var reviewScore = $('<p>');
+                                    var releaseDate = $('<p>');
+                                    var runTime = $('<p>');
 
-                        const terminator = {
-                                url: "http://www.omdbapi.com/?t=" + response.results[i].name + "&apikey=9efaf7ad",
-                                method: "GET",
-                            }
-                            //when this query is done...wait on this to finish before we go forward
-                        await $.ajax(terminator).then(function(responseTwo) {
-                                console.log(responseTwo);
+                                    //set the text of these new elements to their corresponding values from the query
+                                    plot.html((`<span class="firstWord">Synopsis:</span>`) + ' ' + responseTwo.Plot);
+                                    rating.html((`<span class="firstWord">Rated:</span>`) + ' ' + responseTwo.Rated);
+                                    reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + ' ' + responseTwo.imdbRating);
+                                    releaseDate.html((`<span class="firstWord">Release Date:</span>`) + ' ' + responseTwo.Released);
+                                    runTime.html((`<span class="firstWord">Runtime:</span>`) + ' ' + responseTwo.Runtime);
 
-                                //create a new div that will contain all the information we need
-                                var resultInfo = $('<div>');
-
-                                //create a series of new elements for each piece of info we want
-                                var plot = $('<p>');
-                                var rating = $('<p>');
-                                var reviewScore = $('<p>');
-                                var releaseDate = $('<p>');
-                                var runTime = $('<p>');
-
-                                //set the text of these new elements to their corresponding values from the query
-                                plot.html((`<span class="firstWord">Synopsis:</span>`) + ' ' + responseTwo.Plot);
-                                rating.html((`<span class="firstWord">Rated:</span>`) + ' ' + responseTwo.Rated);
-                                reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + ' ' + responseTwo.imdbRating);
-                                releaseDate.html((`<span class="firstWord">Release Date:</span>`) + ' ' + responseTwo.Released);
-                                runTime.html((`<span class="firstWord">Runtime:</span>`) + ' ' + responseTwo.Runtime);
-
-                                //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results                 
-                                resultInfo.append(releaseDate, rating, runTime, plot, reviewScore);
-
-                                //then append the resultInfo div into the main div containing the result name, poster, and favorite button
-                                resultsMain.append(resultInfo);
-                            }) //end of omdb ajax query
+                                    //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results                 
 
 
-                        //then, for each new div we create for each title, append that div to the main container that will house all of the results.
-                        resultsDiv.append(resultsMain);
+                                    resultInfo.append(releaseDate, rating, runTime, plot, reviewScore);
+                                    //then append the resultInfo div into the main div containing the result name, poster, and favorite button
 
-                    } //end of for loop
-                } // end of first if statement
+                                    resultsMain.append(resultInfo);
+                                }) //end of omdb ajax query
 
-                //if we don't get any results back from the query, pop up this modal alert
-                else { //this changes the modal so that if the search is wonky, an alert tells the user so; needs tweaking still
 
-                    $('#favsModal').html("<h2>These aren't the results you're looking for...</h2><p class='lead'>Your search didn't return any results. Check your spelling and try again.</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+                            //then, for each new div we create for each title, append that div to the main container that will house all of the results.
+                            resultsDiv.append(resultsMain);
+
+                        } //end of for loop
+                    } // end of first if statement
+
+                    //if we don't get any results back from the query, pop up this modal alert
+                    else { //this changes the modal so that if the search is wonky, an alert tells the user so; needs tweaking still
+                        $('#favsModal').html("<h3>These aren't the results you're looking for...</h3><p class='lead'>Your search didn't return any results. Check your spelling and try again.</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+                    }
                 }
-            }
-            query(response);
-        }); //end of utelly ajax query
-
+                query(response);
+            }); //end of utelly ajax query
+        } //end of waiting fxn
     } //end of searchByTitle fxn
 
     $('#searchBtn').on('click', searchByTitle);
@@ -213,6 +222,7 @@ function renderFavoritesList() {
 
             //just added this in so that the styling matches the favorites buttons on displaydiv
             favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
+
             favButton.on({
                 mouseenter: function() {
                     $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
@@ -247,11 +257,9 @@ async function displayFavorite() {
     //this code is almost identical to the stuff above - redo the query for the OMDB API for this specific favorite
     await $.ajax(terminator).then(function(responseTwo) {
 
-
         var resultName = $('<h3>');
         resultName.attr('style', 'font-weight: 800')
         resultName.html(responseTwo.Title + "    " + "<span id='heart'>&#10084</span>");
-
 
         var poster = $('<img>');
         poster.attr('src', responseTwo.Poster);
