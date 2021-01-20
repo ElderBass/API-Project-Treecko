@@ -121,9 +121,10 @@ a:hover {
 .card {
     margin-top: 10px;
     margin-left: 80px;
-    height: 300px;
+    height: 340px;
     width: 250px;
     border: solid rgb(104, 104, 104) 6px;
+    overflow-y: scroll;
 }
 
 .about-card {
@@ -315,6 +316,7 @@ form {
     background-color: white;
     color: black;
     width: 400px;
+    height:800px;
     font-family: 'Cinzel', serif;
     overflow-y: scroll;
 }

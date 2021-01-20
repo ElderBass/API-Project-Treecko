@@ -2,27 +2,25 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
-    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
-  <link rel="stylesheet" href="Assets/CSS/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link rel="stylesheet" href="Assets/CSS/style.css">
 
-  <title>Flick Finder</title>
+    <title>Flick Finder</title>
 
 </head>
 
 <body>
 
-  <div class="header">
-    <h1>Welcome to Flick Finder</h1>
-    <h5>Peep the deets on your favorite movies</h5>
-  </div>
+    <div class="header">
+        <h1>Welcome to Flick Finder</h1>
+        <h5>Peep the deets on your favorite movies</h5>
+    </div>
 
     <BR>
     <div class="row">
@@ -36,7 +34,7 @@
             <BR>
             <a href='#freeMovies'><button class='button'>Free Movies on YouTube</button></a>
             <div class="card">
-                <h3><u>Favorites</u></h3>
+                <h3>Favorites</h3>
                 <ul class='stack button-group' id='favoritesList'>
                 </ul>
                 <button class='button hide' id='clearFavorites'>Clear Favorites</button>
@@ -60,21 +58,19 @@
 
     </div>
 
-
     <hr>
     <div class="top10" id="top10">
         <h2 style="background-color: gray; margin: auto;">Top 10 Popular Movies</h2>
         <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-use-m-u-i="false" data-pause="hover">
             <div class="orbit-wrapper">
                 <div class="orbit-controls">
-                    <button class="orbit-previous"><span class="show-for-sr">Previous
-                            Slide</span>&#9664;&#xFE0E;</button>
+                    <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
                     <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
                 </div>
                 <ul class="orbit-container">
                     <li class="is-active orbit-slide">
                         <figure class="orbit-figure responsive-embed widescreen">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/7Y6-w5Psupw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Movie1"></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/7Y6-w5Psupw" frameborder="0" allowfullscreen alt="Movie1"></iframe>
                         </figure>
                     </li>
                     <li class="orbit-slide">
@@ -123,26 +119,26 @@
                         </figure>
                     </li>
                 </ul>
-
-                <nav class="orbit-bullets">
-                    <button class="is-active" data-slide="0">
-                        <span class="show-for-sr">First slide details.</span>
-                        <span class="show-for-sr" data-slide-active-label>Current Slide</span>
-                    </button>
-                    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-                    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-                    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-                    <button data-slide="4"><span class="show-for-sr">Fifth slide details.</span></button>
-                    <button data-slide="5"><span class="show-for-sr">Sixth slide details.</span></button>
-                    <button data-slide="6"><span class="show-for-sr">Seventh slide details.</span></button>
-                    <button data-slide="7"><span class="show-for-sr">Eighth slide details.</span></button>
-                    <button data-slide="8"><span class="show-for-sr">Ninth slide details.</span></button>
-                    <button data-slide="9"><span class="show-for-sr">Tenth slide details.</span></button>
-                </nav>
             </div>
+            <nav class="orbit-bullets">
+                <button class="is-active" data-slide="0">
+            <span class="show-for-sr">First slide details.</span>
+            <span class="show-for-sr" data-slide-active-label>Current Slide</span>
+          </button>
+                <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+                <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+                <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+                <button data-slide="4"><span class="show-for-sr">Fifth slide details.</span></button>
+                <button data-slide="5"><span class="show-for-sr">Sixth slide details.</span></button>
+                <button data-slide="6"><span class="show-for-sr">Seventh slide details.</span></button>
+                <button data-slide="7"><span class="show-for-sr">Eighth slide details.</span></button>
+                <button data-slide="8"><span class="show-for-sr">Ninth slide details.</span></button>
+                <button data-slide="9"><span class="show-for-sr">Tenth slide details.</span></button>
+            </nav>
         </div>
     </div>
-
+    </div>
+    </div>
     <hr>
     <div class="movie-list" id='freeMovies'>
         <h3>Free Movies</h3>
@@ -220,224 +216,45 @@
             </li>
         </ul>
     </div>
-
-
     <hr>
-    <div class="top10" id="top10">
-      <h2 style="background-color: gray; margin: auto;">Top 10 Popular Movies</h2>
-      <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-use-m-u-i="false" data-pause="hover">
-        <div class="orbit-wrapper">
-          <div class="orbit-controls">
-            <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-            <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-          </div>
-          <ul class="orbit-container">
-            <li class="is-active orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/7Y6-w5Psupw" frameborder="0"
-                  allowfullscreen alt="Movie1"></iframe>
-              </figure>
+    <div class="movie-list">
+        <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
+            <li>
+                <a href="https://www.youtube.com/embed/awXn-EHhC_w"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQKBf2o2GDSqV4ZHCnCgty3lJTli8Eii0xjn3GySCiaaoS2gF8d" style="height: 200px;" alt="Movie1"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/L6P3nI6VnlY" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie2"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/khwPVkoW8IE"><img src="https://images-na.ssl-images-amazon.com/images/I/71AqYqsNwHL._UR1200,1600_RI_.jpg" style="height: 200px;" alt="Movie2"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/mdMtnvMJcDA" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie3"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/yk9mZAJY9g0"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQLWiyc9NdLUD1eO7HL8SIVNMTTXcKhW3EFlxo1rYDCoTagbiJT" style="height: 200px;" alt="Movie3"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/XF8h3hOGBJM" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie4"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/9LaZ6pqSnqM"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTjxZRPDx943hSf3xm5JhA_sIRgC_Q27b6u0wsUS1EyMP9ed4jO" style="height: 200px;" alt="Movie4"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/bgKEoHNi3Uc" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie5"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/3vRr-A-_j7E"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfsJv32NV8SPL-0WF3127tU-cvo6iAdfCkv3TXYdBo25cVnX1T" style="height: 200px;" alt="Movie5"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/u8ZsUivELbs" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie6"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/T0kXMlBrR5A"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVto8_L3kyo-E_YkC1TkP2KJG5YnX3dxEEzB8wnYkz4hTZxYC" style="height: 200px;" alt="Movie6"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/j77XMwc5bqg" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie7"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/m3lL5aiEiqk"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSwjezpwU9yG0c-na2CIFBre-nEnx1pE35FK8Rrz6ah74tsPZgg" style="height: 200px;" alt="Movie7"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ozUuAcGOhPs" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie8"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/Q1mtYvdbgTQ"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR_K75Gjd9ZwqRDsAfDC_4SpYt6X84g4qKm5BpkuueGPfxac4_N" style="height: 200px;" alt="Movie8"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/gdWxGwiuhnU" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie9"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/gnvivUeQxWI"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRewcPGWZ0HFxuhv2v90HQxbn121wDSwvnlNwhjbXSwzHyz6emn" style="height: 200px;" alt="Movie9"></a>
             </li>
-            <li class="orbit-slide">
-              <figure class="orbit-figure responsive-embed widescreen">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/aSiDu3Ywi8E" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen alt="Movie10"></iframe>
-              </figure>
+            <li>
+                <a href="https://www.youtube.com/embed/f9RGUlvrog0"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR75eNLytZxnNRDSjnmOhpefzq032APtIvl-PfSPFYbCXlhtGR" style="height: 200px;" alt="Movie10"></a>
             </li>
-          </ul>
-        </div>
-        <nav class="orbit-bullets">
-          <button class="is-active" data-slide="0">
-            <span class="show-for-sr">First slide details.</span>
-            <span class="show-for-sr" data-slide-active-label>Current Slide</span>
-          </button>
-          <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-          <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-          <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
-          <button data-slide="4"><span class="show-for-sr">Fifth slide details.</span></button>
-          <button data-slide="5"><span class="show-for-sr">Sixth slide details.</span></button>
-          <button data-slide="6"><span class="show-for-sr">Seventh slide details.</span></button>
-          <button data-slide="7"><span class="show-for-sr">Eighth slide details.</span></button>
-          <button data-slide="8"><span class="show-for-sr">Ninth slide details.</span></button>
-          <button data-slide="9"><span class="show-for-sr">Tenth slide details.</span></button>
-        </nav>
-      </div>
+            <li>
+                <a href="https://www.youtube.com/embed/QBshI04K6r0"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqUciHT5HjfGvgKjJ1kpaPkjyjcqXxPoRHYLZ9kh9YwqRUzMZr" style="height: 200px;" alt="Movie11"></a>
+            </li>
+        </ul>
     </div>
-  </div>
-  </div>
-  <hr>
-  <div class="movie-list" id='freeMovies'>
-    <h3>Free Movies</h3>
-    <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
-      <li><a href="https://www.youtube.com/embed/Om3rG2Shbic"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToYQxJjHOcThYvYHi2i4pZQrKRY_ZnSuMZzfo7rn6GQWx22FA9"
-            style="height: 200px;" alt="Movie1"></a></li>
-      <li><a href="https://www.youtube.com/embed/ZpqHrqF4MO4"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSl1EPLaMD5FpcN0D_pME1smJQ79bp0216uHPUlOrbNfIHpvJf"
-            style="height: 200px;" alt="Movie2"></a></li>
-      <li><a href="https://www.youtube.com/embed/pcIuVT3X_UI"><img
-            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRk17LKwZcGvFExzZMDiAsQX4MEEPvjoiyqs3aqC9uFvuEv0N6N"
-            style="height: 200px;" alt="Movie3"></a></li>
-      <li><a href="https://www.youtube.com/embed/EMvIgNcej-w"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pGZ22S4yQiajcGP1qISVUDpeYHU5qtm-pm3EotDlecMZXNcW"
-            style="height: 200px;" alt="Movie4"></a></li>
-      <li><a href="https://www.youtube.com/embed/C-e4SC4KomE"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSarkTjj54IRHIKEluTW3Yy50PRsFnNg_nQerku4GQz8AKEzdHz"
-            style="height: 200px;" alt="Movie5"></a></li>
-      <li><a href="https://www.youtube.com/embed/UcpRvrdoSt0"><img
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRyzloAwn8m4bhcdwV7CxikL1xOno91GUUauShGMuEEISmKXKDq"
-            style="height: 200px;" alt="Movie6"></a></li>
-      <li><a href="https://www.youtube.com/embed/9l0bzTqglXY"><img
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTXCs5Bg4Gjko7svcJIyYEMZM0KNd1OiSK_ElgL3w91rAmQuqXd"
-            style="height: 200px;" alt="Movie7"></a></li>
-      <li><a href="https://www.youtube.com/embed/gRdREU9iKwo"><img
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTdgyH-Kz0taJbhWEHFUw1tLHwQ9JdDKnDJ3YKPVJTdU0xYBnuH"
-            style="height: 200px;" alt="Movie8"></a></li>
-      <li><a href="https://www.youtube.com/embed/s7_qI6_mIXc"><img
-            src="https://upload.wikimedia.org/wikipedia/en/7/70/Terminator1984movieposter.jpg" style="height: 200px;"
-            alt="Movie9"></a></li>
-      <li><a href="https://www.youtube.com/embed/Wq68weAkvro"><img
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR0l9hFFaDN1WjIThho6FjkYIkxilUa2ga_zsvuLEWmUNn-PosA"
-            style="height: 200px;" alt="Movie10"></a></li>
-      <li><a href="https://www.youtube.com/embed/Pg0KlPHd4HM"><img
-            src="https://m.media-amazon.com/images/M/MV5BODVhMmQ4ZjUtYTA3Mi00M2YwLWE2MGEtZmVjYTMyMmQ5NzEyXkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_.jpg"
-            style="height: 200px;" alt="Movie11"></a></li>
-    </ul>
-  </div>
-  <hr>
-  <div class="movie-list">
-    <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
-      <li><a href="https://www.youtube.com/embed/RTZG05sTH3Q"><img
-            src="https://upload.wikimedia.org/wikipedia/en/d/d4/Black_knight_ver2.jpg" style="height: 200px;"
-            alt="Movie1"></a></li>
-      <li><a href="https://www.youtube.com/embed/B0BgpYtssjg"><img
-            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRqKwukm109iY0Fmo_BTFDow2igfeUdayydPnSXrw8iWMJTZnqf"
-            style="height: 200px;" alt="Movie2"></a></li>
-      <li><a href="https://www.youtube.com/embed/suWJdEJ6e3k"><img
-            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR9KRiSi20RQHeD5yux_dH5fWy9GA7Z8jP8GFFg3824h5QhI_ym"
-            style="height: 200px;" alt="Movie3"></a></li>
-      <li><a href="https://www.youtube.com/embed/32_Xa3Tmdfw"><img
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTEYvO5n7iv2CJDR23L9udhmCsQyy32R4iC8Xm3NHPfXU4LuvSY"
-            style="height: 200px;" alt="Movie4"></a></li>
-      <li><a href="https://www.youtube.com/embed/-llHxSH-hSE"><img
-            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIJhNHIYQiFmkFs3YjNa-hXDAAycXpaf41d1qAv5Qpl9huiR7U"
-            style="height: 200px;" alt="Movie5"></a></li>
-      <li><a href="https://www.youtube.com/embed/fhBZ-Tt57Ig"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp2hjFE28n4JNEJTKKI8kN1RALjSCCjMWaWV-MHGZ8ug9HE0u8"
-            style="height: 200px;" alt="Movie6"></a></li>
-      <li><a href="https://www.youtube.com/embed/-IhADNJsO1Y"><img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Species_1995_poster.jpg/220px-Species_1995_poster.jpg"
-            style="height: 200px;" alt="Movie7"></a></li>
-      <li><a href="https://www.youtube.com/embed/CuPzKwoqp3A"><img
-            src="https://upload.wikimedia.org/wikipedia/en/8/8d/Delta_force_poster.jpg" style="height: 200px;"
-            alt="Movie8"></a></li>
-      <li><a href="https://www.youtube.com/embed/6wGIR3LE_oo"><img
-            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlRr0xWDOJhdF7NTisBNQrhz0c_jht9TYeUCJVys7yIGxvz6eA"
-            style="height: 200px;" alt="Movie9"></a></li>
-      <li><a href="https://www.youtube.com/embed/w9TDo8NUadc"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDYNaHVPpNOLHjrM2mJkcER8XQl8E11LyTVBX1fNPXkjWBLvo3"
-            style="height: 200px;" alt="Movie10"></a></li>
-      <li><a href="https://www.youtube.com/embed/gNAIoqRF4wg"><img
-            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTQgdGM8erMQyh0b8A04Ht4y__ucH-Is58A2ETs6RwBsWtPgi1b"
-            style="height: 200px;" alt="Movie11"></a></li>
-    </ul>
-  </div>
-  <hr>
-  <div class="movie-list">
-    <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
-      <li><a href="https://www.youtube.com/embed/awXn-EHhC_w"><img
-            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQKBf2o2GDSqV4ZHCnCgty3lJTli8Eii0xjn3GySCiaaoS2gF8d"
-            style="height: 200px;" alt="Movie1"></a></li>
-      <li><a href="https://www.youtube.com/embed/khwPVkoW8IE"><img
-            src="https://images-na.ssl-images-amazon.com/images/I/71AqYqsNwHL._UR1200,1600_RI_.jpg"
-            style="height: 200px;" alt="Movie2"></a></li>
-      <li><a href="https://www.youtube.com/embed/yk9mZAJY9g0"><img
-            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQLWiyc9NdLUD1eO7HL8SIVNMTTXcKhW3EFlxo1rYDCoTagbiJT"
-            style="height: 200px;" alt="Movie3"></a></li>
-      <li><a href="https://www.youtube.com/embed/9LaZ6pqSnqM"><img
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTjxZRPDx943hSf3xm5JhA_sIRgC_Q27b6u0wsUS1EyMP9ed4jO"
-            style="height: 200px;" alt="Movie4"></a></li>
-      <li><a href="https://www.youtube.com/embed/3vRr-A-_j7E"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfsJv32NV8SPL-0WF3127tU-cvo6iAdfCkv3TXYdBo25cVnX1T"
-            style="height: 200px;" alt="Movie5"></a></li>
-      <li><a href="https://www.youtube.com/embed/T0kXMlBrR5A"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjVto8_L3kyo-E_YkC1TkP2KJG5YnX3dxEEzB8wnYkz4hTZxYC"
-            style="height: 200px;" alt="Movie6"></a></li>
-      <li><a href="https://www.youtube.com/embed/m3lL5aiEiqk"><img
-            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSwjezpwU9yG0c-na2CIFBre-nEnx1pE35FK8Rrz6ah74tsPZgg"
-            style="height: 200px;" alt="Movie7"></a></li>
-      <li><a href="https://www.youtube.com/embed/Q1mtYvdbgTQ"><img
-            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR_K75Gjd9ZwqRDsAfDC_4SpYt6X84g4qKm5BpkuueGPfxac4_N"
-            style="height: 200px;" alt="Movie8"></a></li>
-      <li><a href="https://www.youtube.com/embed/gnvivUeQxWI"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRewcPGWZ0HFxuhv2v90HQxbn121wDSwvnlNwhjbXSwzHyz6emn"
-            style="height: 200px;" alt="Movie9"></a></li>
-      <li><a href="https://www.youtube.com/embed/f9RGUlvrog0"><img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR75eNLytZxnNRDSjnmOhpefzq032APtIvl-PfSPFYbCXlhtGR"
-            style="height: 200px;" alt="Movie10"></a></li>
-      <li><a href="https://www.youtube.com/embed/QBshI04K6r0"><img
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqUciHT5HjfGvgKjJ1kpaPkjyjcqXxPoRHYLZ9kh9YwqRUzMZr"
-            style="height: 200px;" alt="Movie11"></a></li>
-    </ul>
-  </div>
-  <hr>
+    <hr>
 
 
     <footer>
