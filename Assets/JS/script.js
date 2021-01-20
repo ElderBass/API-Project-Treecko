@@ -140,7 +140,7 @@ $(document).ready(function() {
                             resultsMain.append(resultName, poster, availability)
 
                             const terminator = {
-                                    url: "http://www.omdbapi.com/?t=" + response.results[i].name + "&apikey=9efaf7ad",
+                                    url: "https://www.omdbapi.com/?t=" + response.results[i].name + "&apikey=9efaf7ad",
                                     method: "GET",
                                 }
                                 //when this query is done...wait on this to finish before we go forward
@@ -247,7 +247,7 @@ async function displayFavorite() {
     var favName = this.id;
 
     const terminator = { //changed the url to have 'plot=full' to it so we get a longer synopsis on the Favorites page
-        url: "http://www.omdbapi.com/?t=" + this.id + "&plot=full&apikey=9efaf7ad",
+        url: "https://www.omdbapi.com/?t=" + this.id + "&plot=full&apikey=9efaf7ad",
         method: "GET",
     }
 
