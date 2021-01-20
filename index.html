@@ -19,33 +19,37 @@
 <body>
 
     <div class="header">
-        <h1>Welcome to Flick Finder!</h1>
+        <h1>Welcome to Flick Finder</h1>
         <h5>Peep the deets on your favorite movies</h5>
     </div>
 
     <BR>
     <div class="row">
-        <div class="col-md-10" align="center">
 
+        <div class="col-md-10" align="center"> <!--Not sure we need this-->
+            <a href='#top10'><button class='button'>Trending Now</button></a>
+            <a href='#freeMovies'><button class='button'>Free Movies on YouTube</button></a>
             <div class="cd-md-1"><input type='text' id='titleSearch' placeholder='enter movie or show title'>
                 <button id='searchBtn' type='submit'>Search Flick Finder</button><BR><BR>
                 <div class="card">
                     <h3><u>Favorites</u></h3>
-                    <!--I pulled this class from Foundation. In theory, it should create a stack of buttons as shown on this page: https://get.foundation/sites/docs-v5/components/button_groups.html -->
+                    
+
                     <ul class='stack button-group' id='favoritesList'>
                     </ul>
                     <button class='button hide' id='clearFavorites'>Clear Favorites</button>
                 </div>
             </div>
-        </div>
         
-        <div class="cd-md-4">
+        <div class="cd-md-3">
             <div id='resultsDiv'>
+                Search any movie title for details!
                 <!-- leave this empty, it displays the results for search flick finder button-->
-            </div>
+            </div></div>
+       
         </div>
-        
-    </div>
+
+   
 
     <!--NEW STUFF ALERT-->
     <!--Thanks Fong! I got this working finally! So when you add/fail to add something to favorites, this Modal should pop up with a message-->
@@ -55,57 +59,60 @@
 
 
     <hr>
-    <div class="top10">
+
+
+    <div class="top10" id='top10'>
+
         <h2>Top 10 Popular Movies</h2>
         <div id="carouselExampleInterval" class="carousel slide" data-pause="carousel" class="default">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/7Y6-w5Psupw" frameborder="0"
+                    <iframe width="30%" height="200" style="text-align:center;" src="https://www.youtube.com/embed/7Y6-w5Psupw" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/L6P3nI6VnlY" frameborder="0"
+                    <iframe width="30%" height="20" src="https://www.youtube.com/embed/L6P3nI6VnlY" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/mdMtnvMJcDA" frameborder="0"
+                    <iframe width="30%" height="200" src="https://www.youtube.com/embed/mdMtnvMJcDA" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/XF8h3hOGBJM" frameborder="0"
+                    <iframe width="30%" height="200" src="https://www.youtube.com/embed/XF8h3hOGBJM" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/bgKEoHNi3Uc" frameborder="0"
+                    <iframe width="30%" height="200" src="https://www.youtube.com/embed/bgKEoHNi3Uc" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/u8ZsUivELbs" frameborder="0"
+                    <iframe width="30%" height="200" src="https://www.youtube.com/embed/u8ZsUivELbs" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/j77XMwc5bqg" frameborder="0"
+                    <iframe width="30%" height="200" src="https://www.youtube.com/embed/j77XMwc5bqg" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/ozUuAcGOhPs" frameborder="0"
+                    <iframe width="30%" height="200" src="https://www.youtube.com/embed/ozUuAcGOhPs" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/gdWxGwiuhnU" frameborder="0"
+                    <iframe width="30%" height="200" src="https://www.youtube.com/embed/gdWxGwiuhnU" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="carousel-item">
-                    <iframe width="50%" height="520" src="https://www.youtube.com/embed/aSiDu3Ywi8E" frameborder="0"
+                    <iframe width="30%" height="200" src="https://www.youtube.com/embed/aSiDu3Ywi8E" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
@@ -123,7 +130,7 @@
     </div>
     </div>
     <hr>
-    <div class="movie-list">
+    <div class="movie-list" id='freeMovies'>
         <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
             <li><a href="https://www.youtube.com/embed/Om3rG2Shbic"><img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToYQxJjHOcThYvYHi2i4pZQrKRY_ZnSuMZzfo7rn6GQWx22FA9"
@@ -243,20 +250,20 @@
         <nav class="navbar navbar-light bg-light">
             <ul>
                 <a class="treecko-brand" href="#">
-                    <img src="./Assets/treecko.jpg" width="50" height="50" class="d-inline-block align-top"
+                    <img src="./Assets/treecko.jpg" width="30" height="40" class="d-inline-block align-top"
                         alt="treecko" loading="lazy">
                 </a>
             </ul>
             <button>
-                <li>About Flick Finder</li>
+                About Flick Finder
             </button>
             <button>
-                <li><a href="contact.html" style="color: black;">Contact Us</a></li>
+                <a href="contact.html" style="color: black;">Contact Us</a>
             </button>
-            <!-- <button><li>Forum</li></button> -->
-            <!-- <button><li>Help Center</li</button> -->
+          <button>Forum</button> 
+           <button>Help Center</button> 
             <button>
-                <li><a href="index.html" style="color: black;">My Account</a></li>
+                <a href="index.html" style="color: black;">My Account</a>
             </button>
         </nav>
     </footer>

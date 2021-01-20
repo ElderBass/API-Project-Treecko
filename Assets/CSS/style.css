@@ -1,3 +1,7 @@
+html { /*Seth added this for smooth scrolling on the page!*/
+    scroll-behavior: smooth;
+  }
+
 body{
     background-image: url("https://www.colourbox.com/preview/5351999-movie-film-reel.jpg");
     background-repeat: repeat;
@@ -5,27 +9,35 @@ body{
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    position: absolute;
     width: 100% !important;
     z-index: 0;
     color:white;
     font-family: 'Cinzel', serif;
     overflow-x: hidden;
     /* font-size: 1.2vw; */
+    overflow-x: hidden;
 }
 
-.header{
+.header,
+h1,
+h5
+{
 text-align: center;
-font-family: 'Cinzel', serif;
 color:white;
+font-family: 'Cinzel', serif;
 }
 
 a {
     color: black;
+    font-family: 'Cinzel', serif;
 }
 
 #favsModal {
     background-color: white;
     color:black;
+    border-radius: 28px;
+    border: solid black 6px; 
 }
 
 .modal-main {
@@ -41,6 +53,8 @@ left: 0;
 top: 0;
 height: 100%;
 overflow: auto;
+border-radius: 28px;
+border: solid black 6px; 
 }
 
 .modal {
@@ -55,20 +69,21 @@ height: 100%; /* Full height */
 overflow: auto; /* Enable scroll if needed */
 background-color: rgb(0,0,0); /* Fallback color */
 background-color: rgba(0,0,0,0.92); /* Black w/ opacity */
+border-radius: 28px;
+border: solid black 6px; 
 }
 
 .modal-content {
 background-color: transparent;
 padding: 5%;
 border: 1px solid #888;
+border: solid black 6px; 
 width: 70%;
+border-radius: 28px;
 }
 
-a {
-    color: black;
-}
-/*Seth altered this for his own testing purposes - changes not permanent */
-#favsModal {
+
+/* #favsModal {
     background-color: white;
     color:black;
     border: solid black 5px;
@@ -76,7 +91,7 @@ a {
     border-bottom-right-radius: 15px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-}
+} */
 
 .close {
 color: #ffffff;
@@ -102,13 +117,15 @@ text-align: center;
 height:30px;
 width:150px;
 font-family: 'Cinzel', serif;
+border-radius: 28px;
 }
 
 .card {
 margin-top:10px;
-margin-left:-20px;
+margin-left:80px;
 height: 300px;
 width:250px;
+border: solid gray 6px;
 
 }
 
@@ -116,9 +133,7 @@ width:250px;
 background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 }
 
-/* .li a {
-display: block;
-} */
+
 
 #searchBtn{
 border: solid white 2px;
@@ -130,48 +145,67 @@ font-size:16px;
 text-align: center;
 height:30px;
 width:200px;
+border-radius: 28px;
 }
 
 #titleSearch{
-border: solid white 2px;
+border: solid gray 6px;
 background-color:white;
 color:black;
 margin-left:80px; 
 font-family: 'Cinzel', serif;
 font-size:16px;
 text-align: center;
-height:30px;
-width:150px;
+height:50px;
+width:250px;
+border-radius: 28px;
 }
 
 h1{
 margin-top:10px;
 background-color:gray;
-/* font-family: 'Cinzel', serif; */
+font-family: 'Cinzel', serif;
 color:white;
 }
 h5{
-/* font-family: 'Cinzel', serif; */
+font-family: 'Cinzel', serif;
 background-color:gray;
 color:white;
 }
 
+.topTen{
+    margin: auto;
+    width: 80%; 
+   padding: 10px;
+   background-color:black;
+}
 #resultsDiv{
-/* margin-top:20px; */
 background-color:white;
 color:black;
-/* width: 500px; */
-/* font-family: 'Cinzel', serif; */
+ width: 700px; 
+font-family: 'Cinzel', serif;
+margin-left:100px;
+height:450px;
+overflow: scroll;
+border: solid black 8px;
+margin-top:20px;
+font-family: 'Cinzel', serif;
 width: 80%;
-/* margin-left:100px; */
 padding: 0px 20px 0px 20px;
 }
 
 h3{
 text-align:center;
-/* font-family: 'Cinzel', serif; */
+font-family: 'Cinzel', serif;
 margin-top:10px;
 background-color:gray;
+}
+
+h2{
+    color:black;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    background-color:gray;
 }
 
 .navbar{
@@ -187,11 +221,6 @@ font-family: 'Cinzel', serif;
 margin-left:100px;
 }
 
-h3{
-    text-align:center;
-    font-family: 'Cinzel', serif;
-    text-decoration: underline;
-}
 
 li {
     color: black;
@@ -208,7 +237,8 @@ li a {
 }
 
 .col-md-2 {
-    padding: 0px 0px
+    padding: 0px 0px;
+    background-color:black;
 }
 
 .col-md-10 {
@@ -224,15 +254,6 @@ li a {
 }
 
 
-.top10 {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    border: white;
-    border-style: solid;
-    
-}
 
 form {
     border: rgb(255, 255, 255);
@@ -240,6 +261,7 @@ form {
     border-style: solid;
     background-color: rgb(104, 104, 104);
     padding-top: 20px;
+    background-color:black;
 }
 
 .navbar{
@@ -253,38 +275,46 @@ width:400px;
 font-family: 'Cinzel', serif;
 }
 
+
 .button{
 margin-left: 80px;
 border: solid white 2px;
 background-color:gray; 
 color:black;
 font-family: 'Cinzel', serif;
-font-size:9px;
+font-size:12px; /*Seth edited font size here recently */
 text-align: center;  
 height:60px;
 width:200px;
-}
+border-radius: 28px;
+} 
 
+ul {
+    list-style-type: none;
+}
 #favsModal {
     background-color: white;
     color:black;
 }
 
 .firstWord {
-    color: red;
+    color:black;
     text-decoration: underline;
+    font-weight:bold;
+    
 }
-
 /*Seth added this feature recently - probably needs to be restyled */
 #clearFavorites {
     border: solid white 2px;
     background-color:gray; 
     color:black;
     font-family: 'Cinzel', serif;
-    font-size:8px;
+    font-size:10px;
     /* text-align: center;  */
     height:30px;
-    width:90px;
+    width:110px;
+    margin-left:60px;
+    border-radius: 28px;
 }
 #clearFavorites:hover {
     border: solid black 1px;
@@ -292,4 +322,12 @@ width:200px;
 /*Seth added this for the 'clear favorites' button and it should be left in.*/
 .hide {
     display: none;
+}
+.movie-list{
+  
+    background-color:black;
+    margin: auto;
+     width: 80%; 
+    padding: 10px;
+    
 }
