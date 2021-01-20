@@ -336,6 +336,7 @@ background-color:rgb(104, 104, 104);
 .button:hover {
     border: solid black 1px;
     background-color:gray;
+}
 
 
 ul {
