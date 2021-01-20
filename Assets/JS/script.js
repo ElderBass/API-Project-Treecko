@@ -176,9 +176,12 @@ $(document).ready(function (e) {
                   releaseDate.html((`<span class="firstWord">Release Date:</span>`) +' '+ responseTwo.Released);
                   runTime.html((`<span class="firstWord">Runtime:</span>`) +' '+ responseTwo.Runtime);
 
-                  //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
+                  //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results                 
+
+
                   resultInfo.append(releaseDate, rating, runTime, plot, reviewScore);
                   //then append the resultInfo div into the main div containing the result name, poster, and favorite button
+                
                   resultsMain.append(resultInfo);
               }) //end of omdb ajax query
 
@@ -223,13 +226,15 @@ function renderFavoritesList() {
           var favButton = $('<button>') 
           favButton.attr("class", "button");
           favButton.attr('id', favorites[i]);
-          favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+          
+          //just added this in so that the styling matches the favorites buttons on displaydiv
+          favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
             favButton.on({
               mouseenter: function () {
-                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+                $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
               },
               mouseleave: function () {
-                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+                $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
               }
               })
           
