@@ -133,7 +133,7 @@ $(document).ready(function () {
               //create an unordered list that we'll append movie services to down below
 
               var availability = $('<ul>');
-              availability.text('Available to Watch On:')
+              availability.html(`<span class="firstWord">Available to Watch On:</span><br>`);
 
               //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
               for (var j = 0; j < response.results[i].locations.length; j++) {
@@ -229,7 +229,7 @@ function renderFavoritesList() {
                 $(this).attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
               }
               })
-          //not sure we need to do this anymore since I circumvented the problem this was trying to solve
+          
           favButton.text(favorites[i]);
           favButton.on('click', displayFavorite)
           favButton.attr('class', 'button')
@@ -307,14 +307,13 @@ async function displayFavorite () { //an on-click function
           if (favName === response.results[i].name) {
             
             availability.html(`<span class="firstWord">Available to Watch On:</span><br>`)
-            for (var j = 0; j < response.results[i].locations.length; j++) {   //can't really do this yet, need another ajax query for this specific button's id
+            for (var j = 0; j < response.results[i].locations.length; j++) {  
                   var location = $('<li>');
                   location.text(response.results[i].locations[j].display_name)
                   availability.append(location);
             }
           }
         }
-      
       })
 
       resultsDiv.append(resultName, poster, availability, genre, releaseDate, rating, runTime, director, plot, actors, reviewScore, link)
