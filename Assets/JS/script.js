@@ -157,11 +157,11 @@ $(document).ready(function() {
                                     var runTime = $('<p>');
 
                                     //set the text of these new elements to their corresponding values from the query
-                                    plot.html((`<span class="firstWord">Synopsis:</span>`) + ' <BR>' + responseTwo.Plot);
-                                    rating.html((`<span class="firstWord">Rated:</span>`) + ' <BR>' + responseTwo.Rated);
-                                    reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + '<BR> ' + responseTwo.imdbRating);
-                                    releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR> ' + responseTwo.Released);
-                                    runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR> ' + responseTwo.Runtime);
+                                    plot.html((`<span class="firstWord">Synopsis:</span>`) + '<BR>' + responseTwo.Plot);
+                                    rating.html((`<span class="firstWord">Rated:</span>`) + '<BR>' + responseTwo.Rated);
+                                    reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + '<BR>' + responseTwo.imdbRating);
+                                    releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR>' + responseTwo.Released);
+                                    runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR>' + responseTwo.Runtime);
 
                                     //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results                 
 
@@ -271,15 +271,15 @@ async function displayFavorite() {
         var runTime = $('<p>');
         var link = $('<a>');
         var genre = $('<p>');
-
-        plot.html((`<span class="firstWord">Synopsis:</span>`) + '<BR> ' + responseTwo.Plot);
-        rating.html((`<span class="firstWord">Rated:</span>`) + '<BR> ' + responseTwo.Rated);
+      
+        plot.html((`<span class="firstWord">Synopsis:</span>`) + '<BR>' + responseTwo.Plot);
+        rating.html((`<span class="firstWord">Rated:</span>`) + '<BR>' + responseTwo.Rated);
         reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + '<BR> ' + responseTwo.imdbRating);
-        genre.html((`<span class="firstWord">Genre:</span>`) + '<BR> ' + responseTwo.Genre);
-        actors.html((`<span class="firstWord">Lead Actors:</span>`) + '<BR> ' + responseTwo.Actors);
-        director.html((`<span class="firstWord">Directed By:</span>`) + '<BR> ' + responseTwo.Director)
-        releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR> ' + responseTwo.Released);
-        runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR> ' + responseTwo.Runtime);
+        genre.html((`<span class="firstWord">Genre:</span>`) + '<BR>' + responseTwo.Genre);
+        actors.html((`<span class="firstWord">Lead Actors:</span>`) + '<BR>' + responseTwo.Actors);
+        director.html((`<span class="firstWord">Directed By:</span>`) + '<BR>' + responseTwo.Director)
+        releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR>' + responseTwo.Released);
+        runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR>' + responseTwo.Runtime);
         link.text('IMDB Page')
         link.attr('href', "https://www.imdb.com/title/" + responseTwo.imdbID + "/")
 
@@ -314,7 +314,7 @@ async function displayFavorite() {
                 }
             }
         })
-        resultsDiv.append(resultName, poster, availability, genre, releaseDate, rating, runTime, director, plot, actors, reviewScore, link)
+        resultsDiv.append(resultName, poster, availability,'<br>', genre, releaseDate, rating, runTime, director, plot, actors, reviewScore, link)
     })
 
 }
