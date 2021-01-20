@@ -180,17 +180,6 @@ background-color:gray;
 color:white;
 }
 
-.top10 {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    border: white;
-    border-style: solid;
-    width: 80%; 
-    padding: 10px;
-}
-
 #resultsDiv{
 background-color:white;
 color:black;
@@ -271,9 +260,10 @@ li a {
     margin-left: auto;
     text-align: center;
     border: white;
-    border-style: solid;   
+    border-style: solid;
+    width: 80%; 
+    padding: 10px;
 }
-
 
 
 
