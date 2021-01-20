@@ -1,25 +1,13 @@
-var modal = $("#myModal");
-var btn = $("#myBtn");
-var span = $(".close");
-
-$('#searchBtn').attr('data-open', 'favsModal');
-
-// btn.on('click', function () {
-//     modal.attr('style', "display: block");
-// })
-// span.on('click', function () {
-//     modal.attr('style', "display: none"); //do we need any of this stuff anymore?
-// })
-// $(window).on('click', function (event) {
-//     if (event.target == modal) {
-//        modal.attr('style', "display: none");
-//     }
-// })
-
 //going to put all of the results from our search into this container
 var resultsDiv = $('#resultsDiv');
 //so our results are lined up nicely on the page
 $('#resultsDiv').attr('align', 'center');
+
+$('#searchBtn').attr('data-open', 'favsModal');
+
+//this styling won't take when it's written in style.css so I have it here...
+$('#favsModal').attr('style', 'background-color: white;')
+
 
 $(document).ready(function() {
 
@@ -28,6 +16,7 @@ $(document).ready(function() {
 
     //async = saying this function holds asynchronous content so only run when the query is done
     async function searchByTitle() {
+
 
         //empty our results div from the previous search first so we can add new search results to it
         resultsDiv.empty();
@@ -230,7 +219,10 @@ function renderFavoritesList() {
             var favButton = $('<button>')
             favButton.attr("class", "button");
             favButton.attr('id', favorites[i]);
-            favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
+
+            //just added this in so that the styling matches the favorites buttons on displaydiv
+            favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
+
             favButton.on({
                 mouseenter: function() {
                     $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
@@ -265,10 +257,9 @@ async function displayFavorite() {
     //this code is almost identical to the stuff above - redo the query for the OMDB API for this specific favorite
     await $.ajax(terminator).then(function(responseTwo) {
 
-
         var resultName = $('<h3>');
         resultName.attr('style', 'font-weight: 800')
-        resultName.html(responseTwo.Title + "    " + "<span>&#x1F60D</span>");
+        resultName.html(responseTwo.Title + "    " + "<span id='heart'>&#10084</span>");
 
         var poster = $('<img>');
         poster.attr('src', responseTwo.Poster);

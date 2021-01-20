@@ -33,13 +33,6 @@ a {
     font-family: 'Cinzel', serif;
 }
 
-#favsModal {
-    background-color: white;
-    color: black;
-    border-radius: 28px;
-    border: solid black 6px;
-}
-
 .modal-main {
     flex-direction: row;
     box-sizing: border-box;
@@ -85,22 +78,11 @@ a {
 .modal-content {
     background-color: transparent;
     padding: 5%;
-    border: 1px solid #888;
+    border: 1px solid rgb(104, 104, 104);
     border: solid black 6px;
     width: 70%;
     border-radius: 28px;
 }
-
-
-/* #favsModal {
-    background-color: white;
-    color:black;
-    border: solid black 5px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-} */
 
 .close {
     color: #ffffff;
@@ -117,7 +99,8 @@ a {
 }
 
 .modal-button {
-    background: gray;
+
+    background: rgb(104, 104, 104);
     border: solid white 2px;
     color: black;
     cursor: pointer;
@@ -134,14 +117,15 @@ a {
     margin-left: 80px;
     height: 300px;
     width: 250px;
-    border: solid gray 6px;
+    border: solid rgb(104, 104, 104) 6px;
+
 }
 
 .about-card {
     width: 30%;
     margin-right: auto;
     margin-left: auto;
-    background-color: gray;
+    background-color: rgb(104, 104, 104);
     padding: 0 20px 20px 20px;
 }
 
@@ -151,7 +135,7 @@ a {
 
 #searchBtn {
     border: solid white 2px;
-    background-color: gray;
+    background-color: rgb(104, 104, 104);
     color: black;
     margin-left: 100px;
     font-family: 'Cinzel', serif;
@@ -163,7 +147,8 @@ a {
 }
 
 #titleSearch {
-    border: solid gray 6px;
+
+    border: solid rgb(104, 104, 104) 6px;
     background-color: white;
     color: black;
     margin-left: 80px;
@@ -177,14 +162,14 @@ a {
 
 h1 {
     margin-top: 10px;
-    background-color: gray;
+    background-color: rgb(104, 104, 104);
     font-family: 'Cinzel', serif;
     color: white;
 }
 
 h5 {
     font-family: 'Cinzel', serif;
-    background-color: gray;
+    background-color: rgb(104, 104, 104);
     color: white;
 }
 
@@ -207,18 +192,42 @@ h3 {
     text-align: center;
     font-family: 'Cinzel', serif;
     margin-top: 10px;
-    background-color: gray;
+    background-color: rgb(104, 104, 104);
 }
 
 h2 {
     color: black;
     font-family: 'Cinzel', serif;
     text-align: center;
-    background-color: gray;
+    background-color: rgb(104, 104, 104);
 }
 
 .navbar {
     height: 60px;
+    background-color: rgb(104, 104, 104);
+}
+
+.navbar {
+    height: 60px;
+}
+
+
+/*NEW STUFF ALERT - SETH AMENDED THESE THREE favsModals A BIT TO MAKE THEM POP OUT MORE */
+
+#favsModal {
+    background-color: white;
+    color: black;
+    border-radius: 28px;
+    border: solid black 6px;
+}
+
+#favsModal h2 {
+    background-color: white;
+}
+
+#favsModal h3 {
+    background-color: white;
+
 }
 
 .ul {
@@ -272,6 +281,12 @@ li a {
     padding: 10px;
 }
 
+
+#heart {
+    color: red;
+    /*Seth added this for the Heart emoji on favorite movies! */
+}
+
 form {
     border: rgb(255, 255, 255);
     border-width: 5px;
@@ -296,7 +311,7 @@ form {
 .button {
     margin-left: 100px;
     border: solid white 2px;
-    background-color: gray;
+    background-color: rgb(104, 104, 104);
     color: black;
     font-family: 'Cinzel', serif;
     font-size: 10px;
@@ -311,11 +326,6 @@ ul {
     list-style-type: none;
 }
 
-#favsModal {
-    background-color: white;
-    color: black;
-}
-
 .firstWord {
     color: black;
     text-decoration: underline;
@@ -327,7 +337,7 @@ ul {
 
 #clearFavorites {
     border: solid white 2px;
-    background-color: gray;
+    background-color: rgb(104, 104, 104);
     color: black;
     font-family: 'Cinzel', serif;
     font-size: 10px;
