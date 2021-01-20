@@ -224,9 +224,7 @@ function renderFavoritesList() {
           var favButton = $('<button>') 
           favButton.attr("class", "button");
           favButton.attr('id', favorites[i]);
-          
-          //just added this in so that the styling matches the favorites buttons on displaydiv
-          favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
+          favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white;');
             favButton.on({
               mouseenter: function () {
                 $(this).attr('style', 'border: solid black 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
