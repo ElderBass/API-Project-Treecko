@@ -180,12 +180,6 @@ background-color:gray;
 color:white;
 }
 
-.topTen{
-    margin: auto;
-    width: 80%; 
-   padding: 10px;
-   background-color:black;
-}
 #resultsDiv{
 background-color:white;
 color:black;
@@ -266,9 +260,10 @@ li a {
     margin-left: auto;
     text-align: center;
     border: white;
-    border-style: solid;   
+    border-style: solid;
+    width: 80%; 
+    padding: 10px;
 }
-
 
 
 
