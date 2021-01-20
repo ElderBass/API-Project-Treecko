@@ -10,6 +10,7 @@ body{
     color:white;
     font-family: 'Cinzel', serif;
     /* font-size: 1.2vw; */
+    overflow-x: hidden;
 }
 
 .header{
@@ -108,10 +109,17 @@ margin-top:10px;
 margin-left:-20px;
 height: 300px;
 width:250px;
-
 }
 
-.treecko-brand {
+.about-card {
+width: 30%;
+margin-right: auto;
+margin-left: auto;
+background-color: gray;
+padding: 0 20px 20px 20px;
+}
+
+.treecko-logo {
 background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 }
 
@@ -171,10 +179,6 @@ text-align:center;
 /* font-family: 'Cinzel', serif; */
 margin-top:10px;
 background-color:gray;
-}
-
-.navbar{
-height:60px;
 }
 
 .ul {
@@ -241,7 +245,7 @@ form {
 }
 
 .navbar{
-height:50px;
+background-color: white;
 }
 
 #favoritesList{

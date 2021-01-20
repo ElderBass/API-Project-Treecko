@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
     <link rel="stylesheet" href="Assets/CSS/style.css">
 
     <title>Flick Finder</title>
@@ -48,7 +49,6 @@
     </div>
 
     <!--NEW STUFF ALERT-->
-    <!--Thanks Fong! I got this working finally! So when you add/fail to add something to favorites, this Modal should pop up with a message-->
     <div id="favsModal" class="reveal" data-reveal>
 
     </div>
@@ -56,74 +56,108 @@
 
     <hr>
     <div class="top10">
-        <h2>Top 10 Popular Movies</h2>
-        <div id="carouselExampleInterval" class="carousel slide" data-pause="carousel" class="default">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
+        <h2 style="background-color: gray; margin: auto;">Top 10 Popular Movies</h2>
+          <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-use-m-u-i="false">
+            <div class="orbit-wrapper">
+              <div class="orbit-controls">
+                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+                <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+              </div>
+              <ul class="orbit-container">
+                <li class="is-active orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/7Y6-w5Psupw" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie1"></iframe>
+                  </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/L6P3nI6VnlY" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie2"></iframe>
+                  </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/mdMtnvMJcDA" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie3"></iframe>
+                  </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/XF8h3hOGBJM" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie4"></iframe>
+                    </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/bgKEoHNi3Uc" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie5"></iframe>
+                    </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/u8ZsUivELbs" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie6"></iframe>
+                  </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/j77XMwc5bqg" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie7"></iframe>
+                  </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/ozUuAcGOhPs" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie8"></iframe>
+                  </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/gdWxGwiuhnU" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="carousel-item">
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie9"></iframe>
+                  </figure>
+                </li>
+                <li class="orbit-slide">
+                  <figure class="orbit-figure">
                     <iframe width="50%" height="520" src="https://www.youtube.com/embed/aSiDu3Ywi8E" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen alt="Movie10"></iframe>
+                  </figure>
+                </li>
+              </ul>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+            <nav class="orbit-bullets">
+              <button class="is-active" data-slide="0">
+                <span class="show-for-sr">First slide details.</span>
+                <span class="show-for-sr" data-slide-active-label>Current Slide</span>
+              </button>
+              <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+              <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+              <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+              <button data-slide="4"><span class="show-for-sr">Fifth slide details.</span></button>
+              <button data-slide="5"><span class="show-for-sr">Sixth slide details.</span></button>
+              <button data-slide="6"><span class="show-for-sr">Seventh slide details.</span></button>
+              <button data-slide="7"><span class="show-for-sr">Eighth slide details.</span></button>
+              <button data-slide="8"><span class="show-for-sr">Ninth slide details.</span></button>
+              <button data-slide="9"><span class="show-for-sr">Tenth slide details.</span></button>
+            </nav>
+          </div>
+      </div>
     </div>
     </div>
     <hr>
     <div class="movie-list">
+      <h3>Free Movies</h3>
         <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
             <li><a href="https://www.youtube.com/embed/Om3rG2Shbic"><img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToYQxJjHOcThYvYHi2i4pZQrKRY_ZnSuMZzfo7rn6GQWx22FA9"
@@ -240,33 +274,23 @@
 
 
     <footer>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar">
             <ul>
-                <a class="treecko-brand" href="#">
-                    <img src="./Assets/treecko.jpg" width="50" height="50" class="d-inline-block align-top"
+                <a class="treecko-logo" href="#">
+                    <img src="./Assets/treecko.jpg" width="50" height="50"
                         alt="treecko" loading="lazy">
                 </a>
             </ul>
-            <button>
-                <li>About Flick Finder</li>
-            </button>
-            <button>
+                <li><a href="about.html" style="color: black;">About Flick Finder</a></li>
                 <li><a href="contact.html" style="color: black;">Contact Us</a></li>
-            </button>
-            <!-- <button><li>Forum</li></button> -->
-            <!-- <button><li>Help Center</li</button> -->
-            <button>
                 <li><a href="index.html" style="color: black;">My Account</a></li>
-            </button>
         </nav>
     </footer>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script type='text/javascript' src='./Assets\JS\script.js'> </script>
-
 
 
 </body>
