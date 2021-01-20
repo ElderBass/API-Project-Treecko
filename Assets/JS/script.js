@@ -23,8 +23,8 @@ var resultsDiv = $('#resultsDiv');
 
 $('#resultsDiv').attr('align','center');
 
-$(document).ready(function (e) {
-    e.preventDefault(); //just in case
+$(document).ready(function () {
+    
     
 
     //Results Variable for testing
@@ -176,9 +176,12 @@ $(document).ready(function (e) {
                   releaseDate.html((`<span class="firstWord">Release Date:</span>`) +' '+ responseTwo.Released);
                   runTime.html((`<span class="firstWord">Runtime:</span>`) +' '+ responseTwo.Runtime);
 
-                  //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results
+                  //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results                 
+
+
                   resultInfo.append(releaseDate, rating, runTime, plot, reviewScore);
                   //then append the resultInfo div into the main div containing the result name, poster, and favorite button
+                
                   resultsMain.append(resultInfo);
               }) //end of omdb ajax query
 
