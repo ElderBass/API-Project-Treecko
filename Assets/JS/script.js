@@ -2,7 +2,7 @@ var modal = $("#myModal");
 var btn = $("#myBtn");
 var span = $(".close");
 
-//$('#searchBtn').attr('data-open', 'favsModal') might need for when search results are null; still tweaking this
+$('#searchBtn').attr('data-open', 'favsModal');
 
 btn.on('click', function () {
     modal.attr('style', "display: block");
@@ -102,7 +102,7 @@ $(document).ready(function () {
                     //reveals the button in the favorites card that allows user to reset their list of favorites
                     $('#clearFavorites').removeClass('hide');
                     //this sets the html of a Modal to reveal a message telling user they've successfully added to their favorites
-                    $('#favsModal').html("<h2>Flick-tastic!</h2><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+                    $('#favsModal').html("<h3>Flick-tastic!</h3><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
 
                     //make a button out of this favorite so that, when clicked, more detailed info will be displayed of the favorite on the screen
                     var favButton = $('<button>');
@@ -128,7 +128,7 @@ $(document).ready(function () {
                     $('#favoritesList').append(favButton)
                     $('#clearFavorites').removeClass('hide');
                     $('#favsModal').removeClass('hide');
-                    $('#favsModal').html("<h2>Flick-tastic!</h2><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+                    $('#favsModal').html("<h3>Flick-tastic!</h3><p class='lead'>This flick has been added to your favorites!</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
                   }   
               })
               
@@ -189,7 +189,7 @@ $(document).ready(function () {
 
       //if we don't get any results back from the query, pop up this modal alert
       else { //this changes the modal so that if the search is wonky, an alert tells the user so; needs tweaking still
-        $('#favsModal').html("<h2>These aren't the results you're looking for...</h2><p class='lead'>Your search didn't return any results. Check your spelling and try again.</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
+        $('#favsModal').html("<h3>These aren't the results you're looking for...</h3><p class='lead'>Your search didn't return any results. Check your spelling and try again.</p><button class='close-button' data-close aria-label='Close modal' type='button'><span aria-hidden='true'>&times;</span></button>")
       }
           }
       query(response);
