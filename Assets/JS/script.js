@@ -42,10 +42,8 @@ $(document).ready(function() {
 
                     if (response.results.length > 0) {
 
-                        //doesn't work; I mean it hides but then you still need to X out of it before touching the main screen....
+                        //need this to get our 'Searching' modal to close
                         $('#favsModal').foundation('close');
-                        // $('#favsModal').addClass('hide');
-                        // $('#favsModal').attr('data-overlay','false'); 
 
 
                         //for every response we get from the query...
@@ -104,7 +102,7 @@ $(document).ready(function() {
                                         //make a button out of this favorite so that, when clicked, more detailed info will be displayed of the favorite on the screen
                                         var favButton = $('<button>');
                                         favButton.text(this.id);
-                                        favButton.attr('class', 'button'); //add this class for styling purposes
+                                        favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
                                         favButton.on('click', displayFavorite); //displayFavorite elaborated below       
                                         $('#favoritesList').append(favButton); //have an empty <ul> that we will append all favorites to
 
@@ -118,7 +116,7 @@ $(document).ready(function() {
                                     localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
                                     var favButton = $('<button>')
                                     favButton.text(this.id)
-                                    favButton.attr('class', 'button')
+                                    favButton.attr('style', 'border: solid white 2px; background-color:gray; color:black; margin-left: 0px; font-family: "Cinzel", serif; font-size:12px; text-align: center; height:60px; width:200px; color:white; border-radius: 28px;');
                                     favButton.on('click', displayFavorite)
                                     $('#favoritesList').append(favButton)
                                     $('#clearFavorites').removeClass('hide');
@@ -129,7 +127,7 @@ $(document).ready(function() {
 
                             //create an unordered list that we'll append movie services to down below
                             var availability = $('<ul>');
-                            availability.html(`<span class="firstWord">Available to Watch On:</span><br>`);
+                            availability.html('<span class="firstWord">Available to Watch On:</span>');
 
                             //for each search result we get back, do another for loop to loop through all of the platforms that have the movie, and append these to above unordered list
                             for (var j = 0; j < response.results[i].locations.length; j++) {
@@ -160,11 +158,11 @@ $(document).ready(function() {
                                     var runTime = $('<p>');
 
                                     //set the text of these new elements to their corresponding values from the query
-                                    plot.html((`<span class="firstWord">Synopsis:</span>`) + '<BR> ' + responseTwo.Plot);
+                                    plot.html((`<span class="firstWord">Synopsis:</span>`) + ' <BR>' + responseTwo.Plot);
                                     rating.html((`<span class="firstWord">Rated:</span>`) + ' <BR>' + responseTwo.Rated);
                                     reviewScore.html((`<span class="firstWord">IMDB Rating:</span>`) + '<BR> ' + responseTwo.imdbRating);
-                                    releaseDate.html((`<span class="firstWord">Release Date:</span>`) + ' <BR>' + responseTwo.Released);
-                                    runTime.html((`<span class="firstWord">Runtime:</span>`) + ' <BR>' + responseTwo.Runtime);
+                                    releaseDate.html((`<span class="firstWord">Release Date:</span>`) + '<BR> ' + responseTwo.Released);
+                                    runTime.html((`<span class="firstWord">Runtime:</span>`) + '<BR> ' + responseTwo.Runtime);
 
                                     //then append all the data to the new div we created, and in turn append that new div to the main container housing ALL of our results                 
 
@@ -300,7 +298,7 @@ async function displayFavorite() {
                 "x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com"
             }
         }
-        
+
         $.ajax(services).then(function(response) {
             console.log(response)
             for (var i = 0; i < response.results.length; i++) {

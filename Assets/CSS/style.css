@@ -29,16 +29,15 @@ h5 {
 }
 
 a {
-    
     color: black;
-    font-size:16px;
+    font-size: 16px;
     font-family: 'Cinzel', serif;
     text-decoration: underline;
-    font-weight:bold;
-    
+    font-weight: bold;
 }
-a:hover{
-    color:rgb(104, 104, 104);
+
+a:hover {
+    color: rgb(104, 104, 104);
 }
 
 .modal-main {
@@ -107,7 +106,6 @@ a:hover{
 }
 
 .modal-button {
-
     background: rgb(104, 104, 104);
     border: solid white 2px;
     color: black;
@@ -126,7 +124,6 @@ a:hover{
     height: 300px;
     width: 250px;
     border: solid rgb(104, 104, 104) 6px;
-
 }
 
 .about-card {
@@ -138,7 +135,7 @@ a:hover{
 }
 
 .treecko-logo {
-background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
+    background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 }
 
 #searchBtn {
@@ -156,21 +153,21 @@ background-image: "https://images.app.goo.gl/LQ5LZHM8drHSNY4E6";
 
 #searchBtn:hover {
     border: solid black 1px;
-    background-color:gray;
+    background-color: gray;
 }
 
-#resultsDiv{
-background-color:white;
-color:black;
- width: 800px; 
-font-family: 'Cinzel', serif;
-margin-left:70px;
-height:550px;
-overflow-y: scroll;
-border: solid black 8px;
-margin-top:20px;
-font-family: 'Cinzel', serif;
-padding-bottom:30px;
+#resultsDiv {
+    background-color: white;
+    color: black;
+    width: 800px;
+    font-family: 'Cinzel', serif;
+    margin-left: 70px;
+    height: 550px;
+    overflow-y: scroll;
+    border: solid black 8px;
+    margin-top: 20px;
+    font-family: 'Cinzel', serif;
+    padding-bottom: 30px;
 }
 
 #titleSearch {
@@ -232,13 +229,17 @@ h2 {
     border: solid black 6px;
 }
 
+#favsModal h1 {
+    background-color: white;
+    color: black;
+}
+
 #favsModal h2 {
     background-color: white;
 }
 
 #favsModal h3 {
     background-color: white;
-
 }
 
 .ul {
@@ -288,10 +289,9 @@ li a {
     text-align: center;
     border: white;
     border-style: solid;
-    width: 80%;
+    width: 50%;
     padding: 10px;
 }
-
 
 #heart {
     color: red;
@@ -307,9 +307,8 @@ form {
     background-color: black;
 }
 
-
-.navbar{
-background-color:rgb(104, 104, 104);
+.navbar {
+    background-color: rgb(104, 104, 104);
 }
 
 #favoritesList {
@@ -333,11 +332,11 @@ background-color:rgb(104, 104, 104);
     width: 200px;
     border-radius: 28px;
 }
+
 .button:hover {
     border: solid black 1px;
-    background-color:gray;
+    background-color: gray;
 }
-
 
 ul {
     list-style-type: none;
@@ -375,4 +374,4 @@ ul {
     margin: auto;
     width: 80%;
     padding: 10px;
-  }
+}
