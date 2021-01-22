@@ -299,7 +299,7 @@ form {
     background-color: white;
     color: black;
     width: 400px;
-    height:800px;
+    height: 800px;
     font-family: 'Cinzel', serif;
     overflow-y: scroll;
 }
@@ -382,7 +382,8 @@ li img {
     }
 }
 
-@media print, screen and (max-width: 600px) {
+@media print,
+screen and (max-width: 600px) {
     .col-md-9 {
         width: 100%;
     }
@@ -397,7 +398,8 @@ li img {
     }
 }
 
-@media print, screen and (max-width: 39.99875em) {
+@media print,
+screen and (max-width: 39.99875em) {
     .reveal {
         min-height: 0%;
         height: 20%;
@@ -464,5 +466,3 @@ li img {
         height: 85px;
     }
 }
-
-@media screen and (max-width: )
