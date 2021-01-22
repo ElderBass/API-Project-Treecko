@@ -1,5 +1,4 @@
 html {
-    /*Seth added this for smooth scrolling on the page!*/
     scroll-behavior: smooth;
 }
 
@@ -16,7 +15,7 @@ body {
     color: white;
     font-family: 'Cinzel', serif;
     overflow-x: hidden;
-    /* font-size: 1.2vw; */
+    font-size: 1.2vw;
     overflow-x: hidden;
 }
 
@@ -59,25 +58,16 @@ a:hover {
 
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Sit on top */
     padding-top: 100px;
-    /* Location of the box */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.92);
-    /* Black w/ opacity */
     border-radius: 28px;
     border: solid black 6px;
 }
@@ -120,11 +110,11 @@ a:hover {
 
 .card {
     margin-top: 10px;
-    margin-left: 80px;
+    /* margin-left: 80px; */
     height: 340px;
     width: 250px;
     border: solid rgb(104, 104, 104) 6px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .about-card {
@@ -143,7 +133,7 @@ a:hover {
     border: solid white 2px;
     background-color: rgb(104, 104, 104);
     color: black;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     font-family: 'Cinzel', serif;
     font-size: 16px;
     text-align: center;
@@ -160,22 +150,22 @@ a:hover {
 #resultsDiv {
     background-color: white;
     color: black;
-    width: 800px;
+    width: 96%;
     font-family: 'Cinzel', serif;
-    margin-left: 70px;
+    margin-left: 20px;
     height: 550px;
     overflow-y: scroll;
     border: solid black 8px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     font-family: 'Cinzel', serif;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
 #titleSearch {
     border: solid rgb(104, 104, 104) 6px;
     background-color: white;
     color: black;
-    margin-left: 80px;
+    /* margin-left: 80px; */
     font-family: 'Cinzel', serif;
     font-size: 16px;
     text-align: center;
@@ -202,6 +192,7 @@ h3 {
     font-family: 'Cinzel', serif;
     margin-top: 10px;
     background-color: rgb(104, 104, 104);
+    /* font-size: 1.2vw; */
 }
 
 h2 {
@@ -209,6 +200,7 @@ h2 {
     font-family: 'Cinzel', serif;
     text-align: center;
     background-color: rgb(104, 104, 104);
+    /* font-size: 1.2vw; */
 }
 
 .navbar {
@@ -228,6 +220,7 @@ h2 {
     color: black;
     border-radius: 28px;
     border: solid black 6px;
+    /* width: 50%; */
 }
 
 #favsModal h1 {
@@ -249,7 +242,7 @@ h2 {
     color: black;
     width: 500px;
     font-family: 'Cinzel', serif;
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 
 li {
@@ -262,17 +255,8 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 16px;
+    padding: 8px;
     text-decoration: none;
-}
-
-.col-md-2 {
-    padding: 0px 0px;
-    background-color: black;
-}
-
-.col-md-10 {
-    padding: 0px 0px
 }
 
 .carousel-inner {
@@ -296,7 +280,6 @@ li a {
 
 #heart {
     color: red;
-    /*Seth added this for the Heart emoji on favorite movies! */
 }
 
 form {
@@ -316,19 +299,18 @@ form {
     background-color: white;
     color: black;
     width: 400px;
-    height:800px;
+    height: 800px;
     font-family: 'Cinzel', serif;
     overflow-y: scroll;
 }
 
 .button {
-    margin-left: 100px;
+    /* margin-left: 100px; */
     border: solid white 2px;
     background-color: rgb(104, 104, 104);
     color: black;
     font-family: 'Cinzel', serif;
     font-size: 10px;
-    /*Seth edited font size here recently */
     text-align: center;
     height: 30px;
     width: 200px;
@@ -338,10 +320,6 @@ form {
 .button:hover {
     border: solid black 1px;
     background-color: gray;
-}
-
-ul {
-    list-style-type: none;
 }
 
 .firstWord {
@@ -373,7 +351,118 @@ ul {
 
 .movie-list {
     background-color: black;
-    margin: auto;
-    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
+}
+
+li img {
+    height: 200px;
+}
+
+.col-md-2 {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.col-md-9 {
+    padding: 0px;
+}
+
+@media screen and (max-width: 1024px) {
+    .col-md-2 {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .col-md-2 {
+        width: 100%;
+    }
+}
+
+@media print,
+screen and (max-width: 600px) {
+    .col-md-9 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #favsModal {
+        width: 60%;
+        max-height: 400px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media print,
+screen and (max-width: 39.99875em) {
+    .reveal {
+        min-height: 0%;
+        height: 20%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .movie-list {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #resultsDiv {
+        max-width: 75%;
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #resultsDiv {
+        max-width: 95%;
+        /* margin-left: auto; */
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    #resultsDiv {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #resultsDiv {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .top10 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    li img {
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    li img {
+        height: 95px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    li img {
+        height: 85px;
+    }
 }
